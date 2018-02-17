@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="software,hexo,挖坑," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="子非鱼" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="其一 安装篇hexo，博客模板框架，基于nodejs。">
+<meta name="keywords" content="software,hexo,挖坑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo施工记录（一）">
+<meta property="og:url" content="http://sslyxhz.github.io/2016-07-01-Hexo施工记录(一)/index.html">
+<meta property="og:site_name" content="子非鱼">
+<meta property="og:description" content="其一 安装篇hexo，博客模板框架，基于nodejs。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-02-13T09:44:19.987Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo施工记录（一）">
+<meta name="twitter:description" content="其一 安装篇hexo，博客模板框架，基于nodejs。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://sslyxhz.github.io/2016-07-01-Hexo施工记录(一)/"/>
+
+
+
+
+
+  <title>Hexo施工记录（一） | 子非鱼</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-111112425-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">子非鱼</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">鱼念鱼</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://sslyxhz.github.io/2016-07-01-Hexo施工记录(一)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="sslyxhz">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="子非鱼">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo施工记录（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-01T20:58:56+08:00">
+                2016-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/记录/" itemprop="url" rel="index">
+                    <span itemprop="name">记录</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016-07-01-Hexo施工记录(一)/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2016-07-01-Hexo施工记录(一)/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>其一 安装篇<br>hexo，博客模板框架，基于nodejs。</p>
+<a id="more"></a>
+<h1 id="前置工作"><a href="#前置工作" class="headerlink" title="前置工作"></a>前置工作</h1><h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><ul>
+<li>Git（<a href="http://git-scm.com/download/）" target="_blank" rel="noopener">http://git-scm.com/download/）</a></li>
+<li>nodejs（<a href="https://nodejs.org/en/）" target="_blank" rel="noopener">https://nodejs.org/en/）</a></li>
+</ul>
+<h2 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 配置用户名和邮件</span><br><span class="line"><span class="meta">$</span> git config --global user.name "sslyxhz"</span><br><span class="line"><span class="meta">$</span> git config --global user.email "sslyxhz@hotmail.com"</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 创建SSH Key</span><br><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C "sslyxhz@hotmail.com"</span><br></pre></td></tr></table></figure>
+<p>登陆GitHub-&gt;Settings-&gt;“SSH Keys”-&gt;“Add SSH Key”</p>
+<h1 id="安装设置"><a href="#安装设置" class="headerlink" title="安装设置"></a>安装设置</h1><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> Hexo主体</span><br><span class="line">mkdir sslyxhz.github.io</span><br><span class="line">cd sslyxhz.github.io</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install hexo --save</span><br></pre></td></tr></table></figure>
+<h2 id="Hexo插件"><a href="#Hexo插件" class="headerlink" title="Hexo插件"></a>Hexo插件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-generator-feed --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-stylus --save</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 部署插件（推荐，git形式备份blog源码）</span><br><span class="line">npm install git+git@github.com:hexojs/hexo-deployer-git.git --save</span><br></pre></td></tr></table></figure>
+<h2 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h2><ul>
+<li>–save，将依赖保存到根目录package.json，以后执行npm install即可自动下载package.json中的所有依赖</li>
+</ul>
+<h2 id="错误情况"><a href="#错误情况" class="headerlink" title="错误情况"></a>错误情况</h2><ul>
+<li>npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.2<ul>
+<li>尝试加上参数–no-optional解决，形如：npm install xxx –no-optional</li>
+</ul>
+</li>
+</ul>
+<h1 id="运行部署"><a href="#运行部署" class="headerlink" title="运行部署"></a>运行部署</h1><h2 id="基础运行"><a href="#基础运行" class="headerlink" title="基础运行"></a>基础运行</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 生成静态站点文件</span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 运行服务器 默认访问站点: http://localhost:4000</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>部署前需要设置根目录的配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/sslyxhz/sslyxhz.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 部署命令</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<h1 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h1><h2 id="新建博文"><a href="#新建博文" class="headerlink" title="新建博文"></a>新建博文</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new [layout] &quot;postName&quot;</span><br></pre></td></tr></table></figure>
+<p>layout：查看scaffolds目录</p>
+<table>
+<thead>
+<tr>
+<th>Layout</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>post</td>
+<td>默认</td>
+</tr>
+<tr>
+<td>page</td>
+<td>页面</td>
+</tr>
+<tr>
+<td>draft</td>
+<td>草稿</td>
+</tr>
+</tbody>
+</table>
+<h2 id="命令缩写"><a href="#命令缩写" class="headerlink" title="命令缩写"></a>命令缩写</h2><ul>
+<li>hexo n == hexo new</li>
+<li>hexo g == hexo generate</li>
+<li>hexo s == hexo server</li>
+<li>hexo d == hexo deploy</li>
+</ul>
+<h2 id="复合命令"><a href="#复合命令" class="headerlink" title="复合命令"></a>复合命令</h2><ul>
+<li>hexo deploy -g</li>
+<li>hexo server -g</li>
+</ul>
+<h1 id="插件拾遗"><a href="#插件拾遗" class="headerlink" title="插件拾遗"></a>插件拾遗</h1><h2 id="git-git部署（推荐）"><a href="#git-git部署（推荐）" class="headerlink" title="git+git部署（推荐）"></a>git+git部署（推荐）</h2><p>通过git发布页面内容和备份blog源码，经过一步hexo d发布到位。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 安装插件</span><br><span class="line">npm install git+git@github.com:hexojs/hexo-deployer-git.git --save</span><br></pre></td></tr></table></figure>
+<p>调整根目录配置文件，将源码备份到src分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># _config.yaml</span><br><span class="line">deploy:</span><br><span class="line">  - type: git</span><br><span class="line">    repo: git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</span><br><span class="line">    branch: master</span><br><span class="line">  - type: git</span><br><span class="line">    repo: git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</span><br><span class="line">    branch: src</span><br><span class="line">    extend_dirs: /</span><br><span class="line">    ignore_hidden: false</span><br><span class="line">    ignore_pattern:</span><br><span class="line">        public: .</span><br></pre></td></tr></table></figure></p>
+<p>参考：<a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">https://github.com/hexojs/hexo-deployer-git</a><br>备注：当无法推送成功时，尝试删除.deploy_git目录，重新部署。</p>
+<h2 id="后台管理（可选）"><a href="#后台管理（可选）" class="headerlink" title="后台管理（可选）"></a>后台管理（可选）</h2><p>配置后台管理插件，直接通过web页面管理编辑博客信息。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-admin</span><br><span class="line">hexo server -d</span><br><span class="line">open http://localhost:4000/admin/</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml</span><br><span class="line">admin:</span><br><span class="line">  username: myfavoritename</span><br><span class="line">  password_hash: be121740bf988b2225a313fa1f107ca1</span><br><span class="line">  secret: a secret something</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://github.com/jaredly/hexo-admin" target="_blank" rel="noopener">https://github.com/jaredly/hexo-admin</a></p>
+<h2 id="资源贴图"><a href="#资源贴图" class="headerlink" title="资源贴图"></a>资源贴图</h2><ol>
+<li><p>调整配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># _config.yml</span><br><span class="line">  post_asset_folder: true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装插件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引用图片</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![new_year](new_year.jpg)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="图床贴图"><a href="#图床贴图" class="headerlink" title="图床贴图"></a>图床贴图</h2><p>插件：七牛云<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-admin-qiniu</span><br></pre></td></tr></table></figure></p>
+<p><a href="https://github.com/xbotao/hexo-admin-qiniu" target="_blank" rel="noopener">https://github.com/xbotao/hexo-admin-qiniu</a><br><a href="https://xbotao.github.io/hexo-admin-qiniu/" target="_blank" rel="noopener">https://xbotao.github.io/hexo-admin-qiniu/</a></p>
+<h2 id="轮播图"><a href="#轮播图" class="headerlink" title="轮播图"></a>轮播图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Fancybox</span><br><span class="line">---</span><br><span class="line">title: Hexo施工记录（一）</span><br><span class="line">date: 2016-07-01 20:58:56</span><br><span class="line">photos:</span><br><span class="line">- https://78.media.tumblr.com/be85ef76868a71471b946247f025d835/tumblr_osv3pcQfz81slhhf0o1_1280.jpg</span><br><span class="line">- https://78.media.tumblr.com/910a65ded4a7e13c807e43b1bc3edbae/tumblr_oqnsfaw6MN1slhhf0o1_1280.jpg</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># themes\next_config.yml</span><br><span class="line">rss：</span><br></pre></td></tr></table></figure>
+<p>启动服务器，查看 <a href="http://localhost:4000/atom.xml" target="_blank" rel="noopener">http://localhost:4000/atom.xml</a></p>
+<h2 id="Sitemap"><a href="#Sitemap" class="headerlink" title="Sitemap"></a>Sitemap</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap</span><br></pre></td></tr></table></figure>
+<p>启动服务器，查看 <a href="http://localhost:4000/sitemap.xml" target="_blank" rel="noopener">http://localhost:4000/sitemap.xml</a></p>
+<h2 id="顺序图和流程图"><a href="#顺序图和流程图" class="headerlink" title="顺序图和流程图"></a>顺序图和流程图</h2><h3 id="安装插件："><a href="#安装插件：" class="headerlink" title="安装插件："></a>安装插件：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-filter-sequence</span><br><span class="line">npm install --save hexo-filter-flowchart</span><br></pre></td></tr></table></figure>
+<h3 id="配置选项："><a href="#配置选项：" class="headerlink" title="配置选项："></a>配置选项：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 配置hexo目录下，而非主题下的_config.yml</span><br><span class="line"></span><br><span class="line">sequence:</span><br><span class="line">  # webfont:     # optional, the source url of webfontloader.js</span><br><span class="line">  # snap:        # optional, the source url of snap.svg.js</span><br><span class="line">  # underscore:  # optional, the source url of underscore.js</span><br><span class="line">  # sequence:    # optional, the source url of sequence-diagram.js</span><br><span class="line">  # css: # optional, the url for css, such as hand drawn theme </span><br><span class="line">  options: </span><br><span class="line">    theme: </span><br><span class="line">    css_class: </span><br><span class="line"></span><br><span class="line">flowchart:</span><br><span class="line">  # raphael:   # optional, the source url of raphael.js</span><br><span class="line">  # flowchart: # optional, the source url of flowchart.js</span><br><span class="line">  options: # options used for `drawSVG`</span><br></pre></td></tr></table></figure>
+<h3 id="简单示例"><a href="#简单示例" class="headerlink" title="简单示例"></a>简单示例</h3><p>参考源码说明：</p>
+<ul>
+<li><a href="https://github.com/bubkoo/hexo-filter-sequence" target="_blank" rel="noopener">sequence</a></li>
+<li><a href="https://github.com/bubkoo/hexo-filter-flowchart" target="_blank" rel="noopener">flowchart</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/software/" rel="tag"># software</a>
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+            <a href="/tags/挖坑/" rel="tag"># 挖坑</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016-05-23-Markdown简单入门/" rel="next" title="Markdown简单入门">
+                <i class="fa fa-chevron-left"></i> Markdown简单入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016-07-12-Hexo施工记录(二)/" rel="prev" title="Hexo施工记录（二）">
+                Hexo施工记录（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">sslyxhz</p>
+              <p class="site-description motion-element" itemprop="description">sslyxhz‘s blog | coder</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          <div class="links-of-author motion-element">
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前置工作"><span class="nav-number">1.</span> <span class="nav-text"><a href="#&#x524D;&#x7F6E;&#x5DE5;&#x4F5C;" class="headerlink" title="&#x524D;&#x7F6E;&#x5DE5;&#x4F5C;"></a>&#x524D;&#x7F6E;&#x5DE5;&#x4F5C;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载安装"><span class="nav-number">1.1.</span> <span class="nav-text"><a href="#&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;" class="headerlink" title="&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;"></a>&#x4E0B;&#x8F7D;&#x5B89;&#x88C5;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置Git"><span class="nav-number">1.2.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;Git" class="headerlink" title="&#x914D;&#x7F6E;Git"></a>&#x914D;&#x7F6E;Git</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#安装设置"><span class="nav-number">2.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;&#x8BBE;&#x7F6E;" class="headerlink" title="&#x5B89;&#x88C5;&#x8BBE;&#x7F6E;"></a>&#x5B89;&#x88C5;&#x8BBE;&#x7F6E;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Hexo"><span class="nav-number">2.1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;Hexo" class="headerlink" title="&#x5B89;&#x88C5;Hexo"></a>&#x5B89;&#x88C5;Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo插件"><span class="nav-number">2.2.</span> <span class="nav-text"><a href="#Hexo&#x63D2;&#x4EF6;" class="headerlink" title="Hexo&#x63D2;&#x4EF6;"></a>Hexo&#x63D2;&#x4EF6;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数说明"><span class="nav-number">2.3.</span> <span class="nav-text"><a href="#&#x53C2;&#x6570;&#x8BF4;&#x660E;" class="headerlink" title="&#x53C2;&#x6570;&#x8BF4;&#x660E;"></a>&#x53C2;&#x6570;&#x8BF4;&#x660E;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误情况"><span class="nav-number">2.4.</span> <span class="nav-text"><a href="#&#x9519;&#x8BEF;&#x60C5;&#x51B5;" class="headerlink" title="&#x9519;&#x8BEF;&#x60C5;&#x51B5;"></a>&#x9519;&#x8BEF;&#x60C5;&#x51B5;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行部署"><span class="nav-number">3.</span> <span class="nav-text"><a href="#&#x8FD0;&#x884C;&#x90E8;&#x7F72;" class="headerlink" title="&#x8FD0;&#x884C;&#x90E8;&#x7F72;"></a>&#x8FD0;&#x884C;&#x90E8;&#x7F72;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础运行"><span class="nav-number">3.1.</span> <span class="nav-text"><a href="#&#x57FA;&#x7840;&#x8FD0;&#x884C;" class="headerlink" title="&#x57FA;&#x7840;&#x8FD0;&#x884C;"></a>&#x57FA;&#x7840;&#x8FD0;&#x884C;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署"><span class="nav-number">3.2.</span> <span class="nav-text"><a href="#&#x90E8;&#x7F72;" class="headerlink" title="&#x90E8;&#x7F72;"></a>&#x90E8;&#x7F72;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本操作"><span class="nav-number">4.</span> <span class="nav-text"><a href="#&#x57FA;&#x672C;&#x64CD;&#x4F5C;" class="headerlink" title="&#x57FA;&#x672C;&#x64CD;&#x4F5C;"></a>&#x57FA;&#x672C;&#x64CD;&#x4F5C;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建博文"><span class="nav-number">4.1.</span> <span class="nav-text"><a href="#&#x65B0;&#x5EFA;&#x535A;&#x6587;" class="headerlink" title="&#x65B0;&#x5EFA;&#x535A;&#x6587;"></a>&#x65B0;&#x5EFA;&#x535A;&#x6587;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令缩写"><span class="nav-number">4.2.</span> <span class="nav-text"><a href="#&#x547D;&#x4EE4;&#x7F29;&#x5199;" class="headerlink" title="&#x547D;&#x4EE4;&#x7F29;&#x5199;"></a>&#x547D;&#x4EE4;&#x7F29;&#x5199;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复合命令"><span class="nav-number">4.3.</span> <span class="nav-text"><a href="#&#x590D;&#x5408;&#x547D;&#x4EE4;" class="headerlink" title="&#x590D;&#x5408;&#x547D;&#x4EE4;"></a>&#x590D;&#x5408;&#x547D;&#x4EE4;</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#插件拾遗"><span class="nav-number">5.</span> <span class="nav-text"><a href="#&#x63D2;&#x4EF6;&#x62FE;&#x9057;" class="headerlink" title="&#x63D2;&#x4EF6;&#x62FE;&#x9057;"></a>&#x63D2;&#x4EF6;&#x62FE;&#x9057;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-git部署（推荐）"><span class="nav-number">5.1.</span> <span class="nav-text"><a href="#git-git&#x90E8;&#x7F72;&#xFF08;&#x63A8;&#x8350;&#xFF09;" class="headerlink" title="git+git&#x90E8;&#x7F72;&#xFF08;&#x63A8;&#x8350;&#xFF09;"></a>git+git&#x90E8;&#x7F72;&#xFF08;&#x63A8;&#x8350;&#xFF09;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台管理（可选）"><span class="nav-number">5.2.</span> <span class="nav-text"><a href="#&#x540E;&#x53F0;&#x7BA1;&#x7406;&#xFF08;&#x53EF;&#x9009;&#xFF09;" class="headerlink" title="&#x540E;&#x53F0;&#x7BA1;&#x7406;&#xFF08;&#x53EF;&#x9009;&#xFF09;"></a>&#x540E;&#x53F0;&#x7BA1;&#x7406;&#xFF08;&#x53EF;&#x9009;&#xFF09;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源贴图"><span class="nav-number">5.3.</span> <span class="nav-text"><a href="#&#x8D44;&#x6E90;&#x8D34;&#x56FE;" class="headerlink" title="&#x8D44;&#x6E90;&#x8D34;&#x56FE;"></a>&#x8D44;&#x6E90;&#x8D34;&#x56FE;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图床贴图"><span class="nav-number">5.4.</span> <span class="nav-text"><a href="#&#x56FE;&#x5E8A;&#x8D34;&#x56FE;" class="headerlink" title="&#x56FE;&#x5E8A;&#x8D34;&#x56FE;"></a>&#x56FE;&#x5E8A;&#x8D34;&#x56FE;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#轮播图"><span class="nav-number">5.5.</span> <span class="nav-text"><a href="#&#x8F6E;&#x64AD;&#x56FE;" class="headerlink" title="&#x8F6E;&#x64AD;&#x56FE;"></a>&#x8F6E;&#x64AD;&#x56FE;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RSS"><span class="nav-number">5.6.</span> <span class="nav-text"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sitemap"><span class="nav-number">5.7.</span> <span class="nav-text"><a href="#Sitemap" class="headerlink" title="Sitemap"></a>Sitemap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序图和流程图"><span class="nav-number">5.8.</span> <span class="nav-text"><a href="#&#x987A;&#x5E8F;&#x56FE;&#x548C;&#x6D41;&#x7A0B;&#x56FE;" class="headerlink" title="&#x987A;&#x5E8F;&#x56FE;&#x548C;&#x6D41;&#x7A0B;&#x56FE;"></a>&#x987A;&#x5E8F;&#x56FE;&#x548C;&#x6D41;&#x7A0B;&#x56FE;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件："><span class="nav-number">5.8.1.</span> <span class="nav-text"><a href="#&#x5B89;&#x88C5;&#x63D2;&#x4EF6;&#xFF1A;" class="headerlink" title="&#x5B89;&#x88C5;&#x63D2;&#x4EF6;&#xFF1A;"></a>&#x5B89;&#x88C5;&#x63D2;&#x4EF6;&#xFF1A;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置选项："><span class="nav-number">5.8.2.</span> <span class="nav-text"><a href="#&#x914D;&#x7F6E;&#x9009;&#x9879;&#xFF1A;" class="headerlink" title="&#x914D;&#x7F6E;&#x9009;&#x9879;&#xFF1A;"></a>&#x914D;&#x7F6E;&#x9009;&#x9879;&#xFF1A;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单示例"><span class="nav-number">5.8.3.</span> <span class="nav-text"><a href="#&#x7B80;&#x5355;&#x793A;&#x4F8B;" class="headerlink" title="&#x7B80;&#x5355;&#x793A;&#x4F8B;"></a>&#x7B80;&#x5355;&#x793A;&#x4F8B;</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">sslyxhz</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+      <style>
+        a.gitment-editor-footer-tip { display: none; }
+        .gitment-container.gitment-footer-container { display: none; }
+      </style>
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'sslyxhz',
+            repo: 'sslyxhz.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '471a575f0edc5c7c642605ea2fdcd7522c1be8c6',
+            
+                client_id: 'bad174e0e116e205403d'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
