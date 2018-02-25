@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on Even - A super concise theme for Hugo</title>
+    <link>https://sslyxhz.github.io/tags/android/</link>
+    <description>Recent content in Android on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 03 Feb 2018 16:51:04 +0800</lastBuildDate>
+    
+	<atom:link href="https://sslyxhz.github.io/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android系统客制化</title>
+      <link>https://sslyxhz.github.io/post/android%E5%AE%A2%E5%88%B6%E5%8C%96/</link>
+      <pubDate>Sat, 03 Feb 2018 16:51:04 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/android%E5%AE%A2%E5%88%B6%E5%8C%96/</guid>
+      <description>&lt;p&gt;整理记录在android上的客制化调整。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JNI Notes</title>
+      <link>https://sslyxhz.github.io/post/jni-notes/</link>
+      <pubDate>Sat, 03 Feb 2018 15:33:01 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/jni-notes/</guid>
+      <description>&lt;p&gt;整理记录对JNI的认知过程。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Android System Tips</title>
+      <link>https://sslyxhz.github.io/post/android-system-tips/</link>
+      <pubDate>Sat, 03 Feb 2018 13:26:27 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/android-system-tips/</guid>
+      <description>&lt;p&gt;整理记录在Android系统的一些操作。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Firefly-RK3399编译记录</title>
+      <link>https://sslyxhz.github.io/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Fri, 17 Nov 2017 23:42:23 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;一块板子一份源码二话不说就是怼，南墙不挡头铁。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

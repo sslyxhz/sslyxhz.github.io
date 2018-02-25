@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Firefly-RK3399编译记录 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="sslyxhz" />
+  <meta name="description" content="一块板子一份源码二话不说就是怼，南墙不挡头铁。
+
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.36" />
+
+
+<link rel="canonical" href="https://sslyxhz.github.io/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<link href="/dist/even.min.css?v=3.0.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Firefly-RK3399编译记录" />
+<meta property="og:description" content="一块板子一份源码二话不说就是怼，南墙不挡头铁。
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sslyxhz.github.io/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/" />
+
+
+
+<meta property="article:published_time" content="2017-11-17T23:42:23&#43;08:00"/>
+
+<meta property="article:modified_time" content="2017-11-17T23:42:23&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="Firefly-RK3399编译记录">
+<meta itemprop="description" content="一块板子一份源码二话不说就是怼，南墙不挡头铁。
+
+">
+
+
+<meta itemprop="datePublished" content="2017-11-17T23:42:23&#43;08:00" />
+<meta itemprop="dateModified" content="2017-11-17T23:42:23&#43;08:00" />
+<meta itemprop="wordCount" content="2030">
+
+
+
+<meta itemprop="keywords" content="android,firefly,rk3399," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Firefly-RK3399编译记录"/>
+<meta name="twitter:description" content="一块板子一份源码二话不说就是怼，南墙不挡头铁。
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">子非鱼</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">子非鱼</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Firefly-RK3399编译记录</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-11-17 </span>
+        <div class="post-category">
+            
+              <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
+            
+          </div>
+        <span class="more-meta"> 约 2030 字 </span>
+        <span class="more-meta"> 预计阅读 5 分钟 </span>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#环境搭建">环境搭建</a>
+<ul>
+<li><a href="#操作系统">操作系统</a></li>
+<li><a href="#换源">换源</a></li>
+<li><a href="#设置jdk">设置JDK</a></li>
+<li><a href="#环境依赖">环境依赖</a></li>
+</ul></li>
+<li><a href="#source-code">Source Code</a>
+<ul>
+<li><a href="#源码压缩包下载">源码压缩包下载</a></li>
+<li><a href="#线上源码">线上源码</a></li>
+<li><a href="#高速缓存">高速缓存</a></li>
+</ul></li>
+<li><a href="#编译前填坑">编译前填坑</a>
+<ul>
+<li><a href="#error-unsupported-reloc-43">error: unsupported reloc 43</a></li>
+<li><a href="#others">others</a></li>
+</ul></li>
+<li><a href="#编译方式">编译方式</a></li>
+<li><a href="#编译kernel">编译kernel</a></li>
+<li><a href="#编译uboot">编译uboot：</a></li>
+<li><a href="#编译android">编译android：</a></li>
+<li><a href="#编译错误记录">编译错误记录</a>
+<ul>
+<li><a href="#中断编译">中断编译</a></li>
+<li><a href="#bc-not-found">bc not found</a></li>
+<li><a href="#communication-error-with-jack-server-52">Communication error with Jack server (52)</a></li>
+<li><a href="#directory-xxx-is-not-writable">directory xxx is not writable</a></li>
+<li><a href="#file-xxx-can-not-be-created">file xxx can not be created</a></li>
+<li><a href="#atomic-file-not-found">&lsquo;atomic&rsquo; file not found</a></li>
+<li><a href="#cannot-allocate-memory">Cannot allocate memory</a></li>
+<li><a href="#waiting-for-unfinished-jobs">Waiting for unfinished jobs</a></li>
+<li><a href="#ota编译失败">OTA编译失败</a></li>
+</ul></li>
+<li><a href="#打包固件">打包固件</a></li>
+<li><a href="#打包统一固件-rockdev-image-rk3399-firefly-box-update-img">打包统一固件，rockdev/Image-rk3399_firefly_box/update.img</a></li>
+<li><a href="#主要参考目录">主要参考目录：</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>一块板子一份源码二话不说就是怼，南墙不挡头铁。</p>
+
+<p></p>
+
+<h1 id="环境搭建">环境搭建</h1>
+
+<h2 id="操作系统">操作系统</h2>
+
+<ul>
+<li>推荐64位Ubuntu，<a href="http://www.ubuntu.org.cn/download/desktop"><a href="http://www.ubuntu.org.cn/download/desktop">官网</a></a></li>
+<li>以UltraISO写入U盘，bios设置优先启动进行安装，略。</li>
+</ul>
+
+<h2 id="换源">换源</h2>
+
+<p>提高国内下载速度（惯用我科 <a href="https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu）">https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu）</a></p>
+
+<pre><code class="language-shell"># 法一：
+sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+
+# 法二：
+# 直接编辑 /etc/apt/sources.list 文件，在开头添加：
+
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+deb https://mirrors.ustc.edu.cn/ubuntu/ xenial main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial main main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+deb https://mirrors.ustc.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+# 预发布软件源，不建议启用
+# deb https://mirrors.ustc.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse
+# deb-src https://mirrors.ustc.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse
+</code></pre>
+
+<h2 id="设置jdk">设置JDK</h2>
+
+<p>Openjdk，需要另外添加该源。</p>
+
+<pre><code class="language-shell">sudo add-apt-repository ppa:openjdk-r/ppa
+# 当add-apt-repository不可用，执行sudo apt-get install software-properties-common
+sudo apt-get update
+sudo apt-get install openjdk-7-jdk      # 6.0用openjdk-7
+# sudo apt-get install openjdk-8-jdk    # 7.1.1用openjdk-8
+</code></pre>
+
+<p>安装结束后输入java、javac、java -version验证是否设置完毕，如果出现问题需要追加配置信息：</p>
+
+<pre><code class="language-shell"># sudo gedit /etc/profile
+# 以下内容追加在文件末尾
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
+export JRE_HOME=${JAVA_HOME}/jre 
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib 
+export PATH=${JAVA_HOME}/bin:$PATH
+
+# source /etc/profile      # 刷新
+</code></pre>
+
+<h2 id="环境依赖">环境依赖</h2>
+
+<p>编译Android系统，需要依赖以下项目，</p>
+
+<pre><code class="language-shell"># Ubuntu14.04，Android6.0
+sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev \
+libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl \
+libncurses5-dev zlib1g-dev pngcrush schedtool libxml2 libxml2-utils \
+xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev \
+lib32readline-gplv2-dev gcc-multilib libswitch-perl
+
+# Ubuntu14.04，Android7.1
+sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev \
+libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl \
+libncurses5-dev zlib1g-dev pngcrush schedtool libxml2 libxml2-utils \
+xsltproc lzop libc6-dev schedtool g++-multilib lib32z1-dev lib32ncurses5-dev \
+lib32readline-gplv2-dev gcc-multilib libswitch-perl
+
+# Ubuntu16.04, 与14.04有所不同，此处只验证对Android6.0编译可用
+sudo apt-get install -y git flex bison gperf build-essential libncurses5-dev:i386 
+sudo apt-get install libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g++-multilib 
+sudo apt-get install tofrodos python-markdown libxml2-utils xsltproc zlib1g-dev:i386 
+sudo apt-get install dpkg-dev libsdl1.2-dev libesd0-dev
+sudo apt-get install git-core gnupg flex bison gperf build-essential  
+sudo apt-get install zip curl zlib1g-dev gcc-multilib g++-multilib 
+sudo apt-get install libc6-dev-i386 
+sudo apt-get install lib32ncurses5-dev x11proto-core-dev libx11-dev 
+sudo apt-get install lib32z-dev ccache
+sudo apt-get install libgl1-mesa-dev libxml2-utils xsltproc unzip m4
+
+# 通用项，交叉编译工具链
+sudo apt-get install gcc-arm-linux-gnueabihf lzop libncurses5-dev libssl1.0.0 libssl-dev
+</code></pre>
+
+<p>另，可以在 .bashrc文件末尾追加，提高编译效率</p>
+
+<pre><code class="language-shell">echo export USE_CCACHE=1 &gt;&gt; ~/.bashrc
+</code></pre>
+
+<h1 id="source-code">Source Code</h1>
+
+<h2 id="源码压缩包下载">源码压缩包下载</h2>
+
+<p>云盘地址：
+<a href="http://pan.baidu.com/s/1o7Cdilk#list/path=%2FPublic%2FDevBoard%2FFirefly-RK3399%2FSource%2FAndroid6.0&amp;parentPath=%2FPublic%2FDevBoard">http://pan.baidu.com/s/1o7Cdilk#list/path=%2FPublic%2FDevBoard%2FFirefly-RK3399%2FSource%2FAndroid6.0&amp;parentPath=%2FPublic%2FDevBoard</a></p>
+
+<pre><code class="language-shell"># 验证MD5
+md5sum /project/Firefly-RK3399_Android6.0_git_20170310.tar.gz
+
+# 解压缩
+cd ~/project/firefly-rk3399
+tar xzvf Firefly-RK3399_Android6.0_git_20170218.tar.gz
+# 7z x /path/to/Firefly-RK3399_Android7.1.1_git_20170518.7z
+
+# 还原代码
+git reset --hard
+</code></pre>
+
+<h2 id="线上源码">线上源码</h2>
+
+<p>源码：
+<a href="https://gitlab.com/TeeFirefly/FireNow-Marshmallow/tree/Firefly_RK3399">https://gitlab.com/TeeFirefly/FireNow-Marshmallow/tree/Firefly_RK3399</a></p>
+
+<pre><code class="language-shell"># 都开始编译了才发现有线上源码是不是傻...
+git remote rm origin
+git remote add gitlab [https://gitlab.com/TeeFirefly/FireNow-Marshmallow.git](https://gitlab.com/TeeFirefly/FireNow-Marshmallow.git)
+# git remote add gitlab [https://gitlab.com/TeeFirefly/FireNow-Nougat.git](https://gitlab.com/TeeFirefly/FireNow-Nougat.git)
+
+# 更新远程仓库
+git pull gitlab Firefly_RK3399:Firefly_RK3399
+</code></pre>
+
+<h2 id="高速缓存">高速缓存</h2>
+
+<pre><code class="language-shell"># 设置编译器高速缓存,提高编译效率
+cd ~/workspace/RK3399
+prebuilts/misc/linux-x86/ccache/ccache -M 50G
+</code></pre>
+
+<h1 id="编译前填坑">编译前填坑</h1>
+
+<h2 id="error-unsupported-reloc-43">error: unsupported reloc 43</h2>
+
+<p>碰到报出一串error: unsupported reloc 43，尝试第一次修改。</p>
+
+<pre><code># mydroid/art/build/Android.common_build.mk，定位到75行
+ifneq ($(WITHOUT_HOST_CLANG),true)
+# 改为
+ifeq ($(WITHOUT_HOST_CLANG),false)
+</code></pre>
+
+<p>经过第一次修改之后发现编译还是报同样的错误，执行下面：</p>
+
+<pre><code class="language-shell">cp /usr/bin/ld.gold &lt;source_android&gt;/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld
+make update-api
+make...
+</code></pre>
+
+<h2 id="others">others</h2>
+
+<p>其他坑参考的官方文档后基本不会碰上了，目前编译中断是因为cpu烧的停了。</p>
+
+<h1 id="编译方式">编译方式</h1>
+
+<ul>
+<li><p>官方编译脚本(发现的太晚&hellip;)</p>
+
+<pre><code class="language-shell">cd ~/project/firefly-rk3399/
+./FFTools/make.sh -k -j8    # 单独编译kernel
+./FFTools/make.sh -u -j8    # 单独编译uboot
+./FFTools/make.sh -a -j8    # 单独编译android上层
+./FFTools/make.sh -j8       # 同时编译ubooot、kernel、android
+</code></pre></li>
+
+<li><p>手动编译
+``` shell
+cd ~/project/firefly-rk3399/kernel/</p></li>
+</ul>
+
+<h1 id="编译kernel">编译kernel</h1>
+
+<p>make ARCH=arm64 firefly_defconfig
+make -j8 ARCH=arm64 rk3399-firefly.img</p>
+
+<h1 id="编译uboot">编译uboot：</h1>
+
+<p>make rk3399_box_defconfig
+make ARCHV=aarch64 -j8</p>
+
+<h1 id="编译android">编译android：</h1>
+
+<p>source build/envsetup.sh
+lunch rk3399_firefly_box-userdebug
+make -j8
+./mkimage.sh</p>
+
+<pre><code>
+备注：8为同时编译的线程数，一般google推荐这个数字为2倍的cpu个数再加上2，比如4核，就是10。
+``` shell
+# 查看CPU个数
+cat /proc/cpuinfo
+</code></pre>
+
+<h1 id="编译错误记录">编译错误记录</h1>
+
+<p>记录下编译的注意点和错误。</p>
+
+<h2 id="中断编译">中断编译</h2>
+
+<p>如果中断后重新编译，最好make clean后再编。</p>
+
+<h2 id="bc-not-found">bc not found</h2>
+
+<p>编译kernel出现bc not found，[include/generated/timeconst.h] Error 127。</p>
+
+<pre><code class="language-shell">sudo apt-get install bc
+</code></pre>
+
+<h2 id="communication-error-with-jack-server-52">Communication error with Jack server (52)</h2>
+
+<pre><code class="language-shell"># Error
+Building with Jack: out/target/common/obj/JAVA_LIBRARIES/android-support-transition-res_intermediates/classes.jack
+Communication error with Jack server (52). Try 'jack-diagnose'
+
+# Solution
+find . -name jack-admin
+export PATH=$PATH:~/proj/firefly-rk3399/prebuilts/sdk/tools
+jack-admin start-server
+export JACK_SERVER_VM_ARGUMENTS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
+</code></pre>
+
+<h2 id="directory-xxx-is-not-writable">directory xxx is not writable</h2>
+
+<pre><code class="language-shell"># Error
+Property 'jack.dex.output.dir' (in Options): directory 'out/target/common/obj/JAVA_LIBRARIES/conscrypt_intermediates/jack-rsc' is not writable (required because 'jack.dex.output.container' (defined in Options) is set to 'dir')
+
+# Solution
+edit $HOME/.jack-server/config.properties
+and set jack.server.max-service=1
+</code></pre>
+
+<h2 id="file-xxx-can-not-be-created">file xxx can not be created</h2>
+
+<pre><code class="language-shell"># Error
+[ 30% 15013/48677] build out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack
+
+FAILED: /bin/bash -c &quot;(mkdir -p out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack.tmpjill.res ) &amp;&amp; (unzip -qo prebuilts/sdk/9/android.jar -d out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack.tmpjill.res ) &amp;&amp; (find out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack.tmpjill.res -iname \&quot;*.class\&quot; -delete ) &amp;&amp; (JACK_VERSION=3.36.CANDIDATE out/host/linux-x86/bin/jack @build/core/jack-default.args --verbose error -D jack.import.resource.policy=keep-first -D jack.import.type.policy=keep-first -D jack.android.min-api-level=1 --import prebuilts/sdk/9/android.jar --import-resource out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack.tmpjill.res --output-jack out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack ) &amp;&amp; (rm -rf out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack.tmpjill.res )&quot;
+
+1 error during configuration. Try --help-properties for help.
+
+Property 'jack.library.output.zip' (in Options): file 'out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack' can not be created (required because 'jack.library' (defined in Options) is set to true and 'jack.library.output.container' (defined in Options) is set to 'zip')
+
+# Solution
+export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
+</code></pre>
+
+<h2 id="atomic-file-not-found">&lsquo;atomic&rsquo; file not found</h2>
+
+<pre><code class="language-shell"># Error
+frameworks/native/include/binder/Binder.h:20:10: fatal error: 'atomic' file not found
+#include &lt;atomic&gt;
+^
+1 error generated.
+
+# Solution
+make clean and rebuild.
+</code></pre>
+
+<h2 id="cannot-allocate-memory">Cannot allocate memory</h2>
+
+<pre><code class="language-shell"># Error
+[  9% 4800/48682] host C++: libart_32 &lt;= art/runtime/verifier/method_verifier.ccninja: fatal: fork: Cannot allocate memory
+
+# Solution
+解决，调低参数
+
+export JACK_SERVER_VM_ARGUMENTS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
+export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
+</code></pre>
+
+<h2 id="waiting-for-unfinished-jobs">Waiting for unfinished jobs</h2>
+
+<pre><code class="language-shell"># Error
+make: *** [out/target/product/rk3399_firefly_box/obj/STATIC_LIBRARIES/libLLVMScalarOpts_intermediates/ADCE.o] Error 1
+make: *** Waiting for unfinished jobs....
+
+make: *** [out/target/product/rk3399_firefly_box/obj/STATIC_LIBRARIES/libLLVMObject_intermediates/IRObjectFile.o] Error 1
+
+make: *** [out/target/product/rk3399_firefly_box/obj/STATIC_LIBRARIES/libLLVMARMDisassembler_intermediates/ARMDisassembler.o] Error 1
+
+# Solution
+结束编译，clean后重编。
+
+</code></pre>
+
+<h2 id="ota编译失败">OTA编译失败</h2>
+
+<pre><code class="language-shell"># Error
+
+No RK Loader for TARGET_DEVICE rk3288 to otapackage
+package add resource.img to BOOT and RECOVERY
+No uboot for uboot/uboot.img to otapackage
+No trust for uboot/trust.img to otapackage
+No charge for uboot/charge.img to otapackage
+No parameter for TARGET_DEVICE rk3288 to otapackage
+Package target files: out/target/product/rk3288/obj/PACKAGING/target_files_intermediates/rk3288-target_files-eng.guochongxin.zip
+building image from target_files RECOVERY...
+Traceback (most recent call last):
+File &quot;./build/tools/releasetools/make_recovery_patch&quot;, line 68, in
+main(sys.argv[1:])
+File &quot;./build/tools/releasetools/make_recovery_patch&quot;, line 39, in main
+input_dir, &quot;RECOVERY&quot;)
+File &quot;/home/guochongxin/rk/rk3288_5.1/build/tools/releasetools/common.py&quot;, line 411,in GetBootableImage
+info_dict)
+File &quot;/home/guochongxin/rk/rk3288_5.1/build/tools/releasetools/common.py&quot;, line 365, in BuildBootableImage
+p4 = Run(sign_cmd)
+File &quot;/home/guochongxin/rk/rk3288_5.1/build/tools/releasetools/common.py&quot;, line 86, in Run
+return subprocess.Popen(args, kwargs)
+File &quot;/usr/lib/python2.7/subprocess.py&quot;, line 679, in init
+errread, errwrite)
+File &quot;/usr/lib/python2.7/subprocess.py&quot;, line 1249, in _execute_child
+raise child_exception
+OSError: [Errno 2] No such file or directory
+make: * [out/target/product/rk3288/obj/PACKAGING/target_files_intermediates/rk3288-target_files-eng.guochongxin.zip] Error 
+
+# Solution
+drmsigntool没有编译进去，
+
+cd build/tools/drmsigntool/
+mm -B
+cd ~/workspace/RK3399
+make otapackage
+
+</code></pre>
+
+<h1 id="打包固件">打包固件</h1>
+
+<ul>
+<li>编译到打包
+``` shell
+source build/envsetup.sh
+lunch rk3399_**
+./FFTools/make.sh -j12
+<br /></li>
+</ul>
+
+<p>./mkimge.sh ota
+make otapackage
+#[100% <sup>234</sup>&frasl;<sub>234</sub>] 在out/target/product/xxxx/生成xxxx.zip本地OTA升级包</p>
+
+<h1 id="打包统一固件-rockdev-image-rk3399-firefly-box-update-img">打包统一固件，rockdev/Image-rk3399_firefly_box/update.img</h1>
+
+<p>./FFTools/mkupdate/mkupdate.sh update
+```
+- Windows下打包，不常用
+    - 将编译生成的文件拷贝到 AndroidTool 的 rockdev\Image 目录中
+    - 然后运行 rockdev 目录下的 mkupdate.bat 批处理文件即可创建 update.img 并存放到 rockdev\Image 目录里。</p>
+
+<h1 id="主要参考目录">主要参考目录：</h1>
+
+<p><a href="[http://wiki.t-firefly.com/index.php/Firefly-RK3399/Build_android](http://wiki.t-firefly.com/index.php/Firefly-RK3399/Build_android)">官方文档 Android 6.0</a></p>
+
+<p><a href="http://wiki.t-firefly.com/index.php/Firefly-RK3399/Build_android_7.1">官方文档 Android 7.1</a></p>
+
+<p><a href="[http://www.linuxidc.com/Linux/2016-01/127292p2.htm](http://www.linuxidc.com/Linux/2016-01/127292p2.htm)">Ubuntu14.04编译Android6.0</a></p>
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">sslyxhz</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">2017-11-17</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/android/">android</a>
+          
+          <a href="/tags/firefly/">firefly</a>
+          
+          <a href="/tags/rk3399/">rk3399</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+          <a class="prev" href="/post/leanote%E6%BA%90%E7%A0%81%E9%83%A8%E7%BD%B2/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Leanote源码部署记录</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        
+          <a class="next" href="/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%BA%8C/">
+            <span class="next-text nav-default">Hexo施工记录（二）</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:sslyxhz@hotmail.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://sslyxhz.github.io" class="iconfont icon-github" title="github"></a>
+  <a href="https://sslyxhz.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> 本站总访问量 <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次 </span>
+    <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> 本站总访客数 <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 人 </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2016 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">sslyxhz</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.0.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

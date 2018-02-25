@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://sslyxhz.github.io/sitemap.xml
