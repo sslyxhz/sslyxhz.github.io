@@ -31,7 +31,7 @@
 <meta name="generator" content="Hugo 0.36" />
 
 
-<link rel="canonical" href="https://sslyxhz.github.io/post/jni-notes/" />
+<link rel="canonical" href="http://localhost:1313/post/jni-notes/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -51,12 +51,15 @@
 
 
 
+<link rel="stylesheet" href="http://localhost:1313/css/gitment.css">
+
+
 <meta property="og:title" content="JNI Notes" />
 <meta property="og:description" content="整理记录对JNI的认知过程。
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sslyxhz.github.io/post/jni-notes/" />
+<meta property="og:url" content="http://localhost:1313/post/jni-notes/" />
 
 
 
@@ -355,6 +358,23 @@ PopLocalFrame()
 
     
     
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/imgs/reward/reward_qr_code_wechat.png">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/imgs/reward/reward_qr_code_alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
 
     <footer class="post-footer">
       <div class="post-tags">
@@ -389,6 +409,20 @@ PopLocalFrame()
   
 
   
+  
+  <div id="comments"></div>
+  <script type="text/javascript" src="http://localhost:1313/js/gitment.js"></script>
+  <script type="text/javascript">
+    const gitment = new Gitment({
+    owner: 'sslyxhz',
+    repo: 'sslyxhz.github.io',
+    oauth: {
+      client_id: 'bad174e0e116e205403d',
+      client_secret: '471a575f0edc5c7c642605ea2fdcd7522c1be8c6',
+    },
+  })
+  gitment.render('comments')
+  </script>
       </div>
     </main>
 
@@ -396,7 +430,7 @@ PopLocalFrame()
       <div class="social-links">
       <a href="mailto:sslyxhz@hotmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://sslyxhz.github.io" class="iconfont icon-github" title="github"></a>
-  <a href="https://sslyxhz.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">

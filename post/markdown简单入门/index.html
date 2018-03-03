@@ -31,7 +31,7 @@
 <meta name="generator" content="Hugo 0.36" />
 
 
-<link rel="canonical" href="https://sslyxhz.github.io/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" />
+<link rel="canonical" href="http://localhost:1313/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -51,12 +51,15 @@
 
 
 
+<link rel="stylesheet" href="http://localhost:1313/css/gitment.css">
+
+
 <meta property="og:title" content="Markdown简单入门" />
 <meta property="og:description" content="Markdown的目标是易读易写。在此简单记录markdown的使用语法。
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sslyxhz.github.io/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" />
+<meta property="og:url" content="http://localhost:1313/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/" />
 
 
 
@@ -82,7 +85,7 @@
 
 <meta itemprop="datePublished" content="2016-05-23T17:12:23&#43;08:00" />
 <meta itemprop="dateModified" content="2016-05-23T17:12:23&#43;08:00" />
-<meta itemprop="wordCount" content="655">
+<meta itemprop="wordCount" content="538">
 
 
 
@@ -167,7 +170,7 @@
               <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 655 字 </span>
+        <span class="more-meta"> 约 538 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -246,14 +249,14 @@
 
 <p>对无序列表来说+、-、*的效果相同。</p>
 
-<pre><code>- Item1
-+ Item2
-* Item3
+<pre><code>- Item1  
++ Item2  
+* Item3  
 </code></pre>
 
 <p>效果如下：
-- Item1
-+ Item2
+- Item1<br />
++ Item2<br />
 * Item3</p>
 
 <h2 id="有序列表">有序列表</h2>
@@ -265,8 +268,8 @@
 </code></pre>
 
 <ol>
-<li>Item1</li>
-<li>Item2</li>
+<li>Item1<br /></li>
+<li>Item2<br /></li>
 </ol>
 
 <h1 id="引用">引用</h1>
@@ -295,12 +298,12 @@
 <h2 id="链接">链接</h2>
 
 <pre><code>[链接文字](链接地址)  
-[图片链接](https://i2.hdslb.com/bfs/face/a6f243d8374c623271cad03f0c105ae76e47a004.jpg)  
-![图片](https://i2.hdslb.com/bfs/face/a6f243d8374c623271cad03f0c105ae76e47a004.jpg)  
+[图片链接](/imgs/reward/reward_qr_code_wechat.png)  
+![图片](/imgs/reward/reward_qr_code_wechat.png)  
 </code></pre>
 
-<p><a href="https://i2.hdslb.com/bfs/face/a6f243d8374c623271cad03f0c105ae76e47a004.jpg">图片链接</a><br />
-<img src="https://i2.hdslb.com/bfs/face/a6f243d8374c623271cad03f0c105ae76e47a004.jpg" alt="图片" /></p>
+<p><a href="/imgs/reward/reward_qr_code_wechat.png">图片链接</a><br />
+<img src="/imgs/reward/reward_qr_code_wechat.png" alt="图片" /></p>
 
 <h1 id="表格">表格</h1>
 
@@ -360,34 +363,12 @@
 
 <h2 id="顺序图">顺序图</h2>
 
-<pre><code>Alice-&gt;Bob: Hello Bob, how are you?
-Note right of Bob: Bob thinks
-Bob--&gt;Alice: I am good thanks!
-</code></pre>
-
 <pre><code class="language-sequence">Alice-&gt;Bob: Hello Bob, how are you?
 Note right of Bob: Bob thinks
 Bob--&gt;Alice: I am good thanks!
 </code></pre>
 
 <h2 id="流程图">流程图</h2>
-
-<pre><code>st=&gt;start: Start|past:&gt;http://www.google.com[blank]
-e=&gt;end: End:&gt;http://www.google.com
-op1=&gt;operation: My Operation|past
-op2=&gt;operation: Stuff|current
-sub1=&gt;subroutine: My Subroutine|invalid
-cond=&gt;condition: Yes
-or No?|approved:&gt;http://www.google.com
-c2=&gt;condition: Good idea|rejected
-io=&gt;inputoutput: catch something...|request
-
-st-&gt;op1(right)-&gt;cond
-cond(yes, right)-&gt;c2
-cond(no)-&gt;sub1(left)-&gt;op1
-c2(yes)-&gt;io-&gt;e
-c2(no)-&gt;op2-&gt;e
-</code></pre>
 
 <pre><code class="language-flow">st=&gt;start: Start|past:&gt;http://www.google.com[blank]
 e=&gt;end: End:&gt;http://www.google.com
@@ -423,6 +404,23 @@ c2(no)-&gt;op2-&gt;e
 
     
     
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/imgs/reward/reward_qr_code_wechat.png">
+        <span>微信打赏</span>
+      </label>
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/imgs/reward/reward_qr_code_alipay.png">
+        <span>支付宝打赏</span>
+      </label>
+  </div>
+</div>
 
     <footer class="post-footer">
       <div class="post-tags">
@@ -452,6 +450,20 @@ c2(no)-&gt;op2-&gt;e
   
 
   
+  
+  <div id="comments"></div>
+  <script type="text/javascript" src="http://localhost:1313/js/gitment.js"></script>
+  <script type="text/javascript">
+    const gitment = new Gitment({
+    owner: 'sslyxhz',
+    repo: 'sslyxhz.github.io',
+    oauth: {
+      client_id: 'bad174e0e116e205403d',
+      client_secret: '471a575f0edc5c7c642605ea2fdcd7522c1be8c6',
+    },
+  })
+  gitment.render('comments')
+  </script>
       </div>
     </main>
 
@@ -459,7 +471,7 @@ c2(no)-&gt;op2-&gt;e
       <div class="social-links">
       <a href="mailto:sslyxhz@hotmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://sslyxhz.github.io" class="iconfont icon-github" title="github"></a>
-  <a href="https://sslyxhz.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">
