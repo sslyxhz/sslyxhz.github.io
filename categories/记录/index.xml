@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>记录 on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</link>
+    <link>https://sslyxhz.github.io/categories/%E8%AE%B0%E5%BD%95/</link>
     <description>Recent content in 记录 on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 03 Feb 2018 16:51:04 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sslyxhz.github.io/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Android系统客制化</title>
-      <link>http://localhost:1313/post/android%E5%AE%A2%E5%88%B6%E5%8C%96/</link>
+      <link>https://sslyxhz.github.io/post/android%E5%AE%A2%E5%88%B6%E5%8C%96/</link>
       <pubDate>Sat, 03 Feb 2018 16:51:04 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/android%E5%AE%A2%E5%88%B6%E5%8C%96/</guid>
+      <guid>https://sslyxhz.github.io/post/android%E5%AE%A2%E5%88%B6%E5%8C%96/</guid>
       <description>&lt;p&gt;整理记录在android上的客制化调整。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Leanote源码部署记录</title>
-      <link>http://localhost:1313/post/leanote%E6%BA%90%E7%A0%81%E9%83%A8%E7%BD%B2/</link>
+      <link>https://sslyxhz.github.io/post/leanote%E6%BA%90%E7%A0%81%E9%83%A8%E7%BD%B2/</link>
       <pubDate>Sun, 10 Dec 2017 13:55:16 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/leanote%E6%BA%90%E7%A0%81%E9%83%A8%E7%BD%B2/</guid>
+      <guid>https://sslyxhz.github.io/post/leanote%E6%BA%90%E7%A0%81%E9%83%A8%E7%BD%B2/</guid>
       <description>&lt;p&gt;Leanote，开源笔记，在苛求数据安全的时候就得自建笔记服务了。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -35,10 +35,10 @@
     
     <item>
       <title>Firefly-RK3399编译记录</title>
-      <link>http://localhost:1313/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</link>
+      <link>https://sslyxhz.github.io/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Fri, 17 Nov 2017 23:42:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://sslyxhz.github.io/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</guid>
       <description>&lt;p&gt;一块板子一份源码二话不说就是怼，南墙不挡头铁。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -46,10 +46,10 @@
     
     <item>
       <title>Hexo施工记录（二）</title>
-      <link>http://localhost:1313/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%BA%8C/</link>
+      <link>https://sslyxhz.github.io/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%BA%8C/</link>
       <pubDate>Fri, 01 Jul 2016 20:58:56 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%BA%8C/</guid>
+      <guid>https://sslyxhz.github.io/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%BA%8C/</guid>
       <description>&lt;p&gt;其二，主题篇。&lt;/p&gt;
 
 &lt;p&gt;hexo，博客模板框架，基于nodejs。&lt;/p&gt;
@@ -59,10 +59,10 @@
     
     <item>
       <title>Hexo施工记录（一）</title>
-      <link>http://localhost:1313/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%B8%80/</link>
+      <link>https://sslyxhz.github.io/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%B8%80/</link>
       <pubDate>Fri, 01 Jul 2016 10:48:19 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%B8%80/</guid>
+      <guid>https://sslyxhz.github.io/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%B8%80/</guid>
       <description>&lt;p&gt;其一，安装篇。&lt;/p&gt;
 
 &lt;p&gt;hexo，博客模板框架，基于nodejs。&lt;/p&gt;
@@ -72,10 +72,10 @@
     
     <item>
       <title>Markdown简单入门</title>
-      <link>http://localhost:1313/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</link>
+      <link>https://sslyxhz.github.io/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</link>
       <pubDate>Mon, 23 May 2016 17:12:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</guid>
+      <guid>https://sslyxhz.github.io/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</guid>
       <description>&lt;p&gt;Markdown的目标是易读易写。在此简单记录markdown的使用语法。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

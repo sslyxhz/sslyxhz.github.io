@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rk3399 on Even - A super concise theme for Hugo</title>
-    <link>http://localhost:1313/tags/rk3399/</link>
+    <link>https://sslyxhz.github.io/tags/rk3399/</link>
     <description>Recent content in Rk3399 on Even - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 17 Nov 2017 23:42:23 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/rk3399/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sslyxhz.github.io/tags/rk3399/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Firefly-RK3399编译记录</title>
-      <link>http://localhost:1313/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</link>
+      <link>https://sslyxhz.github.io/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Fri, 17 Nov 2017 23:42:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</guid>
+      <guid>https://sslyxhz.github.io/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</guid>
       <description>&lt;p&gt;一块板子一份源码二话不说就是怼，南墙不挡头铁。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
