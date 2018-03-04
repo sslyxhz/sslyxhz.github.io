@@ -87,7 +87,7 @@
 
 <meta itemprop="datePublished" content="2017-11-17T23:42:23&#43;08:00" />
 <meta itemprop="dateModified" content="2017-11-17T23:42:23&#43;08:00" />
-<meta itemprop="wordCount" content="2030">
+<meta itemprop="wordCount" content="1955">
 
 
 
@@ -172,8 +172,8 @@
               <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 2030 字 </span>
-        <span class="more-meta"> 预计阅读 5 分钟 </span>
+        <span class="more-meta"> 约 1955 字 </span>
+        <span class="more-meta"> 预计阅读 4 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -193,35 +193,19 @@
 <li><a href="#设置jdk">设置JDK</a></li>
 <li><a href="#环境依赖">环境依赖</a></li>
 </ul></li>
-<li><a href="#source-code">Source Code</a>
+<li><a href="#源码与设置">源码与设置</a>
 <ul>
 <li><a href="#源码压缩包下载">源码压缩包下载</a></li>
 <li><a href="#线上源码">线上源码</a></li>
 <li><a href="#高速缓存">高速缓存</a></li>
 </ul></li>
-<li><a href="#编译前填坑">编译前填坑</a>
-<ul>
-<li><a href="#error-unsupported-reloc-43">error: unsupported reloc 43</a></li>
-<li><a href="#others">others</a></li>
-</ul></li>
-<li><a href="#编译方式">编译方式</a></li>
-<li><a href="#编译kernel">编译kernel</a></li>
-<li><a href="#编译uboot">编译uboot：</a></li>
-<li><a href="#编译android">编译android：</a></li>
+<li><a href="#编译进行时">编译进行时</a></li>
 <li><a href="#编译错误记录">编译错误记录</a>
 <ul>
-<li><a href="#中断编译">中断编译</a></li>
-<li><a href="#bc-not-found">bc not found</a></li>
-<li><a href="#communication-error-with-jack-server-52">Communication error with Jack server (52)</a></li>
-<li><a href="#directory-xxx-is-not-writable">directory xxx is not writable</a></li>
-<li><a href="#file-xxx-can-not-be-created">file xxx can not be created</a></li>
-<li><a href="#atomic-file-not-found">&lsquo;atomic&rsquo; file not found</a></li>
-<li><a href="#cannot-allocate-memory">Cannot allocate memory</a></li>
-<li><a href="#waiting-for-unfinished-jobs">Waiting for unfinished jobs</a></li>
+<li><a href="#系统编译失败">系统编译失败</a></li>
 <li><a href="#ota编译失败">OTA编译失败</a></li>
 </ul></li>
 <li><a href="#打包固件">打包固件</a></li>
-<li><a href="#打包统一固件-rockdev-image-rk3399-firefly-box-update-img">打包统一固件，rockdev/Image-rk3399_firefly_box/update.img</a></li>
 <li><a href="#主要参考目录">主要参考目录：</a></li>
 </ul>
 </nav>
@@ -245,7 +229,7 @@
 
 <h2 id="换源">换源</h2>
 
-<p>提高国内下载速度（惯用我科 <a href="https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu）">https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu）</a></p>
+<p>提高国内下载速度，如<a href="https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu">USTC</a>。</p>
 
 <pre><code class="language-shell"># 法一：
 sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
@@ -329,12 +313,11 @@ sudo apt-get install gcc-arm-linux-gnueabihf lzop libncurses5-dev libssl1.0.0 li
 <pre><code class="language-shell">echo export USE_CCACHE=1 &gt;&gt; ~/.bashrc
 </code></pre>
 
-<h1 id="source-code">Source Code</h1>
+<h1 id="源码与设置">源码与设置</h1>
 
 <h2 id="源码压缩包下载">源码压缩包下载</h2>
 
-<p>云盘地址：
-<a href="http://pan.baidu.com/s/1o7Cdilk#list/path=%2FPublic%2FDevBoard%2FFirefly-RK3399%2FSource%2FAndroid6.0&amp;parentPath=%2FPublic%2FDevBoard">http://pan.baidu.com/s/1o7Cdilk#list/path=%2FPublic%2FDevBoard%2FFirefly-RK3399%2FSource%2FAndroid6.0&amp;parentPath=%2FPublic%2FDevBoard</a></p>
+<p>下载地址：<a href="http://pan.baidu.com/s/1o7Cdilk#list/path=%2FPublic%2FDevBoard%2FFirefly-RK3399%2FSource%2FAndroid6.0&amp;parentPath=%2FPublic%2FDevBoard">百度云盘</a></p>
 
 <pre><code class="language-shell"># 验证MD5
 md5sum /project/Firefly-RK3399_Android6.0_git_20170310.tar.gz
@@ -350,8 +333,7 @@ git reset --hard
 
 <h2 id="线上源码">线上源码</h2>
 
-<p>源码：
-<a href="https://gitlab.com/TeeFirefly/FireNow-Marshmallow/tree/Firefly_RK3399">https://gitlab.com/TeeFirefly/FireNow-Marshmallow/tree/Firefly_RK3399</a></p>
+<p>源码地址：<a href="https://gitlab.com/TeeFirefly/FireNow-Marshmallow/tree/Firefly_RK3399">gitlab</a></p>
 
 <pre><code class="language-shell"># 都开始编译了才发现有线上源码是不是傻...
 git remote rm origin
@@ -369,9 +351,55 @@ cd ~/workspace/RK3399
 prebuilts/misc/linux-x86/ccache/ccache -M 50G
 </code></pre>
 
-<h1 id="编译前填坑">编译前填坑</h1>
+<h1 id="编译进行时">编译进行时</h1>
 
-<h2 id="error-unsupported-reloc-43">error: unsupported reloc 43</h2>
+<ul>
+<li>官方编译脚本(发现的太晚&hellip;)</li>
+</ul>
+
+<pre><code class="language-shell">cd ~/project/firefly-rk3399/
+./FFTools/make.sh -k -j8    # 单独编译kernel
+./FFTools/make.sh -u -j8    # 单独编译uboot
+./FFTools/make.sh -a -j8    # 单独编译android上层
+./FFTools/make.sh -j8       # 同时编译ubooot、kernel、android
+</code></pre>
+
+<ul>
+<li>手动编译</li>
+</ul>
+
+<pre><code class="language-shell">cd ~/project/firefly-rk3399/kernel/
+      
+# 编译kernel
+make ARCH=arm64 firefly_defconfig
+make -j8 ARCH=arm64 rk3399-firefly.img
+      
+# 编译uboot：
+make rk3399_box_defconfig
+make ARCHV=aarch64 -j8
+      
+# 编译android：
+source build/envsetup.sh
+lunch rk3399_firefly_box-userdebug
+make -j8
+./mkimage.sh
+</code></pre>
+
+<p>备注：8为同时编译的线程数，一般google推荐这个数字为2倍的cpu个数再加上2，比如4核，就是10。</p>
+
+<pre><code class="language-shell"># 查看CPU个数
+cat /proc/cpuinfo
+</code></pre>
+
+<h1 id="编译错误记录">编译错误记录</h1>
+
+<p>记录下编译的注意点和错误。</p>
+
+<h2 id="系统编译失败">系统编译失败</h2>
+
+<ul>
+<li>error: unsupported reloc 43<br /></li>
+</ul>
 
 <p>碰到报出一串error: unsupported reloc 43，尝试第一次修改。</p>
 
@@ -388,67 +416,24 @@ make update-api
 make...
 </code></pre>
 
-<h2 id="others">others</h2>
-
-<p>其他坑参考的官方文档后基本不会碰上了，目前编译中断是因为cpu烧的停了。</p>
-
-<h1 id="编译方式">编译方式</h1>
-
 <ul>
-<li><p>官方编译脚本(发现的太晚&hellip;)</p>
-
-<pre><code class="language-shell">cd ~/project/firefly-rk3399/
-./FFTools/make.sh -k -j8    # 单独编译kernel
-./FFTools/make.sh -u -j8    # 单独编译uboot
-./FFTools/make.sh -a -j8    # 单独编译android上层
-./FFTools/make.sh -j8       # 同时编译ubooot、kernel、android
-</code></pre></li>
-
-<li><p>手动编译
-``` shell
-cd ~/project/firefly-rk3399/kernel/</p></li>
+<li>中断编译</li>
 </ul>
-
-<h1 id="编译kernel">编译kernel</h1>
-
-<p>make ARCH=arm64 firefly_defconfig
-make -j8 ARCH=arm64 rk3399-firefly.img</p>
-
-<h1 id="编译uboot">编译uboot：</h1>
-
-<p>make rk3399_box_defconfig
-make ARCHV=aarch64 -j8</p>
-
-<h1 id="编译android">编译android：</h1>
-
-<p>source build/envsetup.sh
-lunch rk3399_firefly_box-userdebug
-make -j8
-./mkimage.sh</p>
-
-<pre><code>
-备注：8为同时编译的线程数，一般google推荐这个数字为2倍的cpu个数再加上2，比如4核，就是10。
-``` shell
-# 查看CPU个数
-cat /proc/cpuinfo
-</code></pre>
-
-<h1 id="编译错误记录">编译错误记录</h1>
-
-<p>记录下编译的注意点和错误。</p>
-
-<h2 id="中断编译">中断编译</h2>
 
 <p>如果中断后重新编译，最好make clean后再编。</p>
 
-<h2 id="bc-not-found">bc not found</h2>
+<ul>
+<li>bc not found</li>
+</ul>
 
 <p>编译kernel出现bc not found，[include/generated/timeconst.h] Error 127。</p>
 
 <pre><code class="language-shell">sudo apt-get install bc
 </code></pre>
 
-<h2 id="communication-error-with-jack-server-52">Communication error with Jack server (52)</h2>
+<ul>
+<li>Communication error with Jack server (52)<br /></li>
+</ul>
 
 <pre><code class="language-shell"># Error
 Building with Jack: out/target/common/obj/JAVA_LIBRARIES/android-support-transition-res_intermediates/classes.jack
@@ -461,7 +446,9 @@ jack-admin start-server
 export JACK_SERVER_VM_ARGUMENTS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
 </code></pre>
 
-<h2 id="directory-xxx-is-not-writable">directory xxx is not writable</h2>
+<ul>
+<li>directory xxx is not writable</li>
+</ul>
 
 <pre><code class="language-shell"># Error
 Property 'jack.dex.output.dir' (in Options): directory 'out/target/common/obj/JAVA_LIBRARIES/conscrypt_intermediates/jack-rsc' is not writable (required because 'jack.dex.output.container' (defined in Options) is set to 'dir')
@@ -471,7 +458,9 @@ edit $HOME/.jack-server/config.properties
 and set jack.server.max-service=1
 </code></pre>
 
-<h2 id="file-xxx-can-not-be-created">file xxx can not be created</h2>
+<ul>
+<li>file xxx can not be created</li>
+</ul>
 
 <pre><code class="language-shell"># Error
 [ 30% 15013/48677] build out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack
@@ -486,7 +475,9 @@ Property 'jack.library.output.zip' (in Options): file 'out/target/common/obj/JAV
 export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
 </code></pre>
 
-<h2 id="atomic-file-not-found">&lsquo;atomic&rsquo; file not found</h2>
+<ul>
+<li>&lsquo;atomic&rsquo; file not found</li>
+</ul>
 
 <pre><code class="language-shell"># Error
 frameworks/native/include/binder/Binder.h:20:10: fatal error: 'atomic' file not found
@@ -498,7 +489,9 @@ frameworks/native/include/binder/Binder.h:20:10: fatal error: 'atomic' file not 
 make clean and rebuild.
 </code></pre>
 
-<h2 id="cannot-allocate-memory">Cannot allocate memory</h2>
+<ul>
+<li>Cannot allocate memory</li>
+</ul>
 
 <pre><code class="language-shell"># Error
 [  9% 4800/48682] host C++: libart_32 &lt;= art/runtime/verifier/method_verifier.ccninja: fatal: fork: Cannot allocate memory
@@ -510,7 +503,9 @@ export JACK_SERVER_VM_ARGUMENTS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilati
 export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
 </code></pre>
 
-<h2 id="waiting-for-unfinished-jobs">Waiting for unfinished jobs</h2>
+<ul>
+<li>Waiting for unfinished jobs</li>
+</ul>
 
 <pre><code class="language-shell"># Error
 make: *** [out/target/product/rk3399_firefly_box/obj/STATIC_LIBRARIES/libLLVMScalarOpts_intermediates/ADCE.o] Error 1
@@ -568,33 +563,39 @@ make otapackage
 <h1 id="打包固件">打包固件</h1>
 
 <ul>
-<li>编译到打包
-``` shell
-source build/envsetup.sh
-lunch rk3399_**
-./FFTools/make.sh -j12
-<br /></li>
+<li>编译到打包</li>
 </ul>
 
-<p>./mkimge.sh ota
+<pre><code class="language-shell">source build/envsetup.sh
+lunch rk3399_**
+./FFTools/make.sh -j12
+    
+./mkimge.sh ota
 make otapackage
-#[100% <sup>234</sup>&frasl;<sub>234</sub>] 在out/target/product/xxxx/生成xxxx.zip本地OTA升级包</p>
+#[100% 234/234] 在out/target/product/xxxx/生成xxxx.zip本地OTA升级包
+    
+# 打包统一固件，rockdev/Image-rk3399_firefly_box/update.img
+./FFTools/mkupdate/mkupdate.sh update
+</code></pre>
 
-<h1 id="打包统一固件-rockdev-image-rk3399-firefly-box-update-img">打包统一固件，rockdev/Image-rk3399_firefly_box/update.img</h1>
+<ul>
+<li>Windows下打包，不常用
 
-<p>./FFTools/mkupdate/mkupdate.sh update
-```
-- Windows下打包，不常用
-    - 将编译生成的文件拷贝到 AndroidTool 的 rockdev\Image 目录中
-    - 然后运行 rockdev 目录下的 mkupdate.bat 批处理文件即可创建 update.img 并存放到 rockdev\Image 目录里。</p>
+<ul>
+<li>将编译生成的文件拷贝到 AndroidTool 的 rockdev\Image 目录中</li>
+<li>然后运行 rockdev 目录下的 mkupdate.bat 批处理文件即可创建 update.img 并存放到 rockdev\Image 目录里。</li>
+</ul></li>
+</ul>
 
 <h1 id="主要参考目录">主要参考目录：</h1>
 
-<p><a href="[http://wiki.t-firefly.com/index.php/Firefly-RK3399/Build_android](http://wiki.t-firefly.com/index.php/Firefly-RK3399/Build_android)">官方文档 Android 6.0</a></p>
+<ul>
+<li><p><a href="[http://wiki.t-firefly.com/index.php/Firefly-RK3399/Build_android](http://wiki.t-firefly.com/index.php/Firefly-RK3399/Build_android)">官方文档 Android 6.0</a></p></li>
 
-<p><a href="http://wiki.t-firefly.com/index.php/Firefly-RK3399/Build_android_7.1">官方文档 Android 7.1</a></p>
+<li><p><a href="http://wiki.t-firefly.com/index.php/Firefly-RK3399/Build_android_7.1">官方文档 Android 7.1</a></p></li>
 
-<p><a href="[http://www.linuxidc.com/Linux/2016-01/127292p2.htm](http://www.linuxidc.com/Linux/2016-01/127292p2.htm)">Ubuntu14.04编译Android6.0</a></p>
+<li><p><a href="[http://www.linuxidc.com/Linux/2016-01/127292p2.htm](http://www.linuxidc.com/Linux/2016-01/127292p2.htm)">Ubuntu14.04编译Android6.0</a></p></li>
+</ul>
     </div>
 
     
@@ -671,7 +672,7 @@ make otapackage
   <script type="text/javascript" src="https://sslyxhz.github.io/js/gitment.js"></script>
   <script type="text/javascript">
     const gitment = new Gitment({
-    id: '2017-11-17 23:42:23 \x2b0800 CST',
+    id: 'Firefly-RK3399编译记录',
     owner: 'sslyxhz',
     repo: 'sslyxhz.github.io',
     oauth: {

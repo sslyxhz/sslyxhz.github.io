@@ -92,7 +92,7 @@ hexo，博客模板框架，基于nodejs。
 
 <meta itemprop="datePublished" content="2016-07-01T10:48:19&#43;08:00" />
 <meta itemprop="dateModified" content="2016-07-01T10:48:19&#43;08:00" />
-<meta itemprop="wordCount" content="1098">
+<meta itemprop="wordCount" content="1040">
 
 
 
@@ -179,7 +179,7 @@ hexo，博客模板框架，基于nodejs。
               <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 1098 字 </span>
+        <span class="more-meta"> 约 1040 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -225,13 +225,9 @@ hexo，博客模板框架，基于nodejs。
 <li><a href="#轮播图">轮播图</a></li>
 <li><a href="#rss">RSS</a></li>
 <li><a href="#sitemap">Sitemap</a></li>
-<li><a href="#顺序图和流程图">顺序图和流程图</a>
-<ul>
-<li><a href="#安装插件">安装插件</a></li>
-<li><a href="#配置选项">配置选项</a></li>
-<li><a href="#简单示例">简单示例</a></li>
+<li><a href="#顺序图和流程图">顺序图和流程图</a></li>
 </ul></li>
-</ul></li>
+<li><a href="#配置hexo目录下-而非主题下的-config-yml">配置hexo目录下，而非主题下的_config.yml</a></li>
 </ul>
 </nav>
   </div>
@@ -250,8 +246,8 @@ hexo，博客模板框架，基于nodejs。
 <h2 id="下载安装">下载安装</h2>
 
 <ul>
-<li>Git（<a href="http://git-scm.com/download/）">http://git-scm.com/download/）</a></li>
-<li>nodejs（<a href="https://nodejs.org/en/）">https://nodejs.org/en/）</a></li>
+<li><a href="http://git-scm.com/download/">Git</a><br /></li>
+<li><a href="https://nodejs.org/en/">nodejs</a><br /></li>
 </ul>
 
 <h2 id="配置git">配置Git</h2>
@@ -499,36 +495,37 @@ rss：
 
 <h2 id="顺序图和流程图">顺序图和流程图</h2>
 
-<h3 id="安装插件">安装插件</h3>
-
-<pre><code class="language-shell">npm install hexo-filter-sequence --save
+<ul>
+<li>安装插件
+<code>shell
+npm install hexo-filter-sequence --save
 npm install hexo-filter-flowchart --save
-</code></pre>
+</code></li>
 
-<h3 id="配置选项">配置选项</h3>
+<li><p>配置选项
+```</p>
 
-<pre><code># 配置hexo目录下，而非主题下的_config.yml
+<h1 id="配置hexo目录下-而非主题下的-config-yml">配置hexo目录下，而非主题下的_config.yml</h1></li>
+</ul>
 
-sequence:
+<p>sequence:
   # webfont:     # optional, the source url of webfontloader.js
   # snap:        # optional, the source url of snap.svg.js
   # underscore:  # optional, the source url of underscore.js
   # sequence:    # optional, the source url of sequence-diagram.js
-  # css: # optional, the url for css, such as hand drawn theme 
-  options: 
-    theme: 
-    css_class: 
+  # css: # optional, the url for css, such as hand drawn theme
+  options:
+    theme:
+    css_class:</p>
 
-flowchart:
+<p>flowchart:
   # raphael:   # optional, the source url of raphael.js
   # flowchart: # optional, the source url of flowchart.js
-  options: # options used for `drawSVG` 
-</code></pre>
-
-<h3 id="简单示例">简单示例</h3>
-
-<p>参考源码说明：
-- <a href="https://github.com/bubkoo/hexo-filter-sequence">sequence</a>
+  options: # options used for <code>drawSVG</code>
+```
+- 简单示例
+参考源码说明：
+- <a href="https://github.com/bubkoo/hexo-filter-sequence">sequence</a><br />
 - <a href="https://github.com/bubkoo/hexo-filter-flowchart">flowchart</a></p>
     </div>
 
@@ -606,7 +603,7 @@ flowchart:
   <script type="text/javascript" src="https://sslyxhz.github.io/js/gitment.js"></script>
   <script type="text/javascript">
     const gitment = new Gitment({
-    id: '2016-07-01 10:48:19 \x2b0800 CST',
+    id: 'Hexo施工记录（一）',
     owner: 'sslyxhz',
     repo: 'sslyxhz.github.io',
     oauth: {

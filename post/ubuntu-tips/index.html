@@ -87,7 +87,7 @@
 
 <meta itemprop="datePublished" content="2018-01-28T00:59:17&#43;08:00" />
 <meta itemprop="dateModified" content="2018-01-28T00:59:17&#43;08:00" />
-<meta itemprop="wordCount" content="2087">
+<meta itemprop="wordCount" content="2065">
 
 
 
@@ -172,7 +172,7 @@
               <a href="/categories/tips/"> tips </a>
             
           </div>
-        <span class="more-meta"> 约 2087 字 </span>
+        <span class="more-meta"> 约 2065 字 </span>
         <span class="more-meta"> 预计阅读 5 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -189,11 +189,7 @@
 <li><a href="#tips-应用篇">tips-应用篇</a>
 <ul>
 <li><a href="#下载百度云网盘文件">下载百度云网盘文件</a></li>
-<li><a href="#zssh文件传输">ZSSH文件传输</a>
-<ul>
-<li><a href="#上传本地文件到服务器">上传本地文件到服务器</a></li>
-<li><a href="#下载服务器文件到本地">下载服务器文件到本地</a></li>
-</ul></li>
+<li><a href="#zssh文件传输">ZSSH文件传输</a></li>
 <li><a href="#桌面分享">桌面分享</a></li>
 </ul></li>
 <li><a href="#tips-系统篇">tips-系统篇</a>
@@ -201,26 +197,12 @@
 <li><a href="#用户管理">用户管理</a></li>
 <li><a href="#配置dns服务地址">配置DNS服务地址</a></li>
 <li><a href="#主目录中文转英文">主目录中文转英文</a></li>
-<li><a href="#切换命令行模式">切换命令行模式</a>
-<ul>
-<li><a href="#动态切换命令行模式">动态切换命令行模式</a></li>
-<li><a href="#默认命令行模式">默认命令行模式</a></li>
-</ul></li>
+<li><a href="#切换命令行模式">切换命令行模式</a></li>
 <li><a href="#安装桌面环境">安装桌面环境</a></li>
 </ul></li>
 <li><a href="#tips-巨坑篇">tips-巨坑篇</a>
 <ul>
-<li><a href="#在某hp台式机上安装ubuntu14-04的坑">在某HP台式机上安装Ubuntu14.04的坑</a>
-<ul>
-<li><a href="#desc">desc</a></li>
-<li><a href="#reason">reason</a></li>
-<li><a href="#solution">solution</a>
-<ul>
-<li><a href="#step-1">step 1</a></li>
-<li><a href="#step-2">step 2</a></li>
-</ul></li>
-<li><a href="#参考">参考</a></li>
-</ul></li>
+<li><a href="#在某hp台式机上安装ubuntu14-04的坑">在某HP台式机上安装Ubuntu14.04的坑</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -246,9 +228,9 @@
 
 <h2 id="zssh文件传输">ZSSH文件传输</h2>
 
-<h3 id="上传本地文件到服务器">上传本地文件到服务器</h3>
-
-<p>在服务器上先cd至相应要放上传文件的目录之后</p>
+<ul>
+<li>上传本地文件到服务器，并进入上传文件的目录</li>
+</ul>
 
 <pre><code class="language-shell">rz -bye                 # 在远程服务器的相应目录上运行此命令,表示做好接收文件的准备
 ctrl+@                  # 运行上面命令后,会出现一些乱码字符,不要怕,按此组合键,进入zssh
@@ -258,7 +240,9 @@ zssh &gt; ls               # 看一下有那些文件
 zssh &gt; sz 123.txt       # 上传本地机器的当前目录的123.txt到远程机器的当前目录
 </code></pre>
 
-<h3 id="下载服务器文件到本地">下载服务器文件到本地</h3>
+<ul>
+<li>下载服务器文件到本地</li>
+</ul>
 
 <pre><code class="language-shell">sz filename             # 在远程机器上,启动sz, 准备发送文件
 ctrl+@                  # 看到一堆乱码,不要怕,这会按下组合键
@@ -321,15 +305,17 @@ export LANG=zh_CN
 
 <h2 id="切换命令行模式">切换命令行模式</h2>
 
-<h3 id="动态切换命令行模式">动态切换命令行模式</h3>
+<ul>
+<li><p>动态切换命令行模式</p>
 
 <ul>
 <li>图形桌面&mdash;&gt;命令行模式：Ctrl+Alt+F1/F2/F3/F4/F5/F6</li>
 <li>命令行模式&mdash;&gt;图形桌面：Ctrl+Alt+F7</li>
 <li>解除命令行模式锁定光标快捷键：Ctrl+Alt</li>
-</ul>
+</ul></li>
 
-<h3 id="默认命令行模式">默认命令行模式</h3>
+<li><p>默认命令行模式</p></li>
+</ul>
 
 <pre><code class="language-shell">sudo vi /etc/default/grub
 # 注释掉 GRUB_CMDLINE_LINUX_DEFAULT=”quiet” 这行
@@ -369,49 +355,59 @@ sudo apt-get install —no-install-recommends kubuntu-desktop
 
 <h2 id="在某hp台式机上安装ubuntu14-04的坑">在某HP台式机上安装Ubuntu14.04的坑</h2>
 
-<h3 id="desc">desc</h3>
+<ol>
+<li><p>desc<br />
+Ubuntu14.04使用USB安装时，出现&rdquo;install ubuntu/ try ubuntu without installation&rdquo;选择，但是Enter安装时，显示器没有内容显示，片刻之后直接休眠。</p></li>
 
-<p>Ubuntu14.04使用USB安装时，出现&rdquo;install ubuntu/ try ubuntu without installation&rdquo;选择，但是Enter安装时，显示器没有内容显示，片刻之后直接休眠。</p>
+<li><p>reason
+由于ubuntu对于显卡支持有问题，需要手动添加显卡驱动选项，启动的时候告诉内核不要加载显卡。</p>
 
-<h3 id="reason">reason</h3>
+<ul>
+<li>无效一，有的说是UEFI的问题，关了UEFI不行；</li>
+<li>无效二，有的说是N卡不兼容，禁用了显卡还不行。</li>
+</ul></li>
 
-<p>由于ubuntu对于显卡支持有问题，需要手动添加显卡驱动选项，启动的时候告诉内核不要加载显卡。
-- 无效一，有的说是UEFI的问题，关了UEFI不行；
-- 无效二，有的说是N卡不兼容，禁用了显卡还不行。</p>
+<li><p>solution</p>
 
-<h3 id="solution">solution</h3>
+<ul>
+<li>step 1<br />
+安装时选择&rdquo;install ubuntu&rdquo;后，按&rdquo;e&rdquo;进入编辑模式，进入命令行模式, 然后去掉&rdquo;—&rdquo;后，依照不同显卡进行不同显卡驱动选项的添加</li>
+</ul>
 
-<h4 id="step-1">step 1</h4>
-
-<p>安装时选择&rdquo;install ubuntu&rdquo;后，按&rdquo;e&rdquo;进入编辑模式，进入命令行模式, 然后去掉&rdquo;—&rdquo;后，依照不同显卡进行不同显卡驱动选项的添加
-1.Intel <sup>82852</sup>&frasl;<sub>82855</sub> 或8系列显示晶片：i915.modeset=1或i915.modeset=0
-2.Nvidia：<strong>nomodeset</strong>
+<pre><code>1.Intel 82852/82855 或8系列显示晶片：i915.modeset=1或i915.modeset=0
+2.Nvidia：**nomodeset**
 3.其它厂牌(如ATI，技嘉)：xforcevesa或radeon.modeset=0 xforcevesa
 [DELL T3400显卡为Nvidia FX580，选择nomodeset]
-F10安装</p>
+F10安装
+</code></pre>
 
-<h4 id="step-2">step 2</h4>
+<ul>
+<li><p>step 2<br />
+当安装结束后，启动系统出现黑画面</p>
 
-<p>当安装结束后，启动系统出现黑画面
-1.开机，进入grub画面(如果硬碟没有别的OS,请开机时按住shift不放才会有grub画面)
-** (然而就是卡在这一步，没有grub画面！折腾了两次修复grub的设置都是失败，不然后面的都是一样了。)
-2.按&rdquo;&lsquo;e&rdquo;&rsquo; 进入编辑开机指令的模式, 同样找到&rdquo;&lsquo;quite splash&rdquo;&rsquo; 并在后面加上对应的字。
-3.按 &ldquo;F10&rdquo;启动系统.
-4.进去系统之后编辑&rdquo;&lsquo;/etc/default/grub&rdquo;&rsquo; 这个档案(要管理者权限sudo)。
-Ubuntu&gt;打开终端机，输入sudo vi /etc/default/grub
-5.找到这一行:
-GRUB_CMDLINE_LINUX_DEFAULT=&ldquo;quiet splash&rdquo;
-修改为：
-GRUB_CMDLINE_LINUX_DEFAULT=&ldquo;quiet splash <strong>nomodeset</strong>&ldquo;
-6. 更新GRUB： sudo update-grub
-7.存档，并重新开机。</p>
+<ol>
+<li>开机，进入grub画面(如果硬碟没有别的OS,请开机时按住shift不放才会有grub画面)
+** (然而就是卡在这一步，没有grub画面！折腾了两次修复grub的设置都是失败，不然后面的都是一样了。)</li>
+<li>按&rdquo;&lsquo;e&rdquo;&rsquo; 进入编辑开机指令的模式, 同样找到&rdquo;&lsquo;quite splash&rdquo;&rsquo; 并在后面加上对应的字。</li>
+<li>按 &ldquo;F10&rdquo;启动系统.</li>
+<li>进去系统之后编辑&rdquo;&lsquo;/etc/default/grub&rdquo;&rsquo; 这个档案(要管理者权限sudo)。
+Ubuntu&gt;打开终端机，输入sudo vi /etc/default/grub</li>
+<li>找到这一行:<br />
+GRUB_CMDLINE_LINUX_DEFAULT=&ldquo;quiet splash&rdquo;<br />
+修改为：<br />
+GRUB_CMDLINE_LINUX_DEFAULT=&ldquo;quiet splash <strong>nomodeset</strong>&rdquo;<br /></li>
+<li>更新GRUB： sudo update-grub</li>
+<li>存档，并重新开机。</li>
+</ol></li>
+</ul></li>
 
-<h3 id="参考">参考</h3>
+<li><p>参考</p>
 
 <ul>
 <li><a href="http://www.linuxidc.com/Linux/2017-01/139318.htm">Ubuntu安装时出现黑屏问题的解决</a></li>
 <li><a href="http://blog.csdn.net/ubunfans/article/details/46544175/">Windows7硬盘安装Ubuntu14.04引导后黑屏解决方案</a></li>
-</ul>
+</ul></li>
+</ol>
     </div>
 
     
@@ -484,7 +480,7 @@ GRUB_CMDLINE_LINUX_DEFAULT=&ldquo;quiet splash <strong>nomodeset</strong>&ldquo;
   <script type="text/javascript" src="https://sslyxhz.github.io/js/gitment.js"></script>
   <script type="text/javascript">
     const gitment = new Gitment({
-    id: '2018-01-28 00:59:17 \x2b0800 CST',
+    id: 'Ubuntu Tips',
     owner: 'sslyxhz',
     repo: 'sslyxhz.github.io',
     oauth: {

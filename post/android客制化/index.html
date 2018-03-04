@@ -87,7 +87,7 @@
 
 <meta itemprop="datePublished" content="2018-02-03T16:51:04&#43;08:00" />
 <meta itemprop="dateModified" content="2018-02-03T16:51:04&#43;08:00" />
-<meta itemprop="wordCount" content="937">
+<meta itemprop="wordCount" content="940">
 
 
 
@@ -172,7 +172,7 @@
               <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 937 字 </span>
+        <span class="more-meta"> 约 940 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -188,11 +188,7 @@
 <ul>
 <li><a href="#系统层面">系统层面</a>
 <ul>
-<li><a href="#更换开机logo">更换开机LOGO</a>
-<ul>
-<li><a href="#前方案">前方案</a></li>
-<li><a href="#后方案">后方案</a></li>
-</ul></li>
+<li><a href="#更换开机logo">更换开机LOGO</a></li>
 <li><a href="#开机动画">开机动画</a></li>
 </ul></li>
 <li><a href="#应用层面">应用层面</a></li>
@@ -211,7 +207,8 @@
 
 <h2 id="更换开机logo">更换开机LOGO</h2>
 
-<h3 id="前方案">前方案</h3>
+<ul>
+<li><p>前方案</p>
 
 <ol>
 <li>找一张图片，分辨率为：1920×1080，这里以linuxlogo.png为例；</li>
@@ -228,11 +225,14 @@ pnmtoplainpnm linuxlogo224.pnm &gt; logo_linux_clut224.ppm
 <li>重新编译内核，把生成的kernel.img烧进板子即可。</li>
 <li>注意：如果你的boot.img中包含了kernel，记得重新烧一个没有kernel的boot.img，或者重新编译boot.img</li>
 </ul></li>
-</ol>
+</ol></li>
 
-<h3 id="后方案">后方案</h3>
+<li><p>后方案</p>
 
-<p>前方案失效，尝试直接替换kernel下的图片就行了，简单粗暴。</p>
+<ul>
+<li>前方案失效，尝试直接替换kernel下的图片就行了，简单粗暴。</li>
+</ul></li>
+</ul>
 
 <h2 id="开机动画">开机动画</h2>
 
@@ -276,6 +276,8 @@ PRODUCT_COPY_FILES +=/framework/base/cmds/bootanimation/bootanimation.zip:/syste
 </ol>
 
 <h1 id="应用层面">应用层面</h1>
+
+<p>待补充</p>
     </div>
 
     
@@ -343,7 +345,7 @@ PRODUCT_COPY_FILES +=/framework/base/cmds/bootanimation/bootanimation.zip:/syste
   <script type="text/javascript" src="https://sslyxhz.github.io/js/gitment.js"></script>
   <script type="text/javascript">
     const gitment = new Gitment({
-    id: '2018-02-03 16:51:04 \x2b0800 CST',
+    id: 'Android系统客制化',
     owner: 'sslyxhz',
     repo: 'sslyxhz.github.io',
     oauth: {
