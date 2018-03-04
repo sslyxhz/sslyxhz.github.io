@@ -361,6 +361,8 @@ user2 username: demo@leanote.com, password: demo@leanote.com (仅供体验使用
   <div id="comments"></div>
   <script type="text/javascript" src="https://sslyxhz.github.iojs/gitment.js"></script>
   <script type="text/javascript">
+    if (window.location.hostname === 'localhost') return;
+
     const gitment = new Gitment({
     id: '2017-12-10 13:55:16 \x2b0800 CST',
     owner: 'sslyxhz',
