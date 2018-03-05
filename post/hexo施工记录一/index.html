@@ -46,13 +46,9 @@ hexo，博客模板框架，基于nodejs。
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-
-<link rel="stylesheet" href="https://sslyxhz.github.io/css/gitment.css">
-
-
-
 <link href="/dist/even.min.css?v=3.0.1" rel="stylesheet">
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+  <link href="/lib/gitment/gitment.css" rel="stylesheet">
 
 
 
@@ -599,11 +595,11 @@ npm install hexo-filter-flowchart --save
 
   
   
-  <div id="comments"></div>
-  <script type="text/javascript" src="https://sslyxhz.github.io/js/gitment.js"></script>
+  <div id="comments-gitment">
+  <script type="text/javascript" src="https://sslyxhz.github.io/lib/gitment/gitment.js" | relURL ></script>
   <script type="text/javascript">
-    const gitment = new Gitment({
-    id: 'Hexo施工记录（一）',
+  const gitment = new Gitment({
+    id: 'Hexo施工记录（一）',  
     owner: 'sslyxhz',
     repo: 'sslyxhz.github.io',
     oauth: {
@@ -611,8 +607,10 @@ npm install hexo-filter-flowchart --save
       client_secret: '471a575f0edc5c7c642605ea2fdcd7522c1be8c6',
     },
   })
-  gitment.render('comments')
+  gitment.render('comments-gitment')
   </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  </div>
       </div>
     </main>
 
@@ -660,6 +658,7 @@ npm install hexo-filter-flowchart --save
 <script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
   <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+  <script type="text/javascript" src="/lib/gitment/gitment.js"></script>
 <script type="text/javascript" src="/dist/even.min.js?v=3.0.1"></script>
 
 
