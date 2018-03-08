@@ -354,7 +354,24 @@ note_contents
   </article>
         </div>
         
-  
+  <div id="comments-gitment"></div>
+  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
+    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+  <script type="text/javascript">
+  const gitment = new Gitment({
+    id: '\/post\/leanote%E6%BA%90%E7%A0%81%E9%83%A8%E7%BD%B2\/',
+    title: 'Leanote源码部署记录',
+    desc: '\x3cp\x3eLeanote，开源笔记，在苛求数据安全的时候就得自建笔记服务了。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
+    owner: 'sslyxhz',
+    repo: 'sslyxhz.github.io',
+    oauth: {
+      client_id: 'bad174e0e116e205403d',
+      client_secret: '471a575f0edc5c7c642605ea2fdcd7522c1be8c6'
+    }
+  })
+  gitment.render('comments-gitment')
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
       </div>
     </main>
 
