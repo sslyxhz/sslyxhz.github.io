@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Even - A super concise theme for Hugo</title>
-    <link>https://sslyxhz.github.io/categories/</link>
-    <description>Recent content in Categories on Even - A super concise theme for Hugo</description>
+    <title>Categories on sslyxhz&#39;s blog</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on sslyxhz&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
-	<atom:link href="https://sslyxhz.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Notes</title>
-      <link>https://sslyxhz.github.io/categories/notes/</link>
+      <link>http://localhost:1313/categories/notes/</link>
       <pubDate>Sat, 03 Feb 2018 15:33:01 +0800</pubDate>
       
-      <guid>https://sslyxhz.github.io/categories/notes/</guid>
+      <guid>http://localhost:1313/categories/notes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tips</title>
-      <link>https://sslyxhz.github.io/categories/tips/</link>
+      <link>http://localhost:1313/categories/tips/</link>
       <pubDate>Sat, 03 Feb 2018 13:26:27 +0800</pubDate>
       
-      <guid>https://sslyxhz.github.io/categories/tips/</guid>
+      <guid>http://localhost:1313/categories/tips/</guid>
       <description></description>
     </item>
     
     <item>
       <title>记录</title>
-      <link>https://sslyxhz.github.io/categories/%E8%AE%B0%E5%BD%95/</link>
+      <link>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sat, 03 Feb 2018 16:51:04 +0800</pubDate>
       
-      <guid>https://sslyxhz.github.io/categories/%E8%AE%B0%E5%BD%95/</guid>
+      <guid>http://localhost:1313/categories/%E8%AE%B0%E5%BD%95/</guid>
       <description></description>
     </item>
     

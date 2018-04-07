@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Notes on Even - A super concise theme for Hugo</title>
-    <link>https://sslyxhz.github.io/categories/notes/</link>
-    <description>Recent content in Notes on Even - A super concise theme for Hugo</description>
+    <title>Notes on sslyxhz&#39;s blog</title>
+    <link>http://localhost:1313/categories/notes/</link>
+    <description>Recent content in Notes on sslyxhz&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 03 Feb 2018 15:33:01 +0800</lastBuildDate>
     
-	<atom:link href="https://sslyxhz.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JNI Notes</title>
-      <link>https://sslyxhz.github.io/post/jni-notes/</link>
+      <link>http://localhost:1313/post/jni-notes/</link>
       <pubDate>Sat, 03 Feb 2018 15:33:01 +0800</pubDate>
       
-      <guid>https://sslyxhz.github.io/post/jni-notes/</guid>
+      <guid>http://localhost:1313/post/jni-notes/</guid>
       <description>&lt;p&gt;整理记录对JNI的认知过程。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
