@@ -2,102 +2,102 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on sslyxhz&#39;s blog</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://sslyxhz.github.io/tags/</link>
     <description>Recent content in Tags on sslyxhz&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 03 Feb 2018 16:51:04 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sslyxhz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Android</title>
-      <link>http://localhost:1313/tags/android/</link>
+      <link>https://sslyxhz.github.io/tags/android/</link>
       <pubDate>Sat, 03 Feb 2018 16:51:04 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/android/</guid>
+      <guid>https://sslyxhz.github.io/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Firefly</title>
-      <link>http://localhost:1313/tags/firefly/</link>
+      <link>https://sslyxhz.github.io/tags/firefly/</link>
       <pubDate>Fri, 17 Nov 2017 23:42:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/firefly/</guid>
+      <guid>https://sslyxhz.github.io/tags/firefly/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hexo</title>
-      <link>http://localhost:1313/tags/hexo/</link>
+      <link>https://sslyxhz.github.io/tags/hexo/</link>
       <pubDate>Fri, 01 Jul 2016 20:58:56 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/hexo/</guid>
+      <guid>https://sslyxhz.github.io/tags/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Jni</title>
-      <link>http://localhost:1313/tags/jni/</link>
+      <link>https://sslyxhz.github.io/tags/jni/</link>
       <pubDate>Sat, 03 Feb 2018 15:33:01 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/jni/</guid>
+      <guid>https://sslyxhz.github.io/tags/jni/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Markdown</title>
-      <link>http://localhost:1313/tags/markdown/</link>
+      <link>https://sslyxhz.github.io/tags/markdown/</link>
       <pubDate>Mon, 23 May 2016 17:12:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/markdown/</guid>
+      <guid>https://sslyxhz.github.io/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rk3399</title>
-      <link>http://localhost:1313/tags/rk3399/</link>
+      <link>https://sslyxhz.github.io/tags/rk3399/</link>
       <pubDate>Fri, 17 Nov 2017 23:42:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/rk3399/</guid>
+      <guid>https://sslyxhz.github.io/tags/rk3399/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Software</title>
-      <link>http://localhost:1313/tags/software/</link>
+      <link>https://sslyxhz.github.io/tags/software/</link>
       <pubDate>Sun, 10 Dec 2017 13:55:16 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/software/</guid>
+      <guid>https://sslyxhz.github.io/tags/software/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ubuntu</title>
-      <link>http://localhost:1313/tags/ubuntu/</link>
+      <link>https://sslyxhz.github.io/tags/ubuntu/</link>
       <pubDate>Sun, 28 Jan 2018 00:59:17 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/ubuntu/</guid>
+      <guid>https://sslyxhz.github.io/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>挖坑</title>
-      <link>http://localhost:1313/tags/%E6%8C%96%E5%9D%91/</link>
+      <link>https://sslyxhz.github.io/tags/%E6%8C%96%E5%9D%91/</link>
       <pubDate>Sun, 10 Dec 2017 13:55:16 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/%E6%8C%96%E5%9D%91/</guid>
+      <guid>https://sslyxhz.github.io/tags/%E6%8C%96%E5%9D%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>语法</title>
-      <link>http://localhost:1313/tags/%E8%AF%AD%E6%B3%95/</link>
+      <link>https://sslyxhz.github.io/tags/%E8%AF%AD%E6%B3%95/</link>
       <pubDate>Mon, 23 May 2016 17:12:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/%E8%AF%AD%E6%B3%95/</guid>
+      <guid>https://sslyxhz.github.io/tags/%E8%AF%AD%E6%B3%95/</guid>
       <description></description>
     </item>
     
