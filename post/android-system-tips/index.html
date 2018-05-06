@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Android System Tips - sslyxhz&#39;s blog</title>
+  <title>Android-System-Tips - sslyxhz&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="sslyxhz" />
-  <meta name="description" content="整理记录在Android系统的一些操作。
+  <meta name="description" content="整理记录在Android系统的一些命令行控制和系统级的设置。
 
 " />
 
@@ -51,8 +51,8 @@
 
 
 
-<meta property="og:title" content="Android System Tips" />
-<meta property="og:description" content="整理记录在Android系统的一些操作。
+<meta property="og:title" content="Android-System-Tips" />
+<meta property="og:description" content="整理记录在Android系统的一些命令行控制和系统级的设置。
 
 " />
 <meta property="og:type" content="article" />
@@ -62,7 +62,7 @@
 
 <meta property="article:published_time" content="2018-02-03T13:26:27&#43;08:00"/>
 
-<meta property="article:modified_time" content="2018-02-03T13:26:27&#43;08:00"/>
+<meta property="article:modified_time" content="2018-04-20T00:48:18&#43;08:00"/>
 
 
 
@@ -74,22 +74,22 @@
 
 
 
-<meta itemprop="name" content="Android System Tips">
-<meta itemprop="description" content="整理记录在Android系统的一些操作。
+<meta itemprop="name" content="Android-System-Tips">
+<meta itemprop="description" content="整理记录在Android系统的一些命令行控制和系统级的设置。
 
 ">
 
 
 <meta itemprop="datePublished" content="2018-02-03T13:26:27&#43;08:00" />
 <meta itemprop="dateModified" content="2018-02-03T13:26:27&#43;08:00" />
-<meta itemprop="wordCount" content="178">
+<meta itemprop="wordCount" content="683">
 
 
 
 <meta itemprop="keywords" content="android," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Android System Tips"/>
-<meta name="twitter:description" content="整理记录在Android系统的一些操作。
+<meta name="twitter:title" content="Android-System-Tips"/>
+<meta name="twitter:description" content="整理记录在Android系统的一些命令行控制和系统级的设置。
 
 "/>
 
@@ -158,7 +158,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Android System Tips</h1>
+      <h1 class="post-title">Android-System-Tips</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2018-02-03 </span>
@@ -167,8 +167,8 @@
               <a href="/categories/tips/"> tips </a>
             
           </div>
-        <span class="more-meta"> 约 178 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 683 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -183,16 +183,23 @@
 <ul>
 <li><a href="#通用行为">通用行为</a>
 <ul>
-<li><a href="#wifi连接识别">Wifi连接识别</a>
+<li><a href="#wifi远程调试">Wifi远程调试</a>
 <ul>
 <li><a href="#root设备设置">root设备设置</a></li>
 <li><a href="#系统启动脚本">系统启动脚本</a></li>
 </ul></li>
+<li><a href="#设置系统时间">设置系统时间</a></li>
 </ul></li>
+<li><a href="#失败的尝试">失败的尝试</a></li>
+<li><a href="#正确的设置方式">正确的设置方式</a></li>
 <li><a href="#硬件相关">硬件相关</a>
 <ul>
 <li><a href="#usb接线识别">USB接线识别</a></li>
+<li><a href="#网卡控制">网卡控制</a></li>
+<li><a href="#流量统计">流量统计</a></li>
+<li><a href="#usb声卡">USB声卡</a></li>
 </ul></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav>
   </div>
@@ -200,13 +207,13 @@
 
     
     <div class="post-content">
-      <p>整理记录在Android系统的一些操作。</p>
+      <p>整理记录在Android系统的一些命令行控制和系统级的设置。</p>
 
 <p></p>
 
 <h1 id="通用行为">通用行为</h1>
 
-<h2 id="wifi连接识别">Wifi连接识别</h2>
+<h2 id="wifi远程调试">Wifi远程调试</h2>
 
 <h3 id="root设备设置">root设备设置</h3>
 
@@ -222,6 +229,37 @@ reboot
 <h3 id="系统启动脚本">系统启动脚本</h3>
 
 <p>在init.rc中添加设置。</p>
+
+<h2 id="设置系统时间">设置系统时间</h2>
+
+<p>Linux时间区分系统时间和硬件时间，date命令只操作系统时间，hwclock操作硬件时间。</p>
+
+<ol>
+<li><p>系统时间
+系统开机之后读取硬件时间作为系统时间，之后系统时间独立运行，在系统关机之后将系统时间写回RTC。
+``` shell</p>
+
+<h1 id="失败的尝试">失败的尝试</h1>
+
+<p>date -s 20161231.235959
+date -s 123123592016.59</p></li>
+</ol>
+
+<h1 id="正确的设置方式">正确的设置方式</h1>
+
+<p>toybox date 123123592016.59</p>
+
+<pre><code>2. 硬件时间
+```shell
+hwclock -r  # 读取硬件时间
+hwclock -w  # 将系统时钟同步到硬件时间
+</code></pre>
+
+<ol>
+<li>参考</li>
+<li><a href="!https://stackoverflow.com/questions/19496907/set-date-time-using-adb-shell">set-date-time-using-adb-shell</a></li>
+<li><a href="!http://codingstandards.iteye.com/blog/804830">我使用过的Linux命令之hwclock - 查询和设置硬件时钟</a></li>
+</ol>
 
 <h1 id="硬件相关">硬件相关</h1>
 
@@ -244,6 +282,44 @@ sudo udevadm trigger
 sudo adb kill-server
 adb start-server
 </code></pre>
+
+<h2 id="网卡控制">网卡控制</h2>
+
+<pre><code class="language-shell">ifconfig eth0 up  # 打开以太网卡
+
+ifconfig wlan0 down  # 关闭无线网卡
+</code></pre>
+
+<h2 id="流量统计">流量统计</h2>
+
+<p>在Android系统中，&rdquo;/proc/net/xt_qtaguid/stats&rdquo;这个文件里储存着各个应用的流量信息。</p>
+
+<pre><code class="language-shell"># 1. 获取userId
+adb shell dumpsys package [PkgName] | findstr userId
+
+# 2. 查询流量
+adb shell cat /proc/net/xt_qtaguid/stats | findstr [userId]
+
+# 合并两条命令
+for /f &quot;tokens=2 delims== &quot; %%i in ('adb shell &quot;dumpsys package com.tencent.mobileqq | grep userId&quot;') do adb shell cat /proc/net/xt_qtaguid/stats ^| grep %%i
+</code></pre>
+
+<ul>
+<li>查询结果中，第六列和第八列分别对应接收的数据(rx_bytes)和发送的数据(rx_bytes)，相加就是消耗的流量。</li>
+<li>统计一段时间内的流量消耗可以在开始和结束时分别获取，结果相减。</li>
+</ul>
+
+<h2 id="usb声卡">USB声卡</h2>
+
+<pre><code class="language-shell">cat /proc/asound/cards  # 查看声卡设备
+</code></pre>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="!https://www.cnblogs.com/ElliottSilence/p/6590498.html">Android应用的流量统计</a></li>
+<li><a href="!https://blog.csdn.net/kevinx_xu/article/details/12951131">如何在Android平台上使用USB Audio设备</a></li>
+</ul>
     </div>
 
     
@@ -254,7 +330,7 @@ adb start-server
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-02-03</span>
+    <span class="item-content">2018-04-20</span>
   </p>
   
   
@@ -312,9 +388,9 @@ adb start-server
   <script type="text/javascript">
   const gitment = new Gitment({
     id: '2018-02-03 13:26:27 \x2b0800 CST',
-    title: 'Android System Tips',
+    title: 'Android-System-Tips',
     link: decodeURI(location.href),
-    desc: '\x3cp\x3e整理记录在Android系统的一些操作。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
+    desc: '\x3cp\x3e整理记录在Android系统的一些命令行控制和系统级的设置。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
     owner: 'sslyxhz',
     repo: 'sslyxhz.github.io',
     oauth: {
@@ -374,7 +450,14 @@ adb start-server
   
 <script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script><script></script>
+<script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script>
+<script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
 <script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
 
 

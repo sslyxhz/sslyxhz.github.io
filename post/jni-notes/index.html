@@ -82,7 +82,7 @@
 
 <meta itemprop="datePublished" content="2018-02-03T15:33:01&#43;08:00" />
 <meta itemprop="dateModified" content="2018-02-03T15:33:01&#43;08:00" />
-<meta itemprop="wordCount" content="2569">
+<meta itemprop="wordCount" content="3771">
 
 
 
@@ -167,8 +167,8 @@
               <a href="/categories/notes/"> notes </a>
             
           </div>
-        <span class="more-meta"> 约 2569 字 </span>
-        <span class="more-meta"> 预计阅读 6 分钟 </span>
+        <span class="more-meta"> 约 3771 字 </span>
+        <span class="more-meta"> 预计阅读 8 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -180,6 +180,8 @@
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
+<ul>
+<li><a href="#jni基础">JNI基础</a>
 <ul>
 <li><a href="#jni角色定位">JNI角色定位</a></li>
 <li><a href="#jni数据结构和参数">JNI数据结构和参数</a>
@@ -196,6 +198,19 @@
 <ul>
 <li><a href="#异常和错误码">异常和错误码</a></li>
 <li><a href="#异常处理">异常处理</a></li>
+<li><a href="#参考">参考</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#jni应用">JNI应用</a>
+<ul>
+<li><a href="#jni参数传递">JNI参数传递</a>
+<ul>
+<li><a href="#jni类型映射">JNI类型映射</a></li>
+<li><a href="#utf-8编码">UTF-8编码</a></li>
+<li><a href="#局部引用">局部引用</a></li>
+<li><a href="#全局引用">全局引用</a></li>
+<li><a href="#弱全局引用">弱全局引用</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -208,24 +223,26 @@
 
 <p></p>
 
-<h1 id="jni角色定位">JNI角色定位</h1>
+<h1 id="jni基础">JNI基础</h1>
+
+<h2 id="jni角色定位">JNI角色定位</h2>
 
 <p>JNI作为一种双向接口，即允许Java应用程序调用原生代码，也允许原生代码调用Java代码。</p>
 
 <p><img src="jni_role.png" alt="jni_role" /></p>
 
-<h1 id="jni数据结构和参数">JNI数据结构和参数</h1>
+<h2 id="jni数据结构和参数">JNI数据结构和参数</h2>
 
 <p>JNI提供两种主要数据结构，”JavaVM“和”JNIEnv“，其本质上都是指向函数表指针的指针。</p>
 
-<h2 id="javavm">JavaVM</h2>
+<h3 id="javavm">JavaVM</h3>
 
 <ul>
 <li>JavaVM是JVM在JNI层的代表，JNI全局只有一个；JNIEnv是线程中的代表，每个线程都有一个，JNI中可能有多个JNIEnv。</li>
 <li>JavaVM提供执行接口函数，使用这些函数可以创建和销毁JavaVM。</li>
 </ul>
 
-<h2 id="jnienv">JNIEnv</h2>
+<h3 id="jnienv">JNIEnv</h3>
 
 <p>JNIEnv是线程相关的结构体，代表Java在本线程的运行环境。JNIEnv作用：
 - 调用Java函数:JNIEnv代表Java运行环境, 可以使用JNIEnv调用Java中的代码;
@@ -234,7 +251,7 @@
 - JNIEnv接口指针，指向一个线程相关的结构，该结构包含了指向函数表的指针，函数表的每个入口包含一个指向JNI函数的指针。
 - JNIEnv用于线程本地存储，因此不能在线程之间共享JNIEnv变量。如果一个线程无法获取它的JNIEnv参数，那么应该共享JavaVM参数，然后使用函数GetEnv获取线程的JNIEnv。</p>
 
-<h2 id="示意图">示意图</h2>
+<h3 id="示意图">示意图</h3>
 
 <p><img src="jni_struct.png" alt="jni_struct" /></p>
 
@@ -244,7 +261,7 @@
 - 若原生函数不是静态函数，则第二个参数对应调用该原生函数的Java对象；
 - 如果该原生函数是静态函数，则第二个参数对应调用该原生函数的Java类。</p>
 
-<h1 id="jni线程">JNI线程</h1>
+<h2 id="jni线程">JNI线程</h2>
 
 <p>Native代码执行在其调入的Java方法所在的调用栈中。</p>
 
@@ -269,7 +286,7 @@
 
 <p>类的引用、方法、属性ID在类卸载之前都是有效的。需要时应该调用NewGlobalRef保存jclass的引用。</p>
 
-<h1 id="版本兼容性">版本兼容性</h1>
+<h2 id="版本兼容性">版本兼容性</h2>
 
 <p>SDK开发时指定minsdk，targetsdk可以尽可能高。</p>
 
@@ -279,7 +296,7 @@
 
 <p>因为高版本的某些API实现方式会改变。比如signal.h中的signal函数，如果使用android-21编译，那么在低于5.0 版本的手机上是跑不起来，错误是无法找到signal函数，原因就是5.0以后signal.h中的signal函数的实现方式变了。</p>
 
-<h1 id="性能差异">性能差异</h1>
+<h2 id="性能差异">性能差异</h2>
 
 <p>native方法访问java方法，native方法访问native方法，java方法访问java方法</p>
 
@@ -291,7 +308,7 @@
 
 <p>总结：如果不是有特别的需要，最好不要让native方法调用java方法，开销太大。然而访问java层的属性就没有这么大的区别，可以忽略不计。</p>
 
-<h1 id="程序错误检测">程序错误检测</h1>
+<h2 id="程序错误检测">程序错误检测</h2>
 
 <p>JNI不对空指针或非法参数类型等错误进行检测，因为：
 - 检查所有可能的错误会降低方法执行的性能
@@ -299,11 +316,11 @@
 
 <p>程序员不得传递一个非法指针或者错误的类型给JNI函数，否则可能会导致系统异常货虚拟机崩溃</p>
 
-<h1 id="java异常">Java异常</h1>
+<h2 id="java异常">Java异常</h2>
 
 <p>JNI允许本地方法抛出处理任何异常，也可以处理Java中抛出的异常，剩下没有处理的异常会继续给VM处理</p>
 
-<h2 id="异常和错误码">异常和错误码</h2>
+<h3 id="异常和错误码">异常和错误码</h3>
 
 <p>大多数情况下，JNI提供的方法通过返回错误码或者抛出java异常来处理错误，因此，程序中可以：
 - 检查JNI函数返回值
@@ -313,7 +330,7 @@
 - 通过JNI调用Java方法的时候，需要ExceptionOccurred()检测是否在Java方法中抛出了异常
 - 一些访问数组的方法，它不返回错误码，但是会抛出ArrayIndexOutOfBoundsException 或者 ArrayStoreException异常</p>
 
-<h2 id="异常处理">异常处理</h2>
+<h3 id="异常处理">异常处理</h3>
 
 <p>有两种方法可以在本地方法中处理异常
 - 检测到异常的时候立即返回，异常将会在调用该本地代码的地方抛出
@@ -337,6 +354,70 @@ MonitorExit()
 PushLocalFrame()
 PopLocalFrame()
 </code></pre>
+
+<p>TODO: Java中抛异常，C++处理，以及C++抛异常，Java处理；</p>
+
+<h3 id="参考">参考</h3>
+
+<ul>
+<li><a href="!https://blog.csdn.net/p2011211616/article/details/69951039">jni异常，c++抛出异常，java捕获</a></li>
+<li><a href="!https://blog.csdn.net/a345017062/article/details/8068932">JNI官方规范中文版——如何在JNI中抛出Java异常</a></li>
+</ul>
+
+<h1 id="jni应用">JNI应用</h1>
+
+<h2 id="jni参数传递">JNI参数传递</h2>
+
+<h3 id="jni类型映射">JNI类型映射</h3>
+
+<p>基础数据类型直接映射，如Java中的int映射成jint。基本数据类型在java和native之间采用值传递。</p>
+
+<p>引用类型以一种不透明的引用方式向原生代码传递对象，不透明的引用指的是，指向Java虚拟机中内部数据对象的C语言指针，原生代码必须通过JNIEnv中定义的函数处理这些内部数据对象。java对象采用引用传递。</p>
+
+<p>所有的JNI引用都是jobject类型。</p>
+
+<p>虚拟机必须保持已传递给native对象的引用，以便这些对象不被垃圾回收期回收。native code也必须有一种方法通知虚拟机它不再需要某个对象，并且垃圾收集器必须能够将其回收。</p>
+
+<h3 id="utf-8编码">UTF-8编码</h3>
+
+<p>JNI使用改进的UTF-8字符串来表示不同的字符类型。Java使用UTF-16编码。UTF-8编码主要使用于C语言，因为它的编码用\u000表示为0xc0，而不是通常的0×00。非空ASCII字符改进后的字符串编码中可以用一个字节表示。</p>
+
+<h3 id="局部引用">局部引用</h3>
+
+<ul>
+<li><p>范围：传入native方法的所有参数，以及大多数JNI函数返回的对象都是局部引用。</p></li>
+
+<li><p>生存期：本地函数返回后，即使这个对象仍然存活，但是这个引用也是无效的。这种情况适用于jobject的子类，包括jclass、jstring、jarray。</p></li>
+
+<li><p>释放：局部引用在方法调用时有效，在方法调用结束之后自动释放，但有几种情况应当显式进行局部引用的释放：</p>
+
+<ol>
+<li>方法中创建了一个比较大的java对象的，并持有其局部引用，使用完之后，如果接下来都不再需要使用了，如果仍然不对它进行释放的话，在方法结束之前，这个对象都不会进行释放，这样会对资源造成浪费</li>
+<li>JNI会将创建的局部引用都存储在一个局部引用表中，如果这个表超过了最大容量限制，就会造成局部引用表溢出，使程序崩溃。比如在一个循环中创建局部引用，最好在每一轮循环中释放局部引用，否则随着循环次数增加，很可能就内存溢出了</li>
+</ol></li>
+
+<li><p>限制：局部引用仅仅在其创建的线程内有效，native代码不能跨线程传递局部引用。</p></li>
+</ul>
+
+<h3 id="全局引用">全局引用</h3>
+
+<ul>
+<li><p>获取：获取全局引用的唯一方法，通过调用函数NewGlobalRef。</p></li>
+
+<li><p>生存期：全局引用保持有效，直到被显式释放。</p></li>
+</ul>
+
+<p>jfield和jmethod是透明类型，不是对象类型，没有必要传入到NewGlobalRef函数里，它们本身是不变的。</p>
+
+<p>GetStringUtfChars和GetByteArrayElements函数返回的原始数据指针，也不是对象，也就可以在线程间传递。</p>
+
+<h3 id="弱全局引用">弱全局引用</h3>
+
+<ul>
+<li><p>获取：获取若全局引用的唯一办法，通过调用函数NewWEakGlobalRef。</p></li>
+
+<li><p>区别：弱全局引用和全局引用的区别是，弱全局引用持有的java对象可以被VM回收。因此在使用弱全局引用前要先进行检测是否被回收了。</p></li>
+</ul>
     </div>
 
     
@@ -392,7 +473,7 @@ PopLocalFrame()
           </a>
         
           <a class="next" href="/post/android-system-tips/">
-            <span class="next-text nav-default">Android System Tips</span>
+            <span class="next-text nav-default">Android-System-Tips</span>
             <span class="prev-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -469,7 +550,14 @@ PopLocalFrame()
   
 <script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script><script></script>
+<script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script>
+<script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
 <script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
 
 

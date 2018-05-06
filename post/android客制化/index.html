@@ -82,7 +82,7 @@
 
 <meta itemprop="datePublished" content="2018-02-03T16:51:04&#43;08:00" />
 <meta itemprop="dateModified" content="2018-02-03T16:51:04&#43;08:00" />
-<meta itemprop="wordCount" content="940">
+<meta itemprop="wordCount" content="1050">
 
 
 
@@ -167,8 +167,8 @@
               <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 940 字 </span>
-        <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 1050 字 </span>
+        <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -185,8 +185,14 @@
 <ul>
 <li><a href="#更换开机logo">更换开机LOGO</a></li>
 <li><a href="#开机动画">开机动画</a></li>
+<li><a href="#开机动画控制">开机动画控制</a></li>
+<li><a href="#android-audio-system">Android Audio System</a></li>
 </ul></li>
-<li><a href="#应用层面">应用层面</a></li>
+<li><a href="#应用层面">应用层面</a>
+<ul>
+<li><a href="#替换默认launcher">替换默认Launcher</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav>
   </div>
@@ -270,9 +276,34 @@ PRODUCT_COPY_FILES +=/framework/base/cmds/bootanimation/bootanimation.zip:/syste
 <li><p>可以考虑直接替换/system/media/bootanimation.zip查看效果。</p></li>
 </ol>
 
+<h2 id="开机动画控制">开机动画控制</h2>
+
+<ul>
+<li><a href="!https://blog.csdn.net/myvest/article/details/50856199">android开机动画bootanimation</a></li>
+</ul>
+
+<h2 id="android-audio-system">Android Audio System</h2>
+
+<ul>
+<li><a href="http://wiki.jikexueyuan.com/project/deep-android-v1/audio.html">第7章  深入理解Audio系统</a>
+cat /proc/asound/cards</li>
+</ul>
+
 <h1 id="应用层面">应用层面</h1>
 
-<p>待补充</p>
+<h2 id="替换默认launcher">替换默认Launcher</h2>
+
+<p>主要就是移除和添加设置选项：</p>
+
+<pre><code class="language-xml">    &lt;category android:name=&quot;android.intent.category.HOME&quot; /&gt;
+</code></pre>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="!http://dev.t-firefly.com/forum.php?mod=viewthread&amp;tid=185&amp;highlight=%BF%AA%BB%FAlogo">制作开机LOGO及开机动画</a></li>
+<li><a href="!https://blog.csdn.net/luoshengyang/article/details/7691321/">Android系统的开机画面显示过程分析</a></li>
+</ul>
     </div>
 
     
@@ -319,6 +350,11 @@ PRODUCT_COPY_FILES +=/framework/base/cmds/bootanimation/bootanimation.zip:/syste
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/firefly-tips/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Firefly Tips</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
           <a class="next" href="/post/jni-notes/">
             <span class="next-text nav-default">JNI Notes</span>
@@ -398,7 +434,14 @@ PRODUCT_COPY_FILES +=/framework/base/cmds/bootanimation/bootanimation.zip:/syste
   
 <script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script><script></script>
+<script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script>
+<script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg-min.js" integrity="sha256-oI+elz+sIm+jpn8F/qEspKoKveTc5uKeFHNNVexe6d8=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
 <script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
 
 

@@ -6,10 +6,21 @@
     <description>Recent content in Firefly on sslyxhz&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 17 Nov 2017 23:42:23 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2018 15:16:47 +0800</lastBuildDate>
     
 	<atom:link href="https://sslyxhz.github.io/tags/firefly/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Firefly Tips</title>
+      <link>https://sslyxhz.github.io/post/firefly-tips/</link>
+      <pubDate>Mon, 05 Feb 2018 15:16:47 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/firefly-tips/</guid>
+      <description>&lt;p&gt;整理记录在Firefly平台碰到的一些问题。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Firefly-RK3399编译记录</title>

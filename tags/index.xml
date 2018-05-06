@@ -6,7 +6,7 @@
     <description>Recent content in Tags on sslyxhz&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 03 Feb 2018 16:51:04 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 06 May 2018 14:39:23 +0800</lastBuildDate>
     
 	<atom:link href="https://sslyxhz.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,25 @@
     <item>
       <title>Android</title>
       <link>https://sslyxhz.github.io/tags/android/</link>
-      <pubDate>Sat, 03 Feb 2018 16:51:04 +0800</pubDate>
+      <pubDate>Sun, 06 May 2018 14:39:23 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/tags/android/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Blog</title>
+      <link>https://sslyxhz.github.io/tags/blog/</link>
+      <pubDate>Sun, 06 May 2018 11:30:44 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Firefly</title>
       <link>https://sslyxhz.github.io/tags/firefly/</link>
-      <pubDate>Fri, 17 Nov 2017 23:42:23 +0800</pubDate>
+      <pubDate>Mon, 05 Feb 2018 15:16:47 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/tags/firefly/</guid>
       <description></description>
@@ -68,7 +77,7 @@
     <item>
       <title>Software</title>
       <link>https://sslyxhz.github.io/tags/software/</link>
-      <pubDate>Sun, 10 Dec 2017 13:55:16 +0800</pubDate>
+      <pubDate>Sun, 06 May 2018 11:30:44 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/tags/software/</guid>
       <description></description>
@@ -80,6 +89,15 @@
       <pubDate>Sun, 28 Jan 2018 00:59:17 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>技巧</title>
+      <link>https://sslyxhz.github.io/tags/%E6%8A%80%E5%B7%A7/</link>
+      <pubDate>Sun, 06 May 2018 14:39:23 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/tags/%E6%8A%80%E5%B7%A7/</guid>
       <description></description>
     </item>
     
