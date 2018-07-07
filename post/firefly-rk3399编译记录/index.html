@@ -82,7 +82,7 @@
 
 <meta itemprop="datePublished" content="2017-11-17T23:42:23&#43;08:00" />
 <meta itemprop="dateModified" content="2017-11-17T23:42:23&#43;08:00" />
-<meta itemprop="wordCount" content="2050">
+<meta itemprop="wordCount" content="2175">
 
 
 
@@ -167,7 +167,7 @@
               <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 2050 字 </span>
+        <span class="more-meta"> 约 2175 字 </span>
         <span class="more-meta"> 预计阅读 5 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -207,6 +207,9 @@
 </nav>
   </div>
 </div>
+
+    
+    
 
     
     <div class="post-content">
@@ -350,30 +353,27 @@ prebuilts/misc/linux-x86/ccache/ccache -M 50G
 <h1 id="编译进行时">编译进行时</h1>
 
 <ul>
-<li>官方编译脚本(发现的太晚&hellip;)</li>
-</ul>
+<li><p>官方编译脚本(发现的太晚&hellip;)</p>
 
 <pre><code class="language-shell">cd ~/project/firefly-rk3399/
 ./FFTools/make.sh -k -j8    # 单独编译kernel
 ./FFTools/make.sh -u -j8    # 单独编译uboot
 ./FFTools/make.sh -a -j8    # 单独编译android上层
 ./FFTools/make.sh -j8       # 同时编译ubooot、kernel、android
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>手动编译</li>
-</ul>
+<li><p>手动编译</p>
 
 <pre><code class="language-shell">cd ~/project/firefly-rk3399/kernel/
-      
+        
 # 编译kernel
 make ARCH=arm64 firefly_defconfig
 make -j8 ARCH=arm64 rk3399-firefly.img
-      
+        
 # 编译uboot：
 make rk3399_box_defconfig
 make ARCHV=aarch64 -j8
-      
+        
 # 编译android：
 source build/envsetup.sh
 lunch rk3399_firefly_box-userdebug
@@ -385,7 +385,8 @@ make -j8
 
 <pre><code class="language-shell"># 查看CPU个数
 cat /proc/cpuinfo
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h1 id="编译错误记录">编译错误记录</h1>
 
@@ -394,8 +395,7 @@ cat /proc/cpuinfo
 <h2 id="系统编译失败">系统编译失败</h2>
 
 <ul>
-<li>error: unsupported reloc 43<br /></li>
-</ul>
+<li><p>error: unsupported reloc 43</p>
 
 <p>碰到报出一串error: unsupported reloc 43，尝试第一次修改。</p>
 
@@ -410,17 +410,20 @@ ifeq ($(WITHOUT_HOST_CLANG),false)
 <pre><code class="language-shell">cp /usr/bin/ld.gold &lt;source_android&gt;/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld
 make update-api
 make...
-</code></pre>
+</code></pre></li>
+
+<li><p>中断编译</p>
 
 <ul>
-<li>中断编译</li>
-</ul>
+<li>如果中断后重新编译，最好make clean后再编。</li>
+<li>补充记录:<br />
+(1) make clean 在build/core/main.mk中定义，删除out目录下所有;
+(2) make clobber 类似make clean;
+(3) make dataclean 在bulid/core/cleanbuild.mk中定义;
+(3) make installclean 在bulid/core/cleanbuild.mk中定义;</li>
+</ul></li>
 
-<p>如果中断后重新编译，最好make clean后再编。</p>
-
-<ul>
-<li>bc not found</li>
-</ul>
+<li><p>bc not found</p>
 
 <p>编译kernel出现bc not found，[include/generated/timeconst.h] Error 127。</p>
 
@@ -440,11 +443,9 @@ find . -name jack-admin
 export PATH=$PATH:~/proj/firefly-rk3399/prebuilts/sdk/tools
 jack-admin start-server
 export JACK_SERVER_VM_ARGUMENTS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>directory xxx is not writable</li>
-</ul>
+<li><p>directory xxx is not writable</p>
 
 <pre><code class="language-shell"># Error
 Property 'jack.dex.output.dir' (in Options): directory 'out/target/common/obj/JAVA_LIBRARIES/conscrypt_intermediates/jack-rsc' is not writable (required because 'jack.dex.output.container' (defined in Options) is set to 'dir')
@@ -452,11 +453,9 @@ Property 'jack.dex.output.dir' (in Options): directory 'out/target/common/obj/JA
 # Solution
 edit $HOME/.jack-server/config.properties
 and set jack.server.max-service=1
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>file xxx can not be created</li>
-</ul>
+<li><p>file xxx can not be created</p>
 
 <pre><code class="language-shell"># Error
 [ 30% 15013/48677] build out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack
@@ -469,11 +468,9 @@ Property 'jack.library.output.zip' (in Options): file 'out/target/common/obj/JAV
 
 # Solution
 export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>&lsquo;atomic&rsquo; file not found</li>
-</ul>
+<li><p>&lsquo;atomic&rsquo; file not found</p>
 
 <pre><code class="language-shell"># Error
 frameworks/native/include/binder/Binder.h:20:10: fatal error: 'atomic' file not found
@@ -483,11 +480,9 @@ frameworks/native/include/binder/Binder.h:20:10: fatal error: 'atomic' file not 
 
 # Solution
 make clean and rebuild.
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>Cannot allocate memory</li>
-</ul>
+<li><p>Cannot allocate memory</p>
 
 <pre><code class="language-shell"># Error
 [  9% 4800/48682] host C++: libart_32 &lt;= art/runtime/verifier/method_verifier.ccninja: fatal: fork: Cannot allocate memory
@@ -497,11 +492,9 @@ make clean and rebuild.
 
 export JACK_SERVER_VM_ARGUMENTS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
 export ANDROID_JACK_VM_ARGS=&quot;-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4096m&quot;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>Waiting for unfinished jobs</li>
-</ul>
+<li><p>Waiting for unfinished jobs</p>
 
 <pre><code class="language-shell"># Error
 make: *** [out/target/product/rk3399_firefly_box/obj/STATIC_LIBRARIES/libLLVMScalarOpts_intermediates/ADCE.o] Error 1
@@ -514,7 +507,8 @@ make: *** [out/target/product/rk3399_firefly_box/obj/STATIC_LIBRARIES/libLLVMARM
 # Solution
 结束编译，clean后重编。
 
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h2 id="ota编译失败">OTA编译失败</h2>
 
@@ -615,6 +609,7 @@ make otapackage
 <li><a href="[http://www.linuxidc.com/Linux/2016-01/127292p2.htm](http://www.linuxidc.com/Linux/2016-01/127292p2.htm)">Ubuntu14.04编译Android6.0</a></li>
 <li><a href="http://www.cnblogs.com/yin52133/p/ota_package.html">android OTA升级包制作</a></li>
 <li><a href="https://moshuqi.github.io/2017/04/23/Android-OTA-%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%9B%B4%E6%96%B0%E5%8D%87%E7%BA%A7/">Android-OTA-系统的更新升级</a></li>
+<li><a href="https://www.zybuluo.com/zifehng/note/688021">Android make清除命令</a></li>
 </ul>
     </div>
 
@@ -674,7 +669,7 @@ make otapackage
         
           <a class="next" href="/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%BA%8C/">
             <span class="next-text nav-default">Hexo施工记录（二）</span>
-            <span class="prev-text nav-mobile">下一篇</span>
+            <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
       </nav>
@@ -750,7 +745,9 @@ make otapackage
   
 <script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
-  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script><script></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+<script></script>
 <script src="https://cdn.jsdelivr.net/npm/raphael@2.2.7/raphael.min.js" integrity="sha256-67By+NpOtm9ka1R6xpUefeGOY8kWWHHRAKlvaTJ7ONI=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/flowchart.js@1.8.0/release/flowchart.min.js" integrity="sha256-zNGWjubXoY6rb5MnmpBNefO0RgoVYfle9p0tvOQM+6k=" crossorigin="anonymous"></script><script></script>
 <script src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>破解 on sslyxhz&#39;s blog</title>
+    <link>http://localhost:1313/tags/%E7%A0%B4%E8%A7%A3/</link>
+    <description>Recent content in 破解 on sslyxhz&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Jan 2018 00:52:47 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/%E7%A0%B4%E8%A7%A3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Software Craft</title>
+      <link>http://localhost:1313/_drafts/software-craft/</link>
+      <pubDate>Mon, 01 Jan 2018 00:52:47 +0800</pubDate>
+      
+      <guid>http://localhost:1313/_drafts/software-craft/</guid>
+      <description>&lt;p&gt;一些工具的破解。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
