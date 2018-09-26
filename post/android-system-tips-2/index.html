@@ -28,7 +28,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.36" />
+<meta name="generator" content="Hugo 0.49" />
 
 
 <link rel="canonical" href="https://sslyxhz.github.io/post/android-system-tips-2/" />
@@ -45,7 +45,7 @@
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
@@ -56,23 +56,8 @@
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sslyxhz.github.io/post/android-system-tips-2/" />
-
-
-
-<meta property="article:published_time" content="2018-04-20T00:14:18&#43;08:00"/>
-
+<meta property="og:url" content="https://sslyxhz.github.io/post/android-system-tips-2/" /><meta property="article:published_time" content="2018-04-20T00:14:18&#43;08:00"/>
 <meta property="article:modified_time" content="2018-04-20T00:14:18&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
 
 <meta itemprop="name" content="Android-System-Tips-2">
 <meta itemprop="description" content="整理记录在Android系统的一些功能设置，主要是中上层的实现。
@@ -82,7 +67,7 @@
 
 <meta itemprop="datePublished" content="2018-04-20T00:14:18&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-20T00:14:18&#43;08:00" />
-<meta itemprop="wordCount" content="850">
+<meta itemprop="wordCount" content="843">
 
 
 
@@ -120,10 +105,12 @@
         <li class="mobile-menu-item">Home</li>
       </a><a href="/post/">
         <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">Categories</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/wiki/tiddlywiki.html">
+        <li class="mobile-menu-item">Wiki</li>
       </a><a href="/about/">
         <li class="mobile-menu-item">About</li>
       </a>
@@ -142,9 +129,11 @@
       </li><li class="menu-item">
         <a class="menu-item-link" href="/post/">Archives</a>
       </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
         <a class="menu-item-link" href="/tags/">Tags</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
+        <a class="menu-item-link" href="/wiki/tiddlywiki.html">Wiki</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/about/">About</a>
       </li>
@@ -167,7 +156,7 @@
               <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 850 字 </span>
+        <span class="more-meta"> 约 843 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -351,23 +340,16 @@ boolean enable = mWifiManager.enableNetwork(netId, true);
 // 可选操作，若enableNetwork失败，则连之前成功过的网络
 boolean reconnect = mWifiManager.reconnect();
 </code></pre></li>
-
-<li><p>参考</p>
-
-<ul>
-<li><a href="https://blog.csdn.net/gaugamela/article/details/64442989">Android连接指定Wifi的方法</a></li>
-<li><a href="https://blog.csdn.net/kongxiuqi/article/details/52524500">Android 通过WIFI状态监听广播，判断进入指定wifi范围</a></li>
-</ul></li>
 </ol>
 
 <h2 id="控制焦点移动">控制焦点移动</h2>
 
-<pre><code class="language-java"># 1. 直接指定上下左右移动的View
+<pre><code class="language-java">// 直接指定上下左右移动的View
 view.setId(...);
 view.setNextLeftView(...)
 ...
 
-# 2. 手动控制焦点变化
+// 手动控制焦点变化
 public void OnKeyDown(int keyCode, KeyEvent event){
     if( event.KEYCODE_DROP_UP== keyCode ){
             view.requestFocus();
@@ -379,40 +361,41 @@ public void OnKeyDown(int keyCode, KeyEvent event){
 
 <h2 id="usb设备类型">USB设备类型</h2>
 
-<ol>
-<li>USB类型定义
-```c
-include/uapi/linux/usb/ch9.h</li>
-</ol>
+<ul>
+<li>USB类型定义<br /></li>
+</ul>
 
-<p>/*
- * Device and/or Interface Class codes
- * as found in bDeviceClass or bInterfaceClass
- * and defined by www.usb.org documents
- <em>/<br />
-#define USB_CLASS_PER_INTERFACE     0   /</em> for DeviceClass <em>/<br />
-#define USB_CLASS_AUDIO         1<br />
-#define USB_CLASS_COMM          2<br />
-#define USB_CLASS_HID           3<br />
-#define USB_CLASS_PHYSICAL      5<br />
-#define USB_CLASS_STILL_IMAGE       6<br />
-#define USB_CLASS_PRINTER       7<br />
-#define USB_CLASS_MASS_STORAGE      8<br />
-#define USB_CLASS_HUB           9<br />
-#define USB_CLASS_CDC_DATA      0x0a<br />
-#define USB_CLASS_CSCID         0x0b    /</em> chip+ smart card <em>/<br />
-#define USB_CLASS_CONTENT_SEC       0x0d    /</em> content security */<br />
-#define USB_CLASS_VIDEO         0x0e<br />
-#define USB_CLASS_WIRELESS_CONTROLLER   0xe0<br />
-#define USB_CLASS_MISC          0xef<br />
-#define USB_CLASS_APP_SPEC      0xfe<br />
-#define USB_CLASS_VENDOR_SPEC       0xff</p>
+<pre><code class="language-c">include/uapi/linux/usb/ch9.h
 
-<pre><code>
-2. 应用层检测
+/* 
+ * Device and/or Interface Class codes 
+ * as found in bDeviceClass or bInterfaceClass 
+ * and defined by www.usb.org documents 
+ */  
+#define USB_CLASS_PER_INTERFACE     0   /* for DeviceClass */  
+#define USB_CLASS_AUDIO         1  
+#define USB_CLASS_COMM          2  
+#define USB_CLASS_HID           3  
+#define USB_CLASS_PHYSICAL      5  
+#define USB_CLASS_STILL_IMAGE       6  
+#define USB_CLASS_PRINTER       7  
+#define USB_CLASS_MASS_STORAGE      8  
+#define USB_CLASS_HUB           9  
+#define USB_CLASS_CDC_DATA      0x0a  
+#define USB_CLASS_CSCID         0x0b    /* chip+ smart card */  
+#define USB_CLASS_CONTENT_SEC       0x0d    /* content security */  
+#define USB_CLASS_VIDEO         0x0e  
+#define USB_CLASS_WIRELESS_CONTROLLER   0xe0  
+#define USB_CLASS_MISC          0xef  
+#define USB_CLASS_APP_SPEC      0xfe  
+#define USB_CLASS_VENDOR_SPEC       0xff  
+</code></pre>
 
-```java
-UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);
+<ul>
+<li>应用层检测</li>
+</ul>
+
+<pre><code class="language-java">UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);
 HashMap&lt;String, UsbDevice&gt; deviceList = manager.getDeviceList();
 Iterator&lt;UsbDevice&gt; deviceIterator = deviceList.values().iterator();
 StringBuilder sb = new StringBuilder();
@@ -450,6 +433,8 @@ while (deviceIterator.hasNext()){
 <li><a href="https://blog.csdn.net/sinat_20476061/article/details/42125539">Android TV 焦点上下左右移动</a></li>
 <li><a href="https://blog.csdn.net/zhangshiting/article/details/53468210">获取usb设备类型</a></li>
 <li><a href="https://blog.csdn.net/u013686019/article/details/50409421">Android 获取USB设备的类型</a></li>
+<li><a href="https://blog.csdn.net/gaugamela/article/details/64442989">Android连接指定Wifi的方法</a></li>
+<li><a href="https://blog.csdn.net/kongxiuqi/article/details/52524500">Android 通过WIFI状态监听广播，判断进入指定wifi范围</a></li>
 </ul>
     </div>
 
@@ -464,7 +449,10 @@ while (deviceIterator.hasNext()){
     <span class="item-content">2018-04-20</span>
   </p>
   
-  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" title="(CC BY 4.0)"> 署名 4.0 国际</a></span>
+  </p>
 </div>
 
     
@@ -591,7 +579,7 @@ while (deviceIterator.hasNext()){
 <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
-<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
 
 
 

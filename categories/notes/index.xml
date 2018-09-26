@@ -6,18 +6,29 @@
     <description>Recent content in Notes on sslyxhz&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 03 Feb 2018 15:33:01 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 25 Aug 2018 15:54:18 +0800</lastBuildDate>
     
 	<atom:link href="https://sslyxhz.github.io/categories/notes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>JNI Notes</title>
-      <link>https://sslyxhz.github.io/post/jni-notes/</link>
+      <title>JNI手册2 - 基础篇</title>
+      <link>https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C2/</link>
+      <pubDate>Sat, 25 Aug 2018 15:54:18 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C2/</guid>
+      <description>&lt;p&gt;JNI使用手册，其二，基础篇。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JNI手册1 - 实用篇</title>
+      <link>https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C1/</link>
       <pubDate>Sat, 03 Feb 2018 15:33:01 +0800</pubDate>
       
-      <guid>https://sslyxhz.github.io/post/jni-notes/</guid>
-      <description>&lt;p&gt;整理记录对JNI的认知过程。&lt;/p&gt;
+      <guid>https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C1/</guid>
+      <description>&lt;p&gt;JNI使用手册，其一，实用篇，先用起来。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

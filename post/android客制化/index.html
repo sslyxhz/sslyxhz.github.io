@@ -28,7 +28,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.36" />
+<meta name="generator" content="Hugo 0.49" />
 
 
 <link rel="canonical" href="https://sslyxhz.github.io/post/android%E5%AE%A2%E5%88%B6%E5%8C%96/" />
@@ -45,7 +45,7 @@
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
 <link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
 
@@ -56,23 +56,8 @@
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sslyxhz.github.io/post/android%E5%AE%A2%E5%88%B6%E5%8C%96/" />
-
-
-
-<meta property="article:published_time" content="2018-02-03T16:51:04&#43;08:00"/>
-
+<meta property="og:url" content="https://sslyxhz.github.io/post/android%E5%AE%A2%E5%88%B6%E5%8C%96/" /><meta property="article:published_time" content="2018-02-03T16:51:04&#43;08:00"/>
 <meta property="article:modified_time" content="2018-02-03T16:51:04&#43;08:00"/>
-
-
-
-
-
-
-
-
-
-
 
 <meta itemprop="name" content="Android系统客制化">
 <meta itemprop="description" content="整理记录在android上的客制化调整。
@@ -120,10 +105,12 @@
         <li class="mobile-menu-item">Home</li>
       </a><a href="/post/">
         <li class="mobile-menu-item">Archives</li>
-      </a><a href="/tags/">
-        <li class="mobile-menu-item">Tags</li>
       </a><a href="/categories/">
         <li class="mobile-menu-item">Categories</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/wiki/tiddlywiki.html">
+        <li class="mobile-menu-item">Wiki</li>
       </a><a href="/about/">
         <li class="mobile-menu-item">About</li>
       </a>
@@ -142,9 +129,11 @@
       </li><li class="menu-item">
         <a class="menu-item-link" href="/post/">Archives</a>
       </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
         <a class="menu-item-link" href="/tags/">Tags</a>
       </li><li class="menu-item">
-        <a class="menu-item-link" href="/categories/">Categories</a>
+        <a class="menu-item-link" href="/wiki/tiddlywiki.html">Wiki</a>
       </li><li class="menu-item">
         <a class="menu-item-link" href="/about/">About</a>
       </li>
@@ -262,7 +251,7 @@ p 0 0 part1
 
 <li><p>压缩：选中图片文件夹part0和desc.txt（windows下打包前将图片文件夹中的Thumbs.db删除），然后右键选择WINRAR的&rdquo;添加到压缩文件&rdquo;进入自定义压缩文件设置：压缩文件格式选择：ZIP，压缩方式必须选择：存储（否则动画显示不出来），名字为bootanimation.zip，关机动画名称为shutdownanimation.zip。</p>
 
-<p><img src="zip_bootanimation.png" alt="zip_bootanimation" /></p></li>
+<p><img src="/media/android客制化/zip_bootanimation.png" alt="zip_bootanimation" /></p></li>
 
 <li><p>编译版本集成：
 找一个确定会编译到的mk文件</p>
@@ -320,7 +309,10 @@ cat /proc/asound/cards</li>
     <span class="item-content">2018-02-03</span>
   </p>
   
-  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" title="(CC BY 4.0)"> 署名 4.0 国际</a></span>
+  </p>
 </div>
 
     
@@ -359,8 +351,8 @@ cat /proc/asound/cards</li>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/jni-notes/">
-            <span class="next-text nav-default">JNI Notes</span>
+          <a class="next" href="/post/jni%E6%89%8B%E5%86%8C1/">
+            <span class="next-text nav-default">JNI手册1 - 实用篇</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -447,7 +439,7 @@ cat /proc/asound/cards</li>
 <script src="https://cdn.jsdelivr.net/npm/underscore@1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.js" integrity="sha384-8748Vn52gHJYJI0XEuPB2QlPVNUkJlJn9tHqKec6J3q2r9l8fvRxrgn/E5ZHV0sP" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bramp/js-sequence-diagrams@2.0.1/dist/sequence-diagram-min.css" integrity="sha384-6QbLKJMz5dS3adWSeINZe74uSydBGFbnzaAYmp+tKyq60S7H2p6V7g1TysM5lAaF" crossorigin="anonymous">
-<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
 
 
 
