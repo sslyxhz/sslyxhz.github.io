@@ -57,7 +57,7 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C2/" /><meta property="article:published_time" content="2018-08-25T15:54:18&#43;08:00"/>
-<meta property="article:modified_time" content="2018-08-25T14:54:18&#43;08:00"/>
+<meta property="article:modified_time" content="2018-08-28T00:40:21&#43;08:00"/>
 
 <meta itemprop="name" content="JNI手册2 - 基础篇">
 <meta itemprop="description" content="JNI使用手册，其二，基础篇。
@@ -67,7 +67,7 @@
 
 <meta itemprop="datePublished" content="2018-08-25T15:54:18&#43;08:00" />
 <meta itemprop="dateModified" content="2018-08-25T15:54:18&#43;08:00" />
-<meta itemprop="wordCount" content="3217">
+<meta itemprop="wordCount" content="3627">
 
 
 
@@ -156,8 +156,8 @@
               <a href="/categories/notes/"> notes </a>
             
           </div>
-        <span class="more-meta"> 约 3217 字 </span>
-        <span class="more-meta"> 预计阅读 7 分钟 </span>
+        <span class="more-meta"> 约 3627 字 </span>
+        <span class="more-meta"> 预计阅读 8 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -172,8 +172,8 @@
 <ul>
 <li><a href="#jni基本概念">JNI基本概念</a>
 <ul>
-<li><a href="#jni作用">JNI作用</a></li>
 <li><a href="#jni定义">JNI定义</a></li>
+<li><a href="#jni优势和劣势">JNI优势和劣势</a></li>
 <li><a href="#jni元素">JNI元素</a></li>
 <li><a href="#jnienv图示">JNIEnv图示</a></li>
 <li><a href="#jni线程模型">JNI线程模型</a></li>
@@ -184,7 +184,7 @@
 <li><a href="#转义字符">转义字符</a></li>
 <li><a href="#域描述符">域描述符</a></li>
 <li><a href="#jni类型传递">JNI类型传递</a></li>
-<li><a href="#jni引用管理">JNI引用管理</a></li>
+<li><a href="#jni对象管理">JNI对象管理</a></li>
 </ul></li>
 <li><a href="#参考">参考</a></li>
 </ul>
@@ -203,19 +203,38 @@
 
 <h1 id="jni基本概念">JNI基本概念</h1>
 
-<h2 id="jni作用">JNI作用</h2>
+<h2 id="jni定义">JNI定义</h2>
 
 <ul>
-<li>与旧有代码集成，避免重新编写；</li>
+<li>JNI (Java Native Interface)
+
+<ul>
+<li>是一种在Java虚拟机控制下执行代码的标准机制；</li>
+<li>是native code的编程接口；</li>
+<li>是允许Java代码和其他语言代码进行双向交互；<br /></li>
+</ul></li>
+</ul>
+
+<p><img src="/media/jni-notes/jni_role.png" alt="jni_role.png" /></p>
+
+<h2 id="jni优势和劣势">JNI优势和劣势</h2>
+
+<ul>
+<li>优势
+
+<ul>
+<li>能够重用native代码；</li>
 <li>实现可用类库中缺少的功能；</li>
 <li>提高执行性能或其他与环境相关的系统特性；</li>
 <li>满足跨包调用、绕过Java安全性检查等特殊情况；</li>
+</ul></li>
+<li>劣势
+
+<ul>
+<li>Java到Native Code的上下文切换耗时、低效；</li>
+<li>会触发JVM崩溃和内存泄漏；</li>
+</ul></li>
 </ul>
-
-<h2 id="jni定义">JNI定义</h2>
-
-<p>JNI(Java Native Interface)，是一种在Java虚拟机控制下执行代码的标准机制，允许Java代码和其他语言代码进行双向交互。<br />
-<img src="/media/jni-notes/jni_role.png" alt="jni_role.png" /></p>
 
 <h2 id="jni元素">JNI元素</h2>
 
@@ -432,8 +451,8 @@
 <h2 id="jni类型传递">JNI类型传递</h2>
 
 <ul>
-<li>基础数据类型直接映射，如int映射成jint，在Java和Native之间是采用值传递；</li>
-<li>引用类型以一种不透明的引用方式向Native传递对象；
+<li></li>
+<li>
 
 <ul>
 <li>不透明指的是，Native代码必须通过JNIEnv中定义的函数，来处理指向Java虚拟机中的内部数据对象；</li>
@@ -442,20 +461,51 @@
 <li>所有的JNI引用都是jobject类型；</li>
 </ul>
 
-<h2 id="jni引用管理">JNI引用管理</h2>
-
-<p>Java以类似引用计数的方式管理对象，JVM在适当的时机触发GC（Garbage Collection）操作，回收不再使用的对象。在Native层中需要注意从JVM获取到的引用被GC的可能。</p>
+<h2 id="jni对象管理">JNI对象管理</h2>
 
 <ul>
+<li><p>对象传递</p>
+
+<ul>
+<li>基础数据类型直接映射，如int映射成jint，在Java和Native之间是采用值传递；</li>
+<li>引用类型以一种不透明的引用方式向Native传递对象；</li>
+</ul></li>
+
+<li><p>内存回收</p>
+
+<ul>
+<li>Java以类似引用计数的方式管理对象；</li>
+<li>JVM必须要追踪所有传到Native Code的Java对象；</li>
+<li>Native Code在使用Java对象时，需要确保该对象在使用过程中不被回收；</li>
+<li>Native Code需要能够通知JVM不再需要某些Java对象；</li>
+<li>JVM在适当的时机触发GC（Garbage Collection）操作，清理不再使用的对象；</li>
+</ul></li>
+
+<li><p>对象映射</p>
+
+<ul>
+<li>当线程从Java环境切换到Native Code上下文，JVM分配一块内存，为每一个从Java到Native Method的过渡控制建立一个注册表，表中存放本次native method执行中创建的所有局部引用；</li>
+<li>运行native method的线程堆栈，记录局部引用表的内存位置；</li>
+<li>局部引用表实现局部引用到Java对象的映射；当Native Code中引用到一个Java对象，JVM在表中创建一个局部引用，引用计数+1，阻止了所引用的对象被回收；</li>
+<li>DeleteLocalRef释放局部引用，从表中删除引用，即减少相应Java对象的引用计数；</li>
+<li>在native method执行完毕后，所有的局部引用被删除，生命周期结束；</li>
+<li>局部引用表存在容量限制，初始大小<strong>64</strong>，最大为<strong>512</strong>；超出会引起报错：local reference table overflow (max=512)；</li>
+</ul></li>
+
 <li><p>局部引用</p>
 
 <ul>
-<li>局部引用表存在上限，超出会引起报错：local reference table overflow (max=512)；</li>
 <li>传入native方法的所有参数，通过NewLocalRef和各种JNI接口创建的对象都是局部引用；</li>
 <li>不能跨函数、跨线程使用；</li>
-<li>局部引用会阻止所引用的对象被GC回收；函数返回后，局部引用所引用的对象会被JVM自动GC，即使这个对象仍然存活，但是这个引用也是无效的；</li>
-<li>少数情况中，产生的局部引用对象较多，需要尽早调用DeleteLocalRef，避免局部引用对象爆表；</li>
-<li>可以使用PushLocalFrame和PopLocalFrame更方便地管理局部引用；</li>
+<li><strong>尽早</strong>调用DeleteLocalRef，避免潜在内存泄漏；</li>
+<li>可以用PushLocalFrame和PopLocalFrame更方便地管理局部引用；</li>
+<li>理解局部引用和native code中局部变量的区别；
+
+<ul>
+<li>存储位置，一个在线程堆栈，一个在局部引用表；</li>
+<li>生命周期；</li>
+<li>访问限制，局部引用需要借助JNI函数实现间接访问；</li>
+</ul></li>
 </ul>
 
 <pre><code class="language-c">    // Java
@@ -492,10 +542,11 @@
 <li><p>全局引用</p>
 
 <ul>
+<li>全局引用表容量存在限制，初始大小为512，最大为51200；</li>
 <li>调用NewGlobalRef基于局部引用创建，长期保存一个对象避免被自动GC；</li>
 <li>可以跨函数、跨线程使用；</li>
 <li>会阻止JVM自动GC回收该对象；必须调用DeleteGlobalRef手动释放；</li>
-<li>NewGlobalRef操作了同一个对象，但是jobject并不是同一个；</li>
+<li>NewGlobalRef操作了同一个对象，但是引用并不是同一个；</li>
 <li>jfield和jmethod是透明类型，GetStringUtfChars和GetByteArrayElements返回的原始数据指针，都不是对象；</li>
 </ul>
 
@@ -519,31 +570,6 @@
 <li>JNI中的NUL引用，指向Java中的null对象；</li>
 <li>IsSameObject用于弱全局引用与NULL的比较时，返回值意义不同，JNI_TRUE表示指向的引用已被回收，JNI_FALSE表示指向一个活动对象；</li>
 </ul></li>
-
-<li><p>引用表限制</p>
-
-<ul>
-<li>局部引用表，初始大小64，最大为512；</li>
-<li>全局引用表，初始大小为512，最大为51200；</li>
-</ul>
-
-<pre><code class="language-c">// LocalRefTable
-#define kJniLocalRefMin         64
-#define kJniLocalRefMax         512 
-if (!thread-&gt;jniLocalRefTable.init(kJniLocalRefMin,
-        kJniLocalRefMax, kIndirectKindLocal)) {
-    return false;
-}
-    
-// GlobalRefTable
-#define kGlobalRefsTableInitialSize 512
-#define kGlobalRefsTableMaxSize     51200  
-if (!gDvm.jniGlobalRefTable.init(kGlobalRefsTableInitialSize,
-                                 kGlobalRefsTableMaxSize,
-                                 kIndirectKindGlobal)) {
-    return false;
-}
-</code></pre></li>
 </ul>
 
 <h1 id="参考">参考</h1>
@@ -563,6 +589,8 @@ if (!gDvm.jniGlobalRefTable.init(kGlobalRefsTableInitialSize,
 <li><a href="http://blog.hanschen.site/2016/10/13/java-native-interface-specification.html">JNI教程与技术手册</a></li>
 <li><a href="https://blog.csdn.net/mtaxot/article/details/51426734">JNI官方文档翻译5-局部和全局引用</a></li>
 <li><a href="https://www.jianshu.com/p/127adc130508">JNI实现源码分析【三 间接引用表】</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-jnileak/index.html">在 JNI 编程中避免内存泄漏</a></li>
+<li><a href="https://geneblue.github.io/2015/07/20/JNI%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3-Chapter%202%EF%BC%9ADesign%20Overview/">JNI官方文档-Chapter 2：Design Overview</a></li>
 </ul>
     </div>
 
@@ -574,7 +602,7 @@ if (!gDvm.jniGlobalRefTable.init(kGlobalRefsTableInitialSize,
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-08-25</span>
+    <span class="item-content">2018-08-28</span>
   </p>
   
   <p class="copyright-item">
@@ -613,6 +641,11 @@ if (!gDvm.jniGlobalRefTable.init(kGlobalRefsTableInitialSize,
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/jni%E6%89%8B%E5%86%8C3/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">JNI手册3 - 拾遗篇</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
           <a class="next" href="/post/android%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%A7%BF%E5%8A%BF/">
             <span class="next-text nav-default">Android系统源码阅读姿势</span>
