@@ -67,7 +67,7 @@
 
 <meta itemprop="datePublished" content="2018-08-25T15:54:18&#43;08:00" />
 <meta itemprop="dateModified" content="2018-08-25T15:54:18&#43;08:00" />
-<meta itemprop="wordCount" content="3627">
+<meta itemprop="wordCount" content="3534">
 
 
 
@@ -156,7 +156,7 @@
               <a href="/categories/notes/"> notes </a>
             
           </div>
-        <span class="more-meta"> 约 3627 字 </span>
+        <span class="more-meta"> 约 3534 字 </span>
         <span class="more-meta"> 预计阅读 8 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -183,7 +183,6 @@
 <li><a href="#native方法命名">Native方法命名</a></li>
 <li><a href="#转义字符">转义字符</a></li>
 <li><a href="#域描述符">域描述符</a></li>
-<li><a href="#jni类型传递">JNI类型传递</a></li>
 <li><a href="#jni对象管理">JNI对象管理</a></li>
 </ul></li>
 <li><a href="#参考">参考</a></li>
@@ -446,19 +445,6 @@
 <li>以<code>L</code>开头，以<code>;</code>结尾，中间是用<code>/</code>隔开的包及类名。如:Ljava/lang/String;</li>
 <li>如果是嵌套类，则用<code>$</code>来表示嵌套。如:Landroid/os/FileUtils$FileStatus;</li>
 </ul></li>
-</ul>
-
-<h2 id="jni类型传递">JNI类型传递</h2>
-
-<ul>
-<li></li>
-<li>
-
-<ul>
-<li>不透明指的是，Native代码必须通过JNIEnv中定义的函数，来处理指向Java虚拟机中的内部数据对象；</li>
-<li>java对象采用引用传递；</li>
-</ul></li>
-<li>所有的JNI引用都是jobject类型；</li>
 </ul>
 
 <h2 id="jni对象管理">JNI对象管理</h2>
