@@ -6,10 +6,24 @@
     <description>Recent content in 记录 on sslyxhz&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 06 May 2018 11:30:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 03 Oct 2018 11:23:24 +0800</lastBuildDate>
     
 	<atom:link href="https://sslyxhz.github.io/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>酸酸乳搭建记录</title>
+      <link>https://sslyxhz.github.io/post/ssr_server_build/</link>
+      <pubDate>Wed, 03 Oct 2018 11:23:24 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/ssr_server_build/</guid>
+      <description>&lt;p&gt;酸酸乳搭建记录。&lt;/p&gt;
+
+&lt;p&gt;迫于缺IP，缺梯子，入了linode TK2的坑。&lt;br /&gt;
+不折腾了，一键搞定妥妥的！记录下备用。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Hugo施工记录</title>

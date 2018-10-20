@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>JNI手册3 - 拾遗篇 - sslyxhz&#39;s blog</title>
+  <title>酸酸乳搭建记录 - sslyxhz&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,9 @@
 
 
 <meta name="author" content="sslyxhz" />
-  <meta name="description" content="JNI使用手册，其三，拾遗篇。
+  <meta name="description" content="酸酸乳搭建记录。
+迫于缺IP，缺梯子，入了linode TK2的坑。
+不折腾了，一键搞定妥妥的！记录下备用。
 
 " />
 
@@ -31,7 +33,7 @@
 <meta name="generator" content="Hugo 0.49.2" />
 
 
-<link rel="canonical" href="https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C3/" />
+<link rel="canonical" href="https://sslyxhz.github.io/post/ssr_server_build/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -51,30 +53,39 @@
 
 
 
-<meta property="og:title" content="JNI手册3 - 拾遗篇" />
-<meta property="og:description" content="JNI使用手册，其三，拾遗篇。
+<meta property="og:title" content="酸酸乳搭建记录" />
+<meta property="og:description" content="酸酸乳搭建记录。
+
+迫于缺IP，缺梯子，入了linode TK2的坑。
+不折腾了，一键搞定妥妥的！记录下备用。
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C3/" /><meta property="article:published_time" content="2018-09-23T19:36:57&#43;08:00"/>
-<meta property="article:modified_time" content="2018-09-23T19:36:57&#43;08:00"/>
+<meta property="og:url" content="https://sslyxhz.github.io/post/ssr_server_build/" /><meta property="article:published_time" content="2018-10-03T11:23:24&#43;08:00"/>
+<meta property="article:modified_time" content="2018-10-03T11:23:24&#43;08:00"/>
 
-<meta itemprop="name" content="JNI手册3 - 拾遗篇">
-<meta itemprop="description" content="JNI使用手册，其三，拾遗篇。
+<meta itemprop="name" content="酸酸乳搭建记录">
+<meta itemprop="description" content="酸酸乳搭建记录。
+
+迫于缺IP，缺梯子，入了linode TK2的坑。
+不折腾了，一键搞定妥妥的！记录下备用。
 
 ">
 
 
-<meta itemprop="datePublished" content="2018-09-23T19:36:57&#43;08:00" />
-<meta itemprop="dateModified" content="2018-09-23T19:36:57&#43;08:00" />
-<meta itemprop="wordCount" content="1476">
+<meta itemprop="datePublished" content="2018-10-03T11:23:24&#43;08:00" />
+<meta itemprop="dateModified" content="2018-10-03T11:23:24&#43;08:00" />
+<meta itemprop="wordCount" content="451">
 
 
 
-<meta itemprop="keywords" content="jni," />
+<meta itemprop="keywords" content="software," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="JNI手册3 - 拾遗篇"/>
-<meta name="twitter:description" content="JNI使用手册，其三，拾遗篇。
+<meta name="twitter:title" content="酸酸乳搭建记录"/>
+<meta name="twitter:description" content="酸酸乳搭建记录。
+
+迫于缺IP，缺梯子，入了linode TK2的坑。
+不折腾了，一键搞定妥妥的！记录下备用。
 
 "/>
 
@@ -147,17 +158,17 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">JNI手册3 - 拾遗篇</h1>
+      <h1 class="post-title">酸酸乳搭建记录</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-09-23 </span>
+        <span class="post-time"> 2018-10-03 </span>
         <div class="post-category">
             
-              <a href="/categories/notes/"> notes </a>
+              <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 1476 字 </span>
-        <span class="more-meta"> 预计阅读 3 分钟 </span>
+        <span class="more-meta"> 约 451 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -170,20 +181,12 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#some-tips">Some Tips</a>
+<li><a href="#ssr">SSR</a>
 <ul>
-<li><a href="#性能技巧">性能技巧</a></li>
-<li><a href="#内存泄漏">内存泄漏</a></li>
-<li><a href="#调用性能">调用性能</a></li>
-<li><a href="#库文件加载">库文件加载</a></li>
-<li><a href="#utf-8编码">UTF-8编码</a></li>
-<li><a href="#版本兼容性">版本兼容性</a></li>
+<li><a href="#一键脚本">一键脚本</a></li>
 </ul></li>
-<li><a href="#some-questions">Some Questions</a>
-<ul>
-<li><a href="#findclass调用失败">FindClass调用失败</a></li>
-<li><a href="#jni-onload-与jni-onunload">JNI_OnLoad()与JNI_OnUnload()</a></li>
-</ul></li>
+<li><a href="#bbr">BBR</a></li>
+<li><a href="#附录">附录</a></li>
 <li><a href="#参考">参考</a></li>
 </ul>
 </nav>
@@ -195,191 +198,105 @@
 
     
     <div class="post-content">
-      <p>JNI使用手册，其三，拾遗篇。</p>
+      <p>酸酸乳搭建记录。</p>
+
+<p>迫于缺IP，缺梯子，入了linode TK2的坑。<br />
+不折腾了，一键搞定妥妥的！记录下备用。</p>
 
 <p></p>
 
-<h1 id="some-tips">Some Tips</h1>
+<h1 id="ssr">SSR</h1>
 
-<h2 id="性能技巧">性能技巧</h2>
-
-<ul>
-<li>缓存常用的Class、FieldID、MethoidID；
+<h2 id="一键脚本">一键脚本</h2>
 
 <ul>
-<li>缓存字段可能就有20+倍的差异（取决具体机型）；</li>
+<li>安装</li>
+</ul>
+
+<pre><code class="language-shell">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
+chmod +x shadowsocksR.sh
+./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log
+
+# 查询状态
+/etc/init.d/shadowsocks status
+</code></pre>
+
+<ul>
+<li>卸载</li>
+</ul>
+
+<pre><code class="language-shell">./shadowsocksR.sh uninstall
+</code></pre>
+
+<ul>
+<li>多用户配置</li>
+</ul>
+
+<pre><code class="language-json">{
+&quot;server&quot;:&quot;0.0.0.0&quot;,
+&quot;server_ipv6&quot;: &quot;[::]&quot;,
+&quot;local_address&quot;:&quot;127.0.0.1&quot;,
+&quot;local_port&quot;:1080,
+&quot;port_password&quot;:{
+    &quot;8989&quot;:&quot;password1&quot;,
+    &quot;8990&quot;:&quot;password2&quot;,
+    &quot;8991&quot;:&quot;password3&quot;
+},
+&quot;timeout&quot;:300,
+&quot;method&quot;:&quot;aes-256-cfb&quot;,
+&quot;protocol&quot;: &quot;origin&quot;,
+&quot;protocol_param&quot;: &quot;&quot;,
+&quot;obfs&quot;: &quot;plain&quot;,
+&quot;obfs_param&quot;: &quot;&quot;,
+&quot;redirect&quot;: &quot;&quot;,
+&quot;dns_ipv6&quot;: false,
+&quot;fast_open&quot;: false,
+&quot;workers&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li><p>控制命令</p>
+
+<ul>
+<li>启动：/etc/init.d/shadowsocks start</li>
+<li>停止：/etc/init.d/shadowsocks stop</li>
+<li>重启：/etc/init.d/shadowsocks restart</li>
+<li>状态：/etc/init.d/shadowsocks status</li>
 </ul></li>
-<li>避免复制整个数组；
+
+<li><p>相关路径</p>
 
 <ul>
-<li>GetTypeArrayRegion()和SetTypeArrayRegion()方法可以避免复制整个数组；</li>
-</ul></li>
-<li>用参数列表传递多个字段，比传递一个包含多个字段的对象性能要高；
-
-<ul>
-<li>尽管传递一个包含多个字段的对象，更符合面向对象设计，且无需修改签名；</li>
-</ul></li>
-<li>尽量减少跨层调用；
-
-<ul>
-<li>相比相同层的调用更为耗时；</li>
+<li>配置文件路径：/etc/shadowsocks.json</li>
+<li>日志文件路径：/var/log/shadowsocks.log</li>
+<li>代码安装目录：/usr/local/shadowsocks</li>
 </ul></li>
 </ul>
 
-<h2 id="内存泄漏">内存泄漏</h2>
+<h1 id="bbr">BBR</h1>
 
 <ul>
-<li><p>Java Heap的内存泄漏</p>
-
-<ul>
-<li>大量Java对象同时存在，Java Heap容量扩充到上限；</li>
-<li>程序错误；</li>
-</ul></li>
-
-<li><p>native memory的内存泄漏</p>
-
-<ul>
-<li>JVM中，Java Heap外的内存空间都是native memory；</li>
-<li>过多线程被创建；</li>
-<li>Native语言使用不当，没有遵循其内存管理机制；</li>
-<li>局部引用和全局引用没有正确释放；</li>
-</ul></li>
+<li>锐速闭源，BBR是Google推出的黑科技；</li>
+<li>通过优化和控制TCP的拥塞，充分利用带宽并降低延迟；</li>
+<li>Linux kernel 4.9 以上；KVM架构；</li>
+<li>Youtube 1080P基本没问题；</li>
 </ul>
 
-<h2 id="调用性能">调用性能</h2>
+<pre><code class="language-shell">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; bash bbr.sh
+</code></pre>
 
-<table>
-<thead>
-<tr>
-<th>测试项（1亿次）</th>
-<th align="right">华为荣耀7i</th>
-<th align="right">一加5</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Java层调用JNI空方法</td>
-<td align="right">100501 ms</td>
-<td align="right">56102ms</td>
-</tr>
-
-<tr>
-<td>JNI层调用Java空方法</td>
-<td align="right">167847 ms</td>
-<td align="right">44559ms</td>
-</tr>
-
-<tr>
-<td>Java层调用本层空方法</td>
-<td align="right">62529 ms</td>
-<td align="right">1118ms</td>
-</tr>
-
-<tr>
-<td>JNI层调用本层空方法</td>
-<td align="right">1071 ms</td>
-<td align="right">345ms</td>
-</tr>
-</tbody>
-</table>
+<h1 id="附录">附录</h1>
 
 <ul>
-<li>似乎一加有做了一些优化，jni回调java层空方法耗时居然更小；</li>
-<li>前两项耗时可能有4000左右的波动，仅供参考；</li>
-<li>后两项耗时较为稳定，不同机型差异较为明显；</li>
-</ul>
-
-<h2 id="库文件加载">库文件加载</h2>
-
-<ul>
-<li>调用native方法之前，需要调用System.loadLibrary()加载动态链接库；</li>
-<li>Linux系统一般后缀为so，Windows系统为dll，系统根据平台拓展成真实的动态库文件名；</li>
-<li>Android系统中，定向查找/data/app/${PackageName}/lib/${cpu平台}/libxxx.so</li>
-</ul>
-
-<h2 id="utf-8编码">UTF-8编码</h2>
-
-<ul>
-<li>UTF-16
-
-<ul>
-<li>Java层的字符编码方式；</li>
-<li>但Java中和UTF-8沾边的字符串操作，都是使用标准的UTF-8；</li>
-</ul></li>
-<li>MUTF-8（Modified UTF-8）；
-
-<ul>
-<li><code>\u000</code>表示为<code>0xc0 0x80</code></li>
-<li>JNI层的字符编码方式；
-
-<ul>
-<li>传递给NewStringUTF的数据必须是MUTF-8；</li>
-<li>GetStringChars不需要拷贝，GetStringUTFChars需要分配并转为MUTF-8；</li>
-<li>Get获取的字符串<code>jchar*</code>或<code>jbyte*</code>，都是指向原始数据类型的C指针，不是局部引用，需要手动释放；</li>
-</ul></li>
-</ul></li>
-<li>UTF-8编码
-
-<ul>
-<li><code>\u000</code>表示为<code>0x00</code></li>
-<li>主要使用于C语言；</li>
-</ul></li>
-</ul>
-
-<h2 id="版本兼容性">版本兼容性</h2>
-
-<ul>
-<li>指定targetsdk，尽可能高；</li>
-<li>指定minsdk，最好和NDK中的android-target保持一致；
-
-<ul>
-<li>NDK中未使用高版本的API，但指定了较高的targetsdk，编译时将链接到较高版本；</li>
-<li>较高版本的部分API实现存在不一致；
-
-<ul>
-<li>如signal.h中的signal函数，使用android-21在低于5.0版本系统无法编译运行，错误是无法找到signal函数；</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<h1 id="some-questions">Some Questions</h1>
-
-<h2 id="findclass调用失败">FindClass调用失败</h2>
-
-<ul>
-<li>多线程情景中
-
-<ul>
-<li>从Java层调用Native层，FindClass获取正常；
-
-<ul>
-<li>这种调用会携带栈帧信息，包括该类的Class Loader等；</li>
-</ul></li>
-<li>在Native层创建的线程中调用FindClass可能会失败，返回空值；
-
-<ul>
-<li>解决方案一，缓存Class Loader；</li>
-<li>解决方案二，在JNI_OnLoad中初始缓存各个Class；</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<h2 id="jni-onload-与jni-onunload">JNI_OnLoad()与JNI_OnUnload()</h2>
-
-<ul>
-<li>当Android平台的VM执行System.loadLibrary()，总是先执行JNI_OnLoad()函数；</li>
-<li>在Android平台，JNI_OnUnload()函数<strong>不会</strong>被调用，没错，它不会被调用！！；</li>
+<li><a href="https://github.com/shadowsocks/ShadowsocksX-NG">ShadowsocksX-NG</a></li>
 </ul>
 
 <h1 id="参考">参考</h1>
 
 <ul>
-<li><a href="https://blog.csdn.net/banketree/article/details/40535325">JNI 实战全面解析</a></li>
-<li><a href="https://www.ibm.com/developerworks/cn/java/j-jni/index.html">使用 Java Native Interface 的最佳实践</a></li>
-<li><a href="http://bleaklow.com/2006/02/18/jni_onunload_mostly_useless.html">JNI_OnUnload(): mostly useless</a></li>
-<li><a href="https://www.jianshu.com/p/2d4ad873b39f">分享一下我所了解的字符编码知识</a></li>
-<li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-jnileak/index.html">在JNI编程中避免内存泄漏</a></li>
+<li><a href="https://shadowsocks.be/9.html">ShadowsocksR一键安装脚本</a></li>
+<li><a href="https://doub.io/wlzy-16/">Debian/Ubuntu TCP拥塞控制技术 ——TCP-BBR 一键安装脚本</a></li>
 </ul>
     </div>
 
@@ -391,7 +308,7 @@
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-09-23</span>
+    <span class="item-content">2018-10-03</span>
   </p>
   
   <p class="copyright-item">
@@ -423,21 +340,16 @@
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/jni/">jni</a>
+          <a href="/tags/software/">software</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/ssr_server_build/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">酸酸乳搭建记录</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/jni%E6%89%8B%E5%86%8C2/">
-            <span class="next-text nav-default">JNI手册2 - 基础篇</span>
+          <a class="next" href="/post/jni%E6%89%8B%E5%86%8C3/">
+            <span class="next-text nav-default">JNI手册3 - 拾遗篇</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -451,10 +363,10 @@
     <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    id: '2018-09-23 19:36:57 \x2b0800 CST',
-    title: 'JNI手册3 - 拾遗篇',
+    id: '2018-10-03 11:23:24 \x2b0800 CST',
+    title: '酸酸乳搭建记录',
     link: decodeURI(location.href),
-    desc: '\x3cp\x3eJNI使用手册，其三，拾遗篇。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
+    desc: '\x3cp\x3e酸酸乳搭建记录。\x3c\/p\x3e\n\n\x3cp\x3e迫于缺IP，缺梯子，入了linode TK2的坑。\x3cbr \/\x3e\n不折腾了，一键搞定妥妥的！记录下备用。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
     owner: 'sslyxhz',
     repo: 'sslyxhz.github.io',
     oauth: {

@@ -28,7 +28,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.49" />
+<meta name="generator" content="Hugo 0.49.2" />
 
 
 <link rel="canonical" href="https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C1/" />
@@ -42,7 +42,7 @@
 
 
 
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 <link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
@@ -67,7 +67,7 @@
 
 <meta itemprop="datePublished" content="2018-02-03T15:33:01&#43;08:00" />
 <meta itemprop="dateModified" content="2018-02-03T15:33:01&#43;08:00" />
-<meta itemprop="wordCount" content="1281">
+<meta itemprop="wordCount" content="1486">
 
 
 
@@ -156,7 +156,7 @@
               <a href="/categories/notes/"> notes </a>
             
           </div>
-        <span class="more-meta"> 约 1281 字 </span>
+        <span class="more-meta"> 约 1486 字 </span>
         <span class="more-meta"> 预计阅读 3 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -173,6 +173,7 @@
 <li><a href="#来战">来战！</a>
 <ul>
 <li><a href="#java层和native层的传递调用">Java层和Native层的传递调用</a></li>
+<li><a href="#动态注册">动态注册</a></li>
 <li><a href="#异常处理">异常处理</a></li>
 <li><a href="#格式转换">格式转换</a></li>
 </ul></li>
@@ -195,6 +196,7 @@
 
 <ul>
 <li>简而言之，先抛几个例子上手，以后就算忘了，大概只要参考这几个例子就行了。</li>
+<li>JNI手册系列，主要在Android平台上运行。</li>
 </ul>
 
 <h2 id="java层和native层的传递调用">Java层和Native层的传递调用</h2>
@@ -391,6 +393,77 @@ Java_com_sslyxhz_ndkcourse_NativeTransferAdapter_getMapData(JNIEnv *env, jobject
 <li>ByteBuffer，但操作接口较少；</li>
 </ul></li>
 </ul>
+
+<h2 id="动态注册">动态注册</h2>
+
+<ul>
+<li><p>动态注册优势；</p>
+
+<ul>
+<li>缩短方法名；</li>
+<li>提高建立映射关系时的效率；</li>
+</ul></li>
+
+<li><p>示例</p></li>
+</ul>
+
+<pre><code class="language-java">public class NativeRegisterAdapter {
+    public native void testRegisterMethod();
+}
+
+</code></pre>
+
+<pre><code class="language-c">jclass g_registerAdapter;
+
+static JNINativeMethod gNatvieMethods[] = {
+        {
+                &quot;testRegisterMethod&quot;,
+                &quot;()V&quot;,
+                (void *) native_testRegisterMethod
+        },
+};
+
+extern &quot;C&quot;
+JNIEXPORT jint JNICALL
+JNI_OnLoad(JavaVM *vm, void *reserved) {
+    JNIEnv* env = NULL;
+    jint result = -1;
+
+    if (vm-&gt;GetEnv((void**)&amp;env, JNI_VERSION_1_6) != JNI_OK) {
+        LOGE(&quot;**** OnLoad GetEnv failed!&quot;);
+        return result;
+    }
+
+    jclass jAdapterClz = env-&gt;FindClass(&quot;com/sslyxhz/ndkcourse/NativeRegisterAdapter&quot;);
+    g_registerAdapter = (jclass) env-&gt;NewGlobalRef((jobject)jAdapterClz);
+    env-&gt;RegisterNatives(g_registerAdapter, gNatvieMethods, sizeof(gNatvieMethods)/ sizeof(JNINativeMethod));
+    env-&gt;DeleteLocalRef(jAdapterClz);
+    return JNI_VERSION_1_6;
+}
+
+extern &quot;C&quot;
+JNIEXPORT jint JNICALL
+JNI_UnLoad(JavaVM *vm, void *reserved) 
+{
+    // 实际上在Android平台，JNI_UnLoad不会被调用！！
+    JNIEnv* env = NULL;
+    jint result = -1;
+
+    if (vm-&gt;GetEnv((void**)&amp;env, JNI_VERSION_1_6) != JNI_OK) 
+    {
+        LOGE(&quot;**** UnLoad GetEnv failed!&quot;);
+        return result;
+    }
+    env-&gt;UnregisterNatives(g_registerAdapter);
+    env-&gt;DeleteGlobalRef(g_registerAdapter);
+    return JNI_VERSION_1_6;
+}
+
+void native_testRegisterMethod(JNIEnv *env, jobject instance) 
+{
+    //    do something
+}
+</code></pre>
 
 <h2 id="异常处理">异常处理</h2>
 
