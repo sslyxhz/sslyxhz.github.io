@@ -17,7 +17,18 @@
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/about/</guid>
-      <description>仅此小记，无以为忘。 维护历程 2016.07.01 博客系统使用Hexo； 2018.05.02 因Hexo插件问题弃坑，改用Hugo； 2018.10.21 修复不蒜子统计模块失效问题；</description>
+      <description>做减求空，仅此小记，无以为忘。 维护历程 2016.07.01 博客系统使用Hexo； 2018.05.02 因Hexo插件问题弃坑，改用Hugo； 2018.10.21 修复不蒜子统计模块失效问题；</description>
+    </item>
+    
+    <item>
+      <title>Android Wifi开发记录</title>
+      <link>https://sslyxhz.github.io/post/android-wifi%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Tue, 23 Oct 2018 22:40:18 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/android-wifi%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;记录Wifi开发过程中的一些要点和坑。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,7 +46,7 @@
     </item>
     
     <item>
-      <title>JNI手册3 - 拾遗篇</title>
+      <title>JNI自用手册3 - 拾遗篇</title>
       <link>https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C3/</link>
       <pubDate>Sun, 23 Sep 2018 19:36:57 +0800</pubDate>
       
@@ -46,7 +57,7 @@
     </item>
     
     <item>
-      <title>JNI手册2 - 基础篇</title>
+      <title>JNI自用手册2 - 基础篇</title>
       <link>https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C2/</link>
       <pubDate>Sat, 25 Aug 2018 15:54:18 +0800</pubDate>
       
@@ -79,11 +90,11 @@
     </item>
     
     <item>
-      <title>Android-System-Tips-2</title>
-      <link>https://sslyxhz.github.io/post/android-system-tips-2/</link>
+      <title>Android-System-Tips</title>
+      <link>https://sslyxhz.github.io/post/android-system-tips/</link>
       <pubDate>Fri, 20 Apr 2018 00:14:18 +0800</pubDate>
       
-      <guid>https://sslyxhz.github.io/post/android-system-tips-2/</guid>
+      <guid>https://sslyxhz.github.io/post/android-system-tips/</guid>
       <description>&lt;p&gt;整理记录在Android系统的一些功能设置，主要是中上层的实现。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -112,7 +123,7 @@
     </item>
     
     <item>
-      <title>JNI手册1 - 实用篇</title>
+      <title>JNI自用手册1 - 实用篇</title>
       <link>https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C1/</link>
       <pubDate>Sat, 03 Feb 2018 15:33:01 +0800</pubDate>
       
@@ -123,12 +134,12 @@
     </item>
     
     <item>
-      <title>Android-System-Tips</title>
-      <link>https://sslyxhz.github.io/post/android-system-tips/</link>
+      <title>ADB命令记录</title>
+      <link>https://sslyxhz.github.io/post/adb-%E6%8C%87%E4%BB%A4%E8%AE%B0%E5%BD%95/</link>
       <pubDate>Sat, 03 Feb 2018 13:26:27 +0800</pubDate>
       
-      <guid>https://sslyxhz.github.io/post/android-system-tips/</guid>
-      <description>&lt;p&gt;整理记录在Android系统的一些命令行控制和系统级的设置。&lt;/p&gt;
+      <guid>https://sslyxhz.github.io/post/adb-%E6%8C%87%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;整理记录一些使用过的ADB相关的命令。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

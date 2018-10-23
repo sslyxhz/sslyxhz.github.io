@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Android-System-Tips-2 - sslyxhz&#39;s blog</title>
+  <title>Android-System-Tips - sslyxhz&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -31,7 +31,7 @@
 <meta name="generator" content="Hugo 0.49.2" />
 
 
-<link rel="canonical" href="https://sslyxhz.github.io/post/android-system-tips-2/" />
+<link rel="canonical" href="http://localhost:1313/post/android-system-tips-2/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -51,15 +51,15 @@
 
 
 
-<meta property="og:title" content="Android-System-Tips-2" />
+<meta property="og:title" content="Android-System-Tips" />
 <meta property="og:description" content="整理记录在Android系统的一些功能设置，主要是中上层的实现。
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sslyxhz.github.io/post/android-system-tips-2/" /><meta property="article:published_time" content="2018-04-20T00:14:18&#43;08:00"/>
+<meta property="og:url" content="http://localhost:1313/post/android-system-tips-2/" /><meta property="article:published_time" content="2018-04-20T00:14:18&#43;08:00"/>
 <meta property="article:modified_time" content="2018-04-20T00:14:18&#43;08:00"/>
 
-<meta itemprop="name" content="Android-System-Tips-2">
+<meta itemprop="name" content="Android-System-Tips">
 <meta itemprop="description" content="整理记录在Android系统的一些功能设置，主要是中上层的实现。
 
 ">
@@ -67,13 +67,13 @@
 
 <meta itemprop="datePublished" content="2018-04-20T00:14:18&#43;08:00" />
 <meta itemprop="dateModified" content="2018-04-20T00:14:18&#43;08:00" />
-<meta itemprop="wordCount" content="843">
+<meta itemprop="wordCount" content="371">
 
 
 
 <meta itemprop="keywords" content="android," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Android-System-Tips-2"/>
+<meta name="twitter:title" content="Android-System-Tips"/>
 <meta name="twitter:description" content="整理记录在Android系统的一些功能设置，主要是中上层的实现。
 
 "/>
@@ -147,7 +147,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Android-System-Tips-2</h1>
+      <h1 class="post-title">Android-System-Tips</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2018-04-20 </span>
@@ -156,8 +156,8 @@
               <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 843 字 </span>
-        <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 371 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -172,9 +172,9 @@
 <ul>
 <li><a href="#系统设置功能">系统设置功能</a>
 <ul>
-<li><a href="#连接制定wifi">连接制定wifi</a></li>
 <li><a href="#控制焦点移动">控制焦点移动</a></li>
 <li><a href="#usb设备类型">USB设备类型</a></li>
+<li><a href="#hdmi连接状态">HDMI连接状态</a></li>
 </ul></li>
 <li><a href="#参考">参考</a></li>
 </ul>
@@ -192,155 +192,6 @@
 <p></p>
 
 <h1 id="系统设置功能">系统设置功能</h1>
-
-<h2 id="连接制定wifi">连接制定wifi</h2>
-
-<ol>
-<li><p>Wifi开关状态和开启</p>
-
-<pre><code class="language-java">if (!mWifiManager.isWifiEnabled()) {
-    mWifiManager.setWifiEnabled(true);
-}
-</code></pre>
-
-<ul>
-<li>需要相应权限</li>
-</ul>
-
-<pre><code class="language-xml">&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.CHANGE_WIFI_STATE&quot;/&gt;
-</code></pre></li>
-
-<li><p>扫描Wifi接入点</p>
-
-<ul>
-<li>扫描接入点</li>
-</ul>
-
-<pre><code class="language-java">mWifiManager.startScan();
-</code></pre>
-
-<ul>
-<li>过滤扫描结果列表</li>
-</ul>
-
-<pre><code class="language-java">mScanResultList = mWifiManager.getScanResults(); // 获取扫描结果列表
-sortList(mScanResultList); // 过滤重复节点信息
-
-private void sortList(List&lt;ScanResult&gt; list) {
-    TreeMap&lt;String, ScanResult&gt; map = new TreeMap&lt;&gt;();
-    for (ScanResult scanResult : list) {
-        map.put(scanResult.SSID, scanResult);
-    }
-    list.clear();
-    list.addAll(map.values());
-}
-</code></pre>
-
-<ul>
-<li>需要具备相应权限</li>
-</ul>
-
-<pre><code class="language-xml">&lt;uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot;/&gt;
-&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;/&gt;
-</code></pre>
-
-<ul>
-<li>权限需求参见Android7.0的WifiServiceImpl实现</li>
-</ul>
-
-<pre><code class="language-java">public List&lt;ScanResult&gt; getScanResults(String callingPackage) {
-......
-try {
-    ......
-    // checkCallerCanAccessScanResults, check ACCESS_FINE_LOCATION and ACCESS_COARSE_LOCATION permissions
-    if (!canReadPeerMacAddresses &amp;&amp; !isActiveNetworkScorer
-            &amp;&amp; !checkCallerCanAccessScanResults(callingPackage, uid)) {
-        return new ArrayList&lt;ScanResult&gt;();
-    }
-    ......
-} 
-</code></pre>
-
-<ul>
-<li>getScanResults有时获取不到的问题
-
-<ul>
-<li>SCAN_RESULTS_AVAILABLE_ACTION，监听该广播，收到后再获取扫描列表</li>
-<li>NETWORK_STATE_CHANGED_ACTION，监听该广播，更快确定扫描状态</li>
-</ul></li>
-</ul></li>
-
-<li><p>连接接入点</p>
-
-<ul>
-<li>创建配置信息</li>
-</ul>
-
-<pre><code class="language-java">private static final int WIFICIPHER_NOPASS = 0;
-private static final int WIFICIPHER_WEP = 1;
-private static final int WIFICIPHER_WPA = 2;
-
-int netId = mWifiManager.addNetwork(createWifiConfig(scanResult.SSID, &quot;&quot;, WIFICIPHER_NOPASS));
-
-private WifiConfiguration createWifiConfig(String ssid, String password, int type) {
-    WifiConfiguration config = new WifiConfiguration();
-    config.allowedAuthAlgorithms.clear();
-    config.allowedGroupCiphers.clear();
-    config.allowedKeyManagement.clear();
-    config.allowedPairwiseCiphers.clear();
-    config.allowedProtocols.clear();
-    config.SSID = &quot;\&quot;&quot; + ssid + &quot;\&quot;&quot;;  // 指定ssid
-
-    WifiConfiguration tempConfig = isExist(ssid);
-    if(tempConfig != null) {
-        mWifiManager.removeNetwork(tempConfig.networkId); // 清理旧配置
-    }
-
-    if(type == WIFICIPHER_NOPASS) {
-        config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
-    } else if(type == WIFICIPHER_WEP) {
-        config.hiddenSSID = true;
-        config.wepKeys[0]= &quot;\&quot;&quot;+password+&quot;\&quot;&quot;;
-        config.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
-        config.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.SHARED);
-        config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.NONE);
-        config.wepTxKeyIndex = 0;
-    } else if(type == WIFICIPHER_WPA) {
-        config.preSharedKey = &quot;\&quot;&quot;+password+&quot;\&quot;&quot;;
-        config.hiddenSSID = true;
-        config.allowedAuthAlgorithms.set(WifiConfiguration.AuthAlgorithm.OPEN);
-        config.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
-        config.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
-        config.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
-        config.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
-        config.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
-        config.status = WifiConfiguration.Status.ENABLED;
-    }
-    return config;
-}
-private WifiConfiguration isExist(String ssid) {
-    List&lt;WifiConfiguration&gt; configs = mWifiManager.getConfiguredNetworks();
-    for (WifiConfiguration config : configs) {
-        if (config.SSID.equals(&quot;\&quot;&quot;+ssid+&quot;\&quot;&quot;)) {
-            return config;
-        }
-    }
-    return null;
-}
-
-</code></pre>
-
-<ul>
-<li>建立连接</li>
-</ul>
-
-<pre><code class="language-java">// boolean, 是否需要断开其它Wifi网络
-boolean enable = mWifiManager.enableNetwork(netId, true);
-// 可选操作，若enableNetwork失败，则连之前成功过的网络
-boolean reconnect = mWifiManager.reconnect();
-</code></pre></li>
-</ol>
 
 <h2 id="控制焦点移动">控制焦点移动</h2>
 
@@ -427,14 +278,26 @@ while (deviceIterator.hasNext()){
 }
 </code></pre>
 
+<h2 id="hdmi连接状态">HDMI连接状态</h2>
+
+<pre><code class="language-java">// 广播监听
+// 但是当程序初启，无法知道当前插入状态
+if (action.equals(&quot;android.intent.action.HDMI_PLUGGED&quot;)) {
+    boolean hdmiConnected = receivedIt.getBooleanExtra(&quot;state&quot;, false);
+}
+
+// 系统配置
+// 但是频繁查询，会出现读取异常
+// path： /sys/devices/virtual/switch/hdmi/state
+</code></pre>
+
 <h1 id="参考">参考</h1>
 
 <ul>
 <li><a href="https://blog.csdn.net/sinat_20476061/article/details/42125539">Android TV 焦点上下左右移动</a></li>
 <li><a href="https://blog.csdn.net/zhangshiting/article/details/53468210">获取usb设备类型</a></li>
 <li><a href="https://blog.csdn.net/u013686019/article/details/50409421">Android 获取USB设备的类型</a></li>
-<li><a href="https://blog.csdn.net/gaugamela/article/details/64442989">Android连接指定Wifi的方法</a></li>
-<li><a href="https://blog.csdn.net/kongxiuqi/article/details/52524500">Android 通过WIFI状态监听广播，判断进入指定wifi范围</a></li>
+<li><a href="https://www.cnblogs.com/fuccc/p/7676813.html">对于HDMI设备连接状态的监听</a></li>
 </ul>
     </div>
 
@@ -491,8 +354,8 @@ while (deviceIterator.hasNext()){
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/firefly-tips/">
-            <span class="next-text nav-default">Firefly Tips</span>
+          <a class="next" href="/post/android-system-tips/">
+            <span class="next-text nav-default">Android-System-Tips</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -507,7 +370,7 @@ while (deviceIterator.hasNext()){
   <script type="text/javascript">
   const gitment = new Gitment({
     id: '2018-04-20 00:14:18 \x2b0800 CST',
-    title: 'Android-System-Tips-2',
+    title: 'Android-System-Tips',
     link: decodeURI(location.href),
     desc: '\x3cp\x3e整理记录在Android系统的一些功能设置，主要是中上层的实现。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
     owner: 'sslyxhz',
@@ -530,7 +393,7 @@ while (deviceIterator.hasNext()){
       <div class="social-links">
       <a href="mailto:sslyxhz@hotmail.com" class="iconfont icon-email" title="email"></a>
       <a href="https://sslyxhz.github.io" class="iconfont icon-github" title="github"></a>
-  <a href="https://sslyxhz.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">

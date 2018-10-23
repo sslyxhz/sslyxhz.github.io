@@ -62,7 +62,7 @@
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sslyxhz.github.io/post/ssr_server_build/" /><meta property="article:published_time" content="2018-10-03T11:23:24&#43;08:00"/>
-<meta property="article:modified_time" content="2018-10-03T11:23:24&#43;08:00"/>
+<meta property="article:modified_time" content="2018-10-23T22:05:24&#43;08:00"/>
 
 <meta itemprop="name" content="酸酸乳搭建记录">
 <meta itemprop="description" content="酸酸乳搭建记录。
@@ -75,7 +75,7 @@
 
 <meta itemprop="datePublished" content="2018-10-03T11:23:24&#43;08:00" />
 <meta itemprop="dateModified" content="2018-10-03T11:23:24&#43;08:00" />
-<meta itemprop="wordCount" content="451">
+<meta itemprop="wordCount" content="546">
 
 
 
@@ -167,8 +167,8 @@
               <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 451 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 546 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -181,11 +181,13 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#ssr">SSR</a>
+<li><a href="#背景">背景</a></li>
+<li><a href="#ssr服务器搭建">SSR服务器搭建</a>
 <ul>
 <li><a href="#一键脚本">一键脚本</a></li>
 </ul></li>
-<li><a href="#bbr">BBR</a></li>
+<li><a href="#bbr加速">BBR加速</a></li>
+<li><a href="#客户端">客户端</a></li>
 <li><a href="#附录">附录</a></li>
 <li><a href="#参考">参考</a></li>
 </ul>
@@ -205,7 +207,11 @@
 
 <p></p>
 
-<h1 id="ssr">SSR</h1>
+<h1 id="背景">背景</h1>
+
+<p>Shadowsocks是<a href="https://github.com/clowwindy">clowwindy</a>开发的一个开源代理加密协议。</p>
+
+<h1 id="ssr服务器搭建">SSR服务器搭建</h1>
 
 <h2 id="一键脚本">一键脚本</h2>
 
@@ -274,7 +280,7 @@ chmod +x shadowsocksR.sh
 </ul></li>
 </ul>
 
-<h1 id="bbr">BBR</h1>
+<h1 id="bbr加速">BBR加速</h1>
 
 <ul>
 <li>锐速闭源，BBR是Google推出的黑科技；</li>
@@ -286,17 +292,39 @@ chmod +x shadowsocksR.sh
 <pre><code class="language-shell">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/bbr.sh &amp;&amp; chmod +x bbr.sh &amp;&amp; bash bbr.sh
 </code></pre>
 
-<h1 id="附录">附录</h1>
+<h1 id="客户端">客户端</h1>
 
 <ul>
+<li>Windows
+
+<ul>
+<li><a href="https://github.com/shadowsocks/shadowsocks-windows">shadowsocksr-csharp</a></li>
+</ul></li>
+<li>Android : SSR</li>
+<li>OS X
+
+<ul>
+<li><a href="https://github.com/VeniZ/ShadowsocksX-NG-R8-Bakup">ShadowsocksX-NG-R8</a></li>
 <li><a href="https://github.com/shadowsocks/ShadowsocksX-NG">ShadowsocksX-NG</a></li>
+</ul></li>
+<li>IOS
+
+<ul>
+<li>Shadowrocket</li>
+<li>Potatso</li>
+<li>Potatso Lite</li>
+</ul></li>
 </ul>
+
+<h1 id="附录">附录</h1>
 
 <h1 id="参考">参考</h1>
 
 <ul>
 <li><a href="https://shadowsocks.be/9.html">ShadowsocksR一键安装脚本</a></li>
 <li><a href="https://doub.io/wlzy-16/">Debian/Ubuntu TCP拥塞控制技术 ——TCP-BBR 一键安装脚本</a></li>
+<li><a href="https://teddysun.com/489.html">一键安装最新内核并开启 BBR 脚本 - 秋水逸冰</a></li>
+<li><a href="https://kylindc.github.io/post/63883/">Shadowsocks 服务器搭建比较全的纪录</a></li>
 </ul>
     </div>
 
@@ -308,7 +336,7 @@ chmod +x shadowsocksR.sh
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-10-03</span>
+    <span class="item-content">2018-10-23</span>
   </p>
   
   <p class="copyright-item">
@@ -347,9 +375,14 @@ chmod +x shadowsocksR.sh
       
       <nav class="post-nav">
         
+          <a class="prev" href="/post/android-wifi%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Android Wifi开发记录</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
         
           <a class="next" href="/post/jni%E6%89%8B%E5%86%8C3/">
-            <span class="next-text nav-default">JNI手册3 - 拾遗篇</span>
+            <span class="next-text nav-default">JNI自用手册3 - 拾遗篇</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>

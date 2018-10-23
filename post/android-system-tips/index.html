@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="sslyxhz" />
-  <meta name="description" content="整理记录在Android系统的一些命令行控制和系统级的设置。
+  <meta name="description" content="整理记录在Android系统的一些功能设置，主要是中上层的实现。
 
 " />
 
@@ -52,29 +52,29 @@
 
 
 <meta property="og:title" content="Android-System-Tips" />
-<meta property="og:description" content="整理记录在Android系统的一些命令行控制和系统级的设置。
+<meta property="og:description" content="整理记录在Android系统的一些功能设置，主要是中上层的实现。
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sslyxhz.github.io/post/android-system-tips/" /><meta property="article:published_time" content="2018-02-03T13:26:27&#43;08:00"/>
-<meta property="article:modified_time" content="2018-04-20T00:48:18&#43;08:00"/>
+<meta property="og:url" content="https://sslyxhz.github.io/post/android-system-tips/" /><meta property="article:published_time" content="2018-04-20T00:14:18&#43;08:00"/>
+<meta property="article:modified_time" content="2018-04-20T00:14:18&#43;08:00"/>
 
 <meta itemprop="name" content="Android-System-Tips">
-<meta itemprop="description" content="整理记录在Android系统的一些命令行控制和系统级的设置。
+<meta itemprop="description" content="整理记录在Android系统的一些功能设置，主要是中上层的实现。
 
 ">
 
 
-<meta itemprop="datePublished" content="2018-02-03T13:26:27&#43;08:00" />
-<meta itemprop="dateModified" content="2018-02-03T13:26:27&#43;08:00" />
-<meta itemprop="wordCount" content="780">
+<meta itemprop="datePublished" content="2018-04-20T00:14:18&#43;08:00" />
+<meta itemprop="dateModified" content="2018-04-20T00:14:18&#43;08:00" />
+<meta itemprop="wordCount" content="371">
 
 
 
 <meta itemprop="keywords" content="android," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Android-System-Tips"/>
-<meta name="twitter:description" content="整理记录在Android系统的一些命令行控制和系统级的设置。
+<meta name="twitter:description" content="整理记录在Android系统的一些功能设置，主要是中上层的实现。
 
 "/>
 
@@ -150,14 +150,14 @@
       <h1 class="post-title">Android-System-Tips</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-02-03 </span>
+        <span class="post-time"> 2018-04-20 </span>
         <div class="post-category">
             
-              <a href="/categories/tips/"> tips </a>
+              <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
             
           </div>
-        <span class="more-meta"> 约 780 字 </span>
-        <span class="more-meta"> 预计阅读 2 分钟 </span>
+        <span class="more-meta"> 约 371 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -170,17 +170,10 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#通用行为">通用行为</a>
+<li><a href="#系统设置功能">系统设置功能</a>
 <ul>
-<li><a href="#wifi远程调试">Wifi远程调试</a></li>
-<li><a href="#设置系统时间">设置系统时间</a></li>
-</ul></li>
-<li><a href="#硬件相关">硬件相关</a>
-<ul>
-<li><a href="#usb接线识别">USB接线识别</a></li>
-<li><a href="#网卡控制">网卡控制</a></li>
-<li><a href="#流量统计">流量统计</a></li>
-<li><a href="#usb声卡">USB声卡</a></li>
+<li><a href="#控制焦点移动">控制焦点移动</a></li>
+<li><a href="#usb设备类型">USB设备类型</a></li>
 <li><a href="#hdmi连接状态">HDMI连接状态</a></li>
 </ul></li>
 <li><a href="#参考">参考</a></li>
@@ -194,95 +187,95 @@
 
     
     <div class="post-content">
-      <p>整理记录在Android系统的一些命令行控制和系统级的设置。</p>
+      <p>整理记录在Android系统的一些功能设置，主要是中上层的实现。</p>
 
 <p></p>
 
-<h1 id="通用行为">通用行为</h1>
+<h1 id="系统设置功能">系统设置功能</h1>
 
-<h2 id="wifi远程调试">Wifi远程调试</h2>
+<h2 id="控制焦点移动">控制焦点移动</h2>
+
+<pre><code class="language-java">// 直接指定上下左右移动的View
+view.setId(...);
+view.setNextLeftView(...)
+...
+
+// 手动控制焦点变化
+public void OnKeyDown(int keyCode, KeyEvent event){
+    if( event.KEYCODE_DROP_UP== keyCode ){
+            view.requestFocus();
+    }
+    ...
+}
+
+</code></pre>
+
+<h2 id="usb设备类型">USB设备类型</h2>
 
 <ul>
-<li><p>root设备设置</p>
-
-<pre><code class="language-shell">adb root
-adb remount
-adb shell busybox vi system/build.prop
-# 添加命令
-service.adb.tcp.port=5555
-# 设备重启
-reboot
-</code></pre></li>
-
-<li><p>系统启动脚本<br />
-在init.rc中设置service.adb.tcp.port=5555</p></li>
+<li>USB类型定义<br /></li>
 </ul>
 
-<h2 id="设置系统时间">设置系统时间</h2>
+<pre><code class="language-c">include/uapi/linux/usb/ch9.h
 
-<p>Linux时间区分系统时间和硬件时间，date命令只操作系统时间，hwclock操作硬件时间。</p>
-
-<pre><code class="language-shell">// 系统时间
-// 系统开机之后读取硬件时间作为系统时间，之后系统时间独立运行，在系统关机之后将系统时间写回RTC。
-date -s 20161231.235959     // 失败
-date -s 123123592016.59     // 失败
-toybox date 123123592016.59 // 成功
-
-// 硬件时间
-hwclock -r  # 读取硬件时间
-hwclock -w  # 将系统时钟同步到硬件时间
-</code></pre>
-
-<h1 id="硬件相关">硬件相关</h1>
-
-<h2 id="usb接线识别">USB接线识别</h2>
-
-<pre><code class="language-shell">sudo apt-get install android-tools-adb      # 安装 adb 工具
-
-mkdir -p ~/.android
-vi ~/.android/adb_usb.ini                   # 添加一行设备标识 0x2207
-
-sudo vi /etc/udev/rules.d/51-android.rules
-# 加入udev规则，添加以下一行：
-# SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;2207&quot;, MODE=&quot;0666&quot;
-
-# 刷新规则，重新拔插数据线，或者运行以下命令
-sudo udevadm control --reload-rules
-sudo udevadm trigger
-
-# 重启
-sudo adb kill-server
-adb start-server
-</code></pre>
-
-<h2 id="网卡控制">网卡控制</h2>
-
-<pre><code class="language-shell">ifconfig eth0 up  # 打开以太网卡
-ifconfig wlan0 down  # 关闭无线网卡
-</code></pre>
-
-<h2 id="流量统计">流量统计</h2>
-
-<p>在Android系统中，&rdquo;/proc/net/xt_qtaguid/stats&rdquo;这个文件里储存着各个应用的流量信息。</p>
-
-<pre><code class="language-shell">// 获取userId
-adb shell dumpsys package [PkgName] | findstr userId
-
-// 查询流量
-adb shell cat /proc/net/xt_qtaguid/stats | findstr [userId]
-
-// 合并两条命令
-for /f &quot;tokens=2 delims== &quot; %%i in ('adb shell &quot;dumpsys package com.tencent.mobileqq | grep userId&quot;') do adb shell cat /proc/net/xt_qtaguid/stats ^| grep %%i
+/* 
+ * Device and/or Interface Class codes 
+ * as found in bDeviceClass or bInterfaceClass 
+ * and defined by www.usb.org documents 
+ */  
+#define USB_CLASS_PER_INTERFACE     0   /* for DeviceClass */  
+#define USB_CLASS_AUDIO         1  
+#define USB_CLASS_COMM          2  
+#define USB_CLASS_HID           3  
+#define USB_CLASS_PHYSICAL      5  
+#define USB_CLASS_STILL_IMAGE       6  
+#define USB_CLASS_PRINTER       7  
+#define USB_CLASS_MASS_STORAGE      8  
+#define USB_CLASS_HUB           9  
+#define USB_CLASS_CDC_DATA      0x0a  
+#define USB_CLASS_CSCID         0x0b    /* chip+ smart card */  
+#define USB_CLASS_CONTENT_SEC       0x0d    /* content security */  
+#define USB_CLASS_VIDEO         0x0e  
+#define USB_CLASS_WIRELESS_CONTROLLER   0xe0  
+#define USB_CLASS_MISC          0xef  
+#define USB_CLASS_APP_SPEC      0xfe  
+#define USB_CLASS_VENDOR_SPEC       0xff  
 </code></pre>
 
 <ul>
-<li>查询结果中，第六列和第八列分别对应接收的数据(rx_bytes)和发送的数据(rx_bytes)，相加就是消耗的流量。</li>
-<li>统计一段时间内的流量消耗可以在开始和结束时分别获取，结果相减。</li>
+<li>应用层检测</li>
 </ul>
 
-<h2 id="usb声卡">USB声卡</h2>
+<pre><code class="language-java">UsbManager manager = (UsbManager) getSystemService(Context.USB_SERVICE);
+HashMap&lt;String, UsbDevice&gt; deviceList = manager.getDeviceList();
+Iterator&lt;UsbDevice&gt; deviceIterator = deviceList.values().iterator();
+StringBuilder sb = new StringBuilder();
+while (deviceIterator.hasNext()){
+    UsbDevice usbDevice = deviceIterator.next();
+    sb.append(&quot;DeviceName=&quot;+usbDevice.getDeviceName()+&quot;\n&quot;);
+    sb.append(&quot;DeviceId=&quot;+usbDevice.getDeviceId()+&quot;\n&quot;);
+    sb.append(&quot;VendorId=&quot;+usbDevice.getVendorId()+&quot;\n&quot;);
+    sb.append(&quot;ProductId=&quot;+usbDevice.getProductId()+&quot;\n&quot;);
+    sb.append(&quot;DeviceClass=&quot;+usbDevice.getDeviceClass()+&quot;\n&quot;);
+    int deviceClass = usbDevice.getDeviceClass();
+    if(deviceClass==0) {
+        UsbInterface anInterface = usbDevice.getInterface(0);
+        int interfaceClass = anInterface.getInterfaceClass();
+        sb.append(&quot;device Class is 0-------------\n&quot;);  
+        sb.append(&quot;Interface.describeContents()=&quot;+anInterface.describeContents()+&quot;\n&quot;);
+        sb.append(&quot;Interface.getEndpointCount()=&quot;+anInterface.getEndpointCount()+&quot;\n&quot;);
+        sb.append(&quot;Interface.getId()=&quot;+anInterface.getId()+&quot;\n&quot;);
+        sb.append(&quot;Interface.getInterfaceClass()=&quot;+anInterface.getInterfaceClass()+&quot;\n&quot;);
+        sb.append(&quot;anInterface.getInterfaceProtocol()=&quot;+anInterface.getInterfaceProtocol()+&quot;\n&quot;);
+        sb.append(&quot;anInterface.getInterfaceSubclass()=&quot;+anInterface.getInterfaceSubclass()+&quot;\n&quot;);
+        sb.append(&quot;device Class is 0------end-------\n&quot;);
+    }
 
-<pre><code class="language-shell">cat /proc/asound/cards  # 查看声卡设备
+    sb.append(&quot;DeviceProtocol=&quot;+usbDevice.getDeviceProtocol()+&quot;\n&quot;);
+    sb.append(&quot;DeviceSubclass=&quot;+usbDevice.getDeviceSubclass()+&quot;\n&quot;);
+    sb.append(&quot;+++++++++++++++++++++++++++\n&quot;);
+    sb.append(&quot;                           \n&quot;);
+}
 </code></pre>
 
 <h2 id="hdmi连接状态">HDMI连接状态</h2>
@@ -301,10 +294,9 @@ if (action.equals(&quot;android.intent.action.HDMI_PLUGGED&quot;)) {
 <h1 id="参考">参考</h1>
 
 <ul>
-<li><a href="https://www.cnblogs.com/ElliottSilence/p/6590498.html">Android应用的流量统计</a></li>
-<li><a href="https://blog.csdn.net/kevinx_xu/article/details/12951131">如何在Android平台上使用USB Audio设备</a></li>
-<li><a href="https://stackoverflow.com/questions/19496907/set-date-time-using-adb-shell">set-date-time-using-adb-shell</a></li>
-<li><a href="http://codingstandards.iteye.com/blog/804830">我使用过的Linux命令之hwclock - 查询和设置硬件时钟</a></li>
+<li><a href="https://blog.csdn.net/sinat_20476061/article/details/42125539">Android TV 焦点上下左右移动</a></li>
+<li><a href="https://blog.csdn.net/zhangshiting/article/details/53468210">获取usb设备类型</a></li>
+<li><a href="https://blog.csdn.net/u013686019/article/details/50409421">Android 获取USB设备的类型</a></li>
 <li><a href="https://www.cnblogs.com/fuccc/p/7676813.html">对于HDMI设备连接状态的监听</a></li>
 </ul>
     </div>
@@ -356,14 +348,14 @@ if (action.equals(&quot;android.intent.action.HDMI_PLUGGED&quot;)) {
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/jni%E6%89%8B%E5%86%8C1/">
+          <a class="prev" href="/post/hugo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">JNI手册1 - 实用篇</span>
+            <span class="prev-text nav-default">Hugo施工记录</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/ubuntu-tips/">
-            <span class="next-text nav-default">Ubuntu Tips</span>
+          <a class="next" href="/post/firefly-tips/">
+            <span class="next-text nav-default">Firefly Tips</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -377,10 +369,10 @@ if (action.equals(&quot;android.intent.action.HDMI_PLUGGED&quot;)) {
     <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    id: '2018-02-03 13:26:27 \x2b0800 CST',
+    id: '2018-04-20 00:14:18 \x2b0800 CST',
     title: 'Android-System-Tips',
     link: decodeURI(location.href),
-    desc: '\x3cp\x3e整理记录在Android系统的一些命令行控制和系统级的设置。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
+    desc: '\x3cp\x3e整理记录在Android系统的一些功能设置，主要是中上层的实现。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
     owner: 'sslyxhz',
     repo: 'sslyxhz.github.io',
     oauth: {

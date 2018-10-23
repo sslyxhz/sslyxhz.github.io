@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Android系统源码阅读姿势 - sslyxhz&#39;s blog</title>
+  <title>ADB命令记录 - sslyxhz&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,7 @@
 
 
 <meta name="author" content="sslyxhz" />
-  <meta name="description" content="记录几个Android系统源码的阅读方式。
+  <meta name="description" content="整理记录一些使用过的ADB相关的命令。
 
 " />
 
@@ -31,7 +31,7 @@
 <meta name="generator" content="Hugo 0.49.2" />
 
 
-<link rel="canonical" href="https://sslyxhz.github.io/post/android%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%A7%BF%E5%8A%BF/" />
+<link rel="canonical" href="https://sslyxhz.github.io/post/adb-%E6%8C%87%E4%BB%A4%E8%AE%B0%E5%BD%95/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -51,30 +51,30 @@
 
 
 
-<meta property="og:title" content="Android系统源码阅读姿势" />
-<meta property="og:description" content="记录几个Android系统源码的阅读方式。
+<meta property="og:title" content="ADB命令记录" />
+<meta property="og:description" content="整理记录一些使用过的ADB相关的命令。
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sslyxhz.github.io/post/android%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%A7%BF%E5%8A%BF/" /><meta property="article:published_time" content="2018-05-06T14:39:23&#43;08:00"/>
-<meta property="article:modified_time" content="2018-04-20T00:48:18&#43;08:00"/>
+<meta property="og:url" content="https://sslyxhz.github.io/post/adb-%E6%8C%87%E4%BB%A4%E8%AE%B0%E5%BD%95/" /><meta property="article:published_time" content="2018-02-03T13:26:27&#43;08:00"/>
+<meta property="article:modified_time" content="2018-10-23T22:15:18&#43;08:00"/>
 
-<meta itemprop="name" content="Android系统源码阅读姿势">
-<meta itemprop="description" content="记录几个Android系统源码的阅读方式。
+<meta itemprop="name" content="ADB命令记录">
+<meta itemprop="description" content="整理记录一些使用过的ADB相关的命令。
 
 ">
 
 
-<meta itemprop="datePublished" content="2018-05-06T14:39:23&#43;08:00" />
-<meta itemprop="dateModified" content="2018-05-06T14:39:23&#43;08:00" />
-<meta itemprop="wordCount" content="776">
+<meta itemprop="datePublished" content="2018-02-03T13:26:27&#43;08:00" />
+<meta itemprop="dateModified" content="2018-02-03T13:26:27&#43;08:00" />
+<meta itemprop="wordCount" content="785">
 
 
 
-<meta itemprop="keywords" content="android,技巧," />
+<meta itemprop="keywords" content="android,adb," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Android系统源码阅读姿势"/>
-<meta name="twitter:description" content="记录几个Android系统源码的阅读方式。
+<meta name="twitter:title" content="ADB命令记录"/>
+<meta name="twitter:description" content="整理记录一些使用过的ADB相关的命令。
 
 "/>
 
@@ -147,16 +147,16 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Android系统源码阅读姿势</h1>
+      <h1 class="post-title">ADB命令记录</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-05-06 </span>
+        <span class="post-time"> 2018-02-03 </span>
         <div class="post-category">
             
-              <a href="/categories/tips/"> tips </a>
+              <a href="/categories/notes/"> notes </a>
             
           </div>
-        <span class="more-meta"> 约 776 字 </span>
+        <span class="more-meta"> 约 785 字 </span>
         <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -170,10 +170,23 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#android-studio-ide-推荐">Android Studio IDE (推荐)</a></li>
-<li><a href="#source-insight">Source Insight</a></li>
-<li><a href="#ssh-vim">ssh+vim</a></li>
-<li><a href="#线上阅读">线上阅读</a></li>
+<li><a href="#调试相关">调试相关</a>
+<ul>
+<li><a href="#常用命令">常用命令</a></li>
+<li><a href="#wifi远程调试">Wifi远程调试</a></li>
+</ul></li>
+<li><a href="#硬件相关">硬件相关</a>
+<ul>
+<li><a href="#设置系统时间">设置系统时间</a></li>
+<li><a href="#usb接线识别">USB接线识别</a></li>
+<li><a href="#网卡控制">网卡控制</a></li>
+<li><a href="#usb声卡">USB声卡</a></li>
+</ul></li>
+<li><a href="#其他">其他</a>
+<ul>
+<li><a href="#磁盘挂载">磁盘挂载</a></li>
+<li><a href="#流量统计">流量统计</a></li>
+</ul></li>
 <li><a href="#参考">参考</a></li>
 </ul>
 </nav>
@@ -185,99 +198,125 @@
 
     
     <div class="post-content">
-      <p>记录几个Android系统源码的阅读方式。</p>
+      <p>整理记录一些使用过的ADB相关的命令。</p>
 
 <p></p>
 
-<h1 id="android-studio-ide-推荐">Android Studio IDE (推荐)</h1>
+<h1 id="调试相关">调试相关</h1>
 
-<p>Android源码目录development/tools/idegen，在源码编过的前提下，可以为IDE生成项目文件。</p>
+<h2 id="常用命令">常用命令</h2>
 
-<ol>
-<li><p>生成配置文件</p>
+<pre><code class="language-shell">adb devices             # 查看连接到的设备
 
-<pre><code class="language-shell">mmm development/tools/idegen/   #编译idegen模块,生成idegen.jar
+adb -s [serial] shell   # 连接多个设备时，指定某单个设备
 
-development/tools/idegen/idegen.sh  #生成ipr、iml等配置文件
-# 若源码未编过, 尝试直接复制一个idegen.jar, 再执行生成配置文件的命令
+adb kill-server         # 干掉服务
+adb devices             # 重启服务
+
+stop adbd
+start adbd              # 重启adbd
+</code></pre>
+
+<h2 id="wifi远程调试">Wifi远程调试</h2>
+
+<ul>
+<li><p>root设备设置</p>
+
+<pre><code class="language-shell">adb root
+adb remount
+adb shell busybox vi system/build.prop
+# 添加命令
+service.adb.tcp.port=5555
+# 设备重启
+reboot
 </code></pre></li>
 
-<li><p>调整导入配置<br />
-通过修改android.iml可以减少系统源码导入，形如：</p>
+<li><p>系统启动脚本<br />
+在init.rc中设置service.adb.tcp.port=5555</p></li>
+</ul>
 
-<pre><code class="language-xml">&lt;excludeFolder url=&quot;file://$MODULE_DIR$/.repo&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/abi&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/art&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/bionic&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/bootable&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/build&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/cts&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/dalvik&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/developers&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/development&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/device&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/docs&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/external&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/hardware&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/libcore&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/libnativehelper&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/ndk&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/out&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/packages&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/pdk&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/prebuilt&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/prebuilts&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/sdk&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/system&quot; /&gt;
-&lt;excludeFolder url=&quot;file://$MODULE_DIR$/tools&quot; /&gt;
-</code></pre></li>
+<h1 id="硬件相关">硬件相关</h1>
 
-<li><p>导入Android Studio
-打开生成的android.ipr文件</p></li>
+<h2 id="设置系统时间">设置系统时间</h2>
 
-<li><p>配置源码依赖项，正确跳转</p>
+<p>Linux时间区分系统时间和硬件时间，date命令只操作系统时间，hwclock操作硬件时间。</p>
+
+<pre><code class="language-shell">// 系统时间
+// 系统开机之后读取硬件时间作为系统时间，之后系统时间独立运行，在系统关机之后将系统时间写回RTC。
+date -s 20161231.235959     // 失败
+date -s 123123592016.59     // 失败
+toybox date 123123592016.59 // 成功
+
+// 硬件时间
+hwclock -r  # 读取硬件时间
+hwclock -w  # 将系统时钟同步到硬件时间
+</code></pre>
+
+<h2 id="usb接线识别">USB接线识别</h2>
+
+<pre><code class="language-shell">sudo apt-get install android-tools-adb      # 安装 adb 工具
+
+mkdir -p ~/.android
+vi ~/.android/adb_usb.ini                   # 添加一行设备标识 0x2207
+
+sudo vi /etc/udev/rules.d/51-android.rules
+# 加入udev规则，添加以下一行：
+# SUBSYSTEM==&quot;usb&quot;, ATTR{idVendor}==&quot;2207&quot;, MODE=&quot;0666&quot;
+
+# 刷新规则，重新拔插数据线，或者运行以下命令
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+# 重启
+sudo adb kill-server
+adb start-server
+</code></pre>
+
+<h2 id="网卡控制">网卡控制</h2>
+
+<pre><code class="language-shell">ifconfig eth0 up  # 打开以太网卡
+ifconfig wlan0 down  # 关闭无线网卡
+</code></pre>
+
+<h2 id="usb声卡">USB声卡</h2>
+
+<pre><code class="language-shell">cat /proc/asound/cards  # 查看声卡设备
+</code></pre>
+
+<h1 id="其他">其他</h1>
+
+<h2 id="磁盘挂载">磁盘挂载</h2>
+
+<pre><code class="language-shell">mount -o remount,rw /system
+mount -o rw,remount /system     # RK系列等Android设备上一条无效，得反过来
+</code></pre>
+
+<h2 id="流量统计">流量统计</h2>
+
+<p>在Android系统中，&rdquo;/proc/net/xt_qtaguid/stats&rdquo;这个文件里储存着各个应用的流量信息。</p>
+
+<pre><code class="language-shell">// 获取userId
+adb shell dumpsys package [PkgName] | findstr userId
+
+// 查询流量
+adb shell cat /proc/net/xt_qtaguid/stats | findstr [userId]
+
+// 合并两条命令
+for /f &quot;tokens=2 delims== &quot; %%i in ('adb shell &quot;dumpsys package com.tencent.mobileqq | grep userId&quot;') do adb shell cat /proc/net/xt_qtaguid/stats ^| grep %%i
+</code></pre>
 
 <ul>
-<li>删除Project Settings/Modules/Android/Dependence下的配置项，只保留<Module Source>和Android API；</li>
-<li>删除Project Settings/Platform Settings/SDKs/Android API XX/Classpath和Sourcepath下的项目，再重新添加源码中的frameworks和external等文件夹；</li>
-</ul></li>
-</ol>
-
-<h1 id="source-insight">Source Insight</h1>
-
-<p>在Windows平台上可以使用Source Insight。</p>
-
-<h1 id="ssh-vim">ssh+vim</h1>
-
-<p>若是源代码放在远程服务器，在Windows上挂载为网络驱动器，直接用Android Studio查看，会出现必定蓝屏的bug，一个简单的解决方案就是直接用ssh+vim了。</p>
-
-<h1 id="线上阅读">线上阅读</h1>
-
-<ul>
-<li><a href="http://androidxref.com">androidxref</a>
-
-<ul>
-<li>只有Android的源码，更新较及时，已经有Oreo - 8.0.0的源码。</li>
-</ul></li>
-<li><a href="http://www.grepcode.com/">grepcode</a>
-
-<ul>
-<li>包含了Android、Hadoop等源码;</li>
-<li>似乎已经凉了；</li>
-</ul></li>
-<li><a href="https://www.androidos.net.cn/">androidos</a>
-
-<ul>
-<li>小众，只有Android的源码，包含了Oreo - 8.0.0_r4源码。</li>
-</ul></li>
+<li>查询结果中，第六列和第八列分别对应接收的数据(rx_bytes)和发送的数据(rx_bytes)，相加就是消耗的流量。</li>
+<li>统计一段时间内的流量消耗可以在开始和结束时分别获取，结果相减。</li>
 </ul>
 
 <h1 id="参考">参考</h1>
 
 <ul>
-<li><a href="https://blog.csdn.net/dj0379/article/details/45303509">使用Android Studio阅读整个Android源码</a></li>
-<li><a href="https://www.cnblogs.com/l2rf/p/6433773.html">将Android系统源码导入Android studio的方法</a></li>
-<li><a href="http://www.cnblogs.com/Lefter/p/4176991.html">如何使用Android Studio开发/调试Android源码</a></li>
+<li><a href="https://www.cnblogs.com/ElliottSilence/p/6590498.html">Android应用的流量统计</a></li>
+<li><a href="https://blog.csdn.net/kevinx_xu/article/details/12951131">如何在Android平台上使用USB Audio设备</a></li>
+<li><a href="https://stackoverflow.com/questions/19496907/set-date-time-using-adb-shell">set-date-time-using-adb-shell</a></li>
+<li><a href="http://codingstandards.iteye.com/blog/804830">我使用过的Linux命令之hwclock - 查询和设置硬件时钟</a></li>
 </ul>
     </div>
 
@@ -289,7 +328,7 @@ development/tools/idegen/idegen.sh  #生成ipr、iml等配置文件
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-04-20</span>
+    <span class="item-content">2018-10-23</span>
   </p>
   
   <p class="copyright-item">
@@ -323,21 +362,21 @@ development/tools/idegen/idegen.sh  #生成ipr、iml等配置文件
           
           <a href="/tags/android/">android</a>
           
-          <a href="/tags/%E6%8A%80%E5%B7%A7/">技巧</a>
+          <a href="/tags/adb/">adb</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/jni%E6%89%8B%E5%86%8C2/">
+          <a class="prev" href="/post/jni%E6%89%8B%E5%86%8C1/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">JNI自用手册2 - 基础篇</span>
+            <span class="prev-text nav-default">JNI自用手册1 - 实用篇</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/hugo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95/">
-            <span class="next-text nav-default">Hugo施工记录</span>
+          <a class="next" href="/post/ubuntu-tips/">
+            <span class="next-text nav-default">Ubuntu Tips</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -351,10 +390,10 @@ development/tools/idegen/idegen.sh  #生成ipr、iml等配置文件
     <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
   <script type="text/javascript">
   const gitment = new Gitment({
-    id: '2018-05-06 14:39:23 \x2b0800 CST',
-    title: 'Android系统源码阅读姿势',
+    id: '2018-02-03 13:26:27 \x2b0800 CST',
+    title: 'ADB命令记录',
     link: decodeURI(location.href),
-    desc: '\x3cp\x3e记录几个Android系统源码的阅读方式。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
+    desc: '\x3cp\x3e整理记录一些使用过的ADB相关的命令。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
     owner: 'sslyxhz',
     repo: 'sslyxhz.github.io',
     oauth: {
