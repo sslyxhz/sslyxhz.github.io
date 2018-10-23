@@ -67,7 +67,7 @@
 
 <meta itemprop="datePublished" content="2018-10-23T22:40:18&#43;08:00" />
 <meta itemprop="dateModified" content="2018-10-23T22:40:18&#43;08:00" />
-<meta itemprop="wordCount" content="1840">
+<meta itemprop="wordCount" content="1809">
 
 
 
@@ -156,7 +156,7 @@
               <a href="/categories/notes/"> notes </a>
             
           </div>
-        <span class="more-meta"> 约 1840 字 </span>
+        <span class="more-meta"> 约 1809 字 </span>
         <span class="more-meta"> 预计阅读 4 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -183,6 +183,7 @@
 <li><a href="#获取实例">获取实例</a></li>
 <li><a href="#wifi开关">Wifi开关</a></li>
 <li><a href="#扫描热点">扫描热点</a></li>
+<li><a href="#wifi连接历史">wifi连接历史</a></li>
 <li><a href="#当前wifi连接">当前wifi连接</a></li>
 <li><a href="#连接制定wifi">连接制定wifi</a></li>
 <li><a href="#断开连接">断开连接</a></li>
@@ -345,7 +346,7 @@ switch (wifistate) {
 boolean isScanned = intent.getBooleanExtra(WifiManager.EXTRA_RESULTS_UPDATED, true);
 
 // 获取扫描到的wifi列表
-List&lt;ScanResult&gt; results = mWifiManager.getScanResults();
+List&lt;ScanResult&gt; mScanResultList = mWifiManager.getScanResults();
 </code></pre>
 
 <ul>
@@ -359,26 +360,19 @@ List&lt;ScanResult&gt; results = mWifiManager.getScanResults();
 <li><p>过滤扫描列表</p></li>
 </ul>
 
-<pre><code class="language-java">    mScanResultList = mWifiManager.getScanResults(); // 获取扫描结果列表
-    sortList(mScanResultList); // 过滤重复节点信息
+<pre><code class="language-java">TreeMap&lt;String, ScanResult&gt; map = new TreeMap&lt;&gt;();
+for (ScanResult scanResult : mScanResultList) {
+    map.put(scanResult.SSID, scanResult);
+}
+mScanResultList.clear();
+mScanResultList.addAll(map.values());
+</code></pre>
 
-    private void sortList(List&lt;ScanResult&gt; list) {
-        TreeMap&lt;String, ScanResult&gt; map = new TreeMap&lt;&gt;();
-        for (ScanResult scanResult : list) {
-            map.put(scanResult.SSID, scanResult);
-        }
-        list.clear();
-        list.addAll(map.values());
-    }
-    ```
-    
-## wifi连接历史
+<h2 id="wifi连接历史">wifi连接历史</h2>
 
-```java
-// 有SSID和networkId，可以直接连接
+<pre><code class="language-java">// 有SSID和networkId，可以直接连接
 // 没有BSSID、密钥等信息
 List&lt;WifiConfiguration&gt; configurations = mWifiManager.getConfiguredNetworks();
-
 </code></pre>
 
 <h2 id="当前wifi连接">当前wifi连接</h2>
