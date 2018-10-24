@@ -23,6 +23,17 @@
     </item>
     
     <item>
+      <title>Android系统日志控制</title>
+      <link>https://sslyxhz.github.io/post/android-system-log/</link>
+      <pubDate>Fri, 18 May 2018 00:02:36 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/android-system-log/</guid>
+      <description>&lt;p&gt;整理记录控制Android系统日志输出的关键点。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Android系统源码阅读姿势</title>
       <link>https://sslyxhz.github.io/post/android%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%A7%BF%E5%8A%BF/</link>
       <pubDate>Sun, 06 May 2018 14:39:23 +0800</pubDate>

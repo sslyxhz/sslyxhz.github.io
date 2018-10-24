@@ -67,7 +67,7 @@
 
 <meta itemprop="datePublished" content="2018-10-23T22:40:18&#43;08:00" />
 <meta itemprop="dateModified" content="2018-10-23T22:40:18&#43;08:00" />
-<meta itemprop="wordCount" content="1809">
+<meta itemprop="wordCount" content="2093">
 
 
 
@@ -156,8 +156,8 @@
               <a href="/categories/notes/"> notes </a>
             
           </div>
-        <span class="more-meta"> 约 1809 字 </span>
-        <span class="more-meta"> 预计阅读 4 分钟 </span>
+        <span class="more-meta"> 约 2093 字 </span>
+        <span class="more-meta"> 预计阅读 5 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -188,6 +188,7 @@
 <li><a href="#连接制定wifi">连接制定wifi</a></li>
 <li><a href="#断开连接">断开连接</a></li>
 <li><a href="#忘记网络">忘记网络</a></li>
+<li><a href="#captive-portal-check-营销验证">Captive Portal Check (营销验证)</a></li>
 </ul></li>
 <li><a href="#参考">参考</a></li>
 </ul>
@@ -617,8 +618,23 @@ try {
 <ul>
 <li>frameworks/opt/net/wifi/service/java/com/android/server/wifi/WifiConfigManager.java</li>
 <li>（3144）：canModifyNetwork(int uid, int networkId, boolean onlyAnnotate)
+<br />
 <br /></li>
 </ul></li>
+</ul></li>
+</ul>
+
+<h2 id="captive-portal-check-营销验证">Captive Portal Check (营销验证)</h2>
+
+<ul>
+<li>商场/部分企业存在wifi营销验证，通过验证后才能够正常上网，否则流量都被劫持到某个固定页面，显示营销内容；</li>
+<li>检测是否处于未经过营销验证的状态，通常访问某个固定地址，根据返回结果是否204确定；
+
+<ul>
+<li>IOS访问：<a href="http://captive.apple.com/hotspotdetect.html">http://captive.apple.com/hotspotdetect.html</a></li>
+<li>Android访问：<a href="http://connectivitycheck.android.com/generate_204">http://connectivitycheck.android.com/generate_204</a></li>
+<li><a href="https://cli.ee/generate-204">其他服务器</a>
+<br /></li>
 </ul></li>
 </ul>
 
@@ -628,6 +644,10 @@ try {
 <li><a href="https://blog.csdn.net/gaugamela/article/details/64442989">Android连接指定Wifi的方法</a></li>
 <li><a href="https://blog.csdn.net/kongxiuqi/article/details/52524500">Android 通过WIFI状态监听广播，判断进入指定wifi范围</a></li>
 <li><a href="http://www.psvmc.cn/article/android-wifi.html">Android开发中Wi-Fi处理</a></li>
+<li><a href="https://bbs.sunofbeaches.com/thread-6105-1-1.html">WIFI管理器开发记录系统Wifi设置的代码分析</a></li>
+<li><a href="https://www.kancloud.cn/alex_wsc/android-wifi-nfc-gps/414094">Captive Portal Check介绍</a></li>
+<li><a href="http://gmd20.github.io/blog/WiFi%E7%83%AD%E7%82%B9%E5%BC%BA%E5%88%B6%E7%99%BB%E5%BD%95%E8%AE%A4%E8%AF%81%E9%A1%B5%E9%9D%A2Captive-Portal%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/">Wifi热点强制登录认证页面captive portal相关资料</a></li>
+<li><a href="https://cli.ee/generate-204">Generate 204</a></li>
 </ul>
     </div>
 
