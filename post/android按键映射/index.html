@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Hugo施工记录 - sslyxhz&#39;s blog</title>
+  <title>Android按键映射 - sslyxhz&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,8 @@
 
 
 <meta name="author" content="sslyxhz" />
-  <meta name="description" content="整理记录Hugo的使用过程。
+  <meta name="description" content="Android系统按键映射过程。
+ScanCode -&amp;gt; KeyCodeLabel -&amp;gt; KeyCode -&amp;gt; KeyEvent
 
 " />
 
@@ -31,7 +32,7 @@
 <meta name="generator" content="Hugo 0.50" />
 
 
-<link rel="canonical" href="https://sslyxhz.github.io/post/hugo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95/" />
+<link rel="canonical" href="https://sslyxhz.github.io/post/android%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -51,30 +52,33 @@
 
 
 
-<meta property="og:title" content="Hugo施工记录" />
-<meta property="og:description" content="整理记录Hugo的使用过程。
+<meta property="og:title" content="Android按键映射" />
+<meta property="og:description" content="Android系统按键映射过程。
+ScanCode -&gt; KeyCodeLabel -&gt; KeyCode -&gt; KeyEvent
 
 " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://sslyxhz.github.io/post/hugo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95/" /><meta property="article:published_time" content="2018-05-06T11:30:44&#43;08:00"/>
-<meta property="article:modified_time" content="2018-05-06T11:30:44&#43;08:00"/>
+<meta property="og:url" content="https://sslyxhz.github.io/post/android%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84/" /><meta property="article:published_time" content="2018-05-02T16:22:39&#43;08:00"/>
+<meta property="article:modified_time" content="2018-10-27T00:50:21&#43;08:00"/>
 
-<meta itemprop="name" content="Hugo施工记录">
-<meta itemprop="description" content="整理记录Hugo的使用过程。
+<meta itemprop="name" content="Android按键映射">
+<meta itemprop="description" content="Android系统按键映射过程。
+ScanCode -&gt; KeyCodeLabel -&gt; KeyCode -&gt; KeyEvent
 
 ">
 
 
-<meta itemprop="datePublished" content="2018-05-06T11:30:44&#43;08:00" />
-<meta itemprop="dateModified" content="2018-05-06T11:30:44&#43;08:00" />
-<meta itemprop="wordCount" content="180">
+<meta itemprop="datePublished" content="2018-05-02T16:22:39&#43;08:00" />
+<meta itemprop="dateModified" content="2018-10-27T00:50:21&#43;08:00" />
+<meta itemprop="wordCount" content="925">
 
 
 
-<meta itemprop="keywords" content="software,blog," />
+<meta itemprop="keywords" content="android," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hugo施工记录"/>
-<meta name="twitter:description" content="整理记录Hugo的使用过程。
+<meta name="twitter:title" content="Android按键映射"/>
+<meta name="twitter:description" content="Android系统按键映射过程。
+ScanCode -&gt; KeyCodeLabel -&gt; KeyCode -&gt; KeyEvent
 
 "/>
 
@@ -147,17 +151,17 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Hugo施工记录</h1>
+      <h1 class="post-title">Android按键映射</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2018-05-06 </span>
+        <span class="post-time"> 2018-05-02 </span>
         <div class="post-category">
             
-              <a href="/categories/%E8%AE%B0%E5%BD%95/"> 记录 </a>
+              <a href="/categories/notes/"> notes </a>
             
           </div>
-        <span class="more-meta"> 约 180 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
+        <span class="more-meta"> 约 925 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
     </header>
@@ -170,16 +174,16 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#why">why</a></li>
-<li><a href="#installation">installation</a></li>
-<li><a href="#常见命令">常见命令</a></li>
-<li><a href="#安装皮肤">安装皮肤</a></li>
-<li><a href="#技巧">技巧</a>
+<li>
 <ul>
-<li><a href="#shortcodes">Shortcodes</a></li>
+<li><a href="#scancode-键扫描码">ScanCode（键扫描码）</a></li>
+<li><a href="#键盘布局文件-kl">键盘布局文件（*.kl）</a></li>
+<li><a href="#定义keylabel">定义KeyLabel</a></li>
+<li><a href="#定义keycode">定义KeyCode</a></li>
+<li><a href="#监听按键">监听按键</a></li>
+<li><a href="#tips">Tips</a></li>
 </ul></li>
-<li><a href="#对比">对比</a></li>
-<li><a href="#reference">Reference</a></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav>
   </div>
@@ -190,109 +194,115 @@
 
     
     <div class="post-content">
-      <p>整理记录Hugo的使用过程。</p>
+      <p>Android系统按键映射过程。<br />
+ScanCode -&gt; KeyCodeLabel -&gt; KeyCode -&gt; KeyEvent</p>
 
 <p></p>
 
-<h1 id="why">why</h1>
+<h2 id="scancode-键扫描码">ScanCode（键扫描码）</h2>
 
 <ul>
-<li>快速的页面编译生成速度</li>
-<li>跨平台支持</li>
-<li>页面实时刷新</li>
-<li>皮肤支持</li>
-<li>安装方便</li>
+<li>ScanCode是由Input驱动框架定义的整数值；</li>
+<li>内容：#define KEY_TEST_KEY 232</li>
+<li>路径：external/kernel-headers/original/linux/input.h</li>
+<li>即getevent获取的键值；</li>
 </ul>
 
-<h1 id="installation">installation</h1>
-
-<p>hugo二进制文件  <a href="https://github.com/gohugoio/hugo/releases">链接地址</a></p>
-
-<h1 id="常见命令">常见命令</h1>
-
-<pre><code class="language-shell"># 生成站点
-hugo new site /path/to/site
-
-# 创建文章
-hugo new post/first.md
-
-# 调试
-hugo server --theme=even --buildDrafts
-
-# 部署运行
-hugo --theme=even --baseUrl=&quot;https://sslyxhz.github.io/&quot;
-
-# 清理
-hugo --gc
-</code></pre>
-
-<h1 id="安装皮肤">安装皮肤</h1>
-
-<pre><code class="language-shell">git clone --depth 1 --recursive https://github.com/sslyxhz/hugo-theme-even.git themes
-</code></pre>
-
-<h1 id="技巧">技巧</h1>
-
-<h2 id="shortcodes">Shortcodes</h2>
-
-<pre><code class="language-textplain">https://sslyxhz.github.io/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/ =&gt; https://example.com/blog/post/
-https://sslyxhz.github.io/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/#tldr =&gt; https://example.com/blog/post/
-#tldr:caffebad
-</code></pre>
+<h2 id="键盘布局文件-kl">键盘布局文件（*.kl）</h2>
 
 <ul>
-<li><a href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes">参考官网</a></li>
+<li>键盘布局文件将input event上报的键值转换为KeyCodeLabel；</li>
+<li>*.kl文件路径，
+
+<ul>
+<li>通常在devices目录下</li>
+<li>/system/usr/keylayout/.kl</li>
+</ul></li>
+<li>添加键值
+
+<ul>
+<li>key   233 TEST_KEY</li>
+</ul></li>
 </ul>
 
-<h1 id="对比">对比</h1>
-
-<table>
-<thead>
-<tr>
-<th>Items</th>
-<th align="center">Hexo</th>
-<th align="center">Hugo</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>插件</td>
-<td align="center">丰富</td>
-<td align="center">较少</td>
-</tr>
-
-<tr>
-<td>主题</td>
-<td align="center">优</td>
-<td align="center">良</td>
-</tr>
-
-<tr>
-<td>速度</td>
-<td align="center">快</td>
-<td align="center">非常快</td>
-</tr>
-
-<tr>
-<td>安装</td>
-<td align="center">依赖较多，有坑</td>
-<td align="center">简洁</td>
-</tr>
-
-<tr>
-<td>文档</td>
-<td align="center">中文支持较好</td>
-<td align="center">中文支持较差</td>
-</tr>
-</tbody>
-</table>
-
-<h1 id="reference">Reference</h1>
+<h2 id="定义keylabel">定义KeyLabel</h2>
 
 <ul>
-<li><a href="https://gohugo.io/getting-started/">gohugo</a></li>
-<li><a href="https://blog.olowolo.com/post/hugo-quick-start/">Hugo 从入门到会用</a></li>
+<li>通过查找KEYCODES[]数组，得到KeyCodeLabel字符串对应的KeyCode值；</li>
+<li>KEYCODES[]所在文件
+
+<ul>
+<li>4.4以前版本：frameworks/base/include/ui/KeycodeLabels.h</li>
+<li>4.4版：framework/native/include/input/KeyCodelabels.h</li>
+<li>5.0以后：framework/native/include/input/InputEventLabels.h</li>
+</ul></li>
+<li>定义KeyLabel
+
+<ul>
+<li>DEFINE_KEYCODE(TEST_KEY)</li>
+<li>or： { &ldquo;TEST_KEY&rdquo;, 233 }</li>
+</ul></li>
+</ul>
+
+<h2 id="定义keycode">定义KeyCode</h2>
+
+<ul>
+<li>定义native的KeyCode枚举值
+
+<ul>
+<li>路径：frameworks/base/include/android/keycodes.h</li>
+<li>内容：AKEYCODE_TEST_KEY = 233</li>
+</ul></li>
+<li>定义java的KeyCode
+
+<ul>
+<li>路径：frameworks/base/core/java/android/view/KeyEvent.java</li>
+<li>内容：
+
+<ul>
+<li>public static final int KEYCODE_TEST_KEY = 233;</li>
+<li>private static final int LAST_KEYCODE = KEYCODE_TEST_KEY;</li>
+<li>names.append(KEYCODE_TEST_KEY, &ldquo;KEYCODE_TEST_KEY&rdquo;);</li>
+</ul></li>
+<li>Java上层主要通过该值来判定按键；</li>
+</ul></li>
+<li>定义资源文件的KeyCode
+
+<ul>
+<li>路径：frameworks\base\core\res\res\values\attrs.xml</li>
+<li>内容：&lt; enum name=&ldquo;KEYCODE_TEST_KEY&rdquo; value=&ldquo;233&rdquo; / &gt;</li>
+</ul></li>
+</ul>
+
+<h2 id="监听按键">监听按键</h2>
+
+<ul>
+<li>路径：frameworks/policies/base/phone/com/android/internal/policy/impl/PhoneWindowManager.java</li>
+
+<li><p>内容：</p>
+
+<pre><code class="language-java">// onKeyDown
+case KeyEvent.KEYCODE_TEST_KEY: {
+    Intent testIntent = new Intent(&quot;neolink.intent.action.KEY_EVENTS&quot;)
+        .putExtra(&quot;key_event&quot;, KeyEvent.KEYCODE_TEST_KEY);
+    getContext().sendBroadcast(testIntent);
+    return true;
+}
+</code></pre></li>
+</ul>
+
+<h2 id="tips">Tips</h2>
+
+<ul>
+<li>在修改了KeyEvent后影响到API，需要执行<strong>make update-api</strong></li>
+<li>getevent确认驱动键值；</li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="https://blog.csdn.net/victory08/article/details/52472881">Android平台遥控器按键映射流程</a></li>
+<li><a href="https://www.cnblogs.com/dyufei/p/6612790.html">Android 增加（键盘）按键</a></li>
 </ul>
     </div>
 
@@ -304,7 +314,7 @@ https://sslyxhz.github.io/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/#tld
   </p>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
-    <span class="item-content">2018-05-06</span>
+    <span class="item-content">2018-10-27</span>
   </p>
   
   <p class="copyright-item">
@@ -315,44 +325,25 @@ https://sslyxhz.github.io/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/#tld
 
     
     
-<div class="post-reward">
-  <input type="checkbox" name="reward" id="reward" hidden />
-  <label class="reward-button" for="reward">赞赏支持</label>
-  <div class="qr-code">
-    
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/imgs/reward/reward_qr_code_wechat.png">
-        <span>微信打赏</span>
-      </label>
-    
-      <label class="qr-code-image" for="reward">
-        <img class="image" src="/imgs/reward/reward_qr_code_alipay.png">
-        <span>支付宝打赏</span>
-      </label>
-  </div>
-</div>
 
     <footer class="post-footer">
       <div class="post-tags">
           
-          <a href="/tags/software/">software</a>
-          
-          <a href="/tags/blog/">blog</a>
+          <a href="/tags/android/">android</a>
           
         </div>
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/android%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E5%A7%BF%E5%8A%BF/">
+          <a class="prev" href="/post/hugo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Android系统源码阅读姿势</span>
+            <span class="prev-text nav-default">Hugo施工记录</span>
             <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
-          <a class="next" href="/post/android%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84/">
-            <span class="next-text nav-default">Android按键映射</span>
+          <a class="next" href="/post/android-system-tips/">
+            <span class="next-text nav-default">Android-System-Tips</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -368,8 +359,8 @@ https://sslyxhz.github.io/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/#tld
     <script src="/lib/gitalk/gitalk-1.2.2.min.js"></script>
   <script type="text/javascript">
   var gitalk = new Gitalk({
-    id: '2018-05-06 11:30:44 \x2b0800 CST',
-    title: 'Hugo施工记录',
+    id: '2018-05-02 16:22:39 \x2b0800 CST',
+    title: 'Android按键映射',
     clientID: 'bad174e0e116e205403d',
     clientSecret: '471a575f0edc5c7c642605ea2fdcd7522c1be8c6',
     repo: 'sslyxhz.github.io',

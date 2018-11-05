@@ -28,7 +28,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.49.2" />
+<meta name="generator" content="Hugo 0.50" />
 
 
 <link rel="canonical" href="https://sslyxhz.github.io/post/firefly-tips/" />
@@ -304,27 +304,25 @@ index 0b122a4..5f9a2ba 100755
   </article>
         </div>
         
-  <div id="comments-gitment"></div>
-  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
-    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+  
+
+  <div id="gitalk-container"></div>
+  <link rel="stylesheet" href="/lib/gitalk/gitalk-1.2.2.min.css">
+    <script src="/lib/gitalk/gitalk-1.2.2.min.js"></script>
   <script type="text/javascript">
-  const gitment = new Gitment({
+  var gitalk = new Gitalk({
     id: '2018-02-05 15:16:47 \x2b0800 CST',
     title: 'Firefly Tips',
-    link: decodeURI(location.href),
-    desc: '\x3cp\x3e整理记录在Firefly平台碰到的一些问题。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
-    owner: 'sslyxhz',
+    clientID: 'bad174e0e116e205403d',
+    clientSecret: '471a575f0edc5c7c642605ea2fdcd7522c1be8c6',
     repo: 'sslyxhz.github.io',
-    oauth: {
-      client_id: 'bad174e0e116e205403d',
-      client_secret: '471a575f0edc5c7c642605ea2fdcd7522c1be8c6'
-    }
-  })
-  gitment.render('comments-gitment')
+    owner: 'sslyxhz',
+    admin: ['sslyxhz'],
+    body: decodeURI(location.href)
+  });
+  gitalk.render('gitalk-container');
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
-
-  
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
 
       </div>
     </main>

@@ -101,6 +101,18 @@
     </item>
     
     <item>
+      <title>Android按键映射</title>
+      <link>https://sslyxhz.github.io/post/android%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84/</link>
+      <pubDate>Wed, 02 May 2018 16:22:39 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/android%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84/</guid>
+      <description>&lt;p&gt;Android系统按键映射过程。&lt;br /&gt;
+ScanCode -&amp;gt; KeyCodeLabel -&amp;gt; KeyCode -&amp;gt; KeyEvent&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Android-System-Tips</title>
       <link>https://sslyxhz.github.io/post/android-system-tips/</link>
       <pubDate>Fri, 20 Apr 2018 00:14:18 +0800</pubDate>

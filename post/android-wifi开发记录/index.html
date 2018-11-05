@@ -28,7 +28,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.49.2" />
+<meta name="generator" content="Hugo 0.50" />
 
 
 <link rel="canonical" href="https://sslyxhz.github.io/post/android-wifi%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" />
@@ -67,7 +67,7 @@
 
 <meta itemprop="datePublished" content="2018-10-23T22:40:18&#43;08:00" />
 <meta itemprop="dateModified" content="2018-10-23T22:40:18&#43;08:00" />
-<meta itemprop="wordCount" content="2093">
+<meta itemprop="wordCount" content="2114">
 
 
 
@@ -156,7 +156,7 @@
               <a href="/categories/notes/"> notes </a>
             
           </div>
-        <span class="more-meta"> 约 2093 字 </span>
+        <span class="more-meta"> 约 2114 字 </span>
         <span class="more-meta"> 预计阅读 5 分钟 </span>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> 次阅读 </span>
       </div>
@@ -645,6 +645,7 @@ try {
 <li><a href="https://blog.csdn.net/kongxiuqi/article/details/52524500">Android 通过WIFI状态监听广播，判断进入指定wifi范围</a></li>
 <li><a href="http://www.psvmc.cn/article/android-wifi.html">Android开发中Wi-Fi处理</a></li>
 <li><a href="https://bbs.sunofbeaches.com/thread-6105-1-1.html">WIFI管理器开发记录系统Wifi设置的代码分析</a></li>
+<li><a href="https://www.dayexie.com/detail114306.html">Android中WIFI常见的几种加密方式</a></li>
 <li><a href="https://www.kancloud.cn/alex_wsc/android-wifi-nfc-gps/414094">Captive Portal Check介绍</a></li>
 <li><a href="http://gmd20.github.io/blog/WiFi%E7%83%AD%E7%82%B9%E5%BC%BA%E5%88%B6%E7%99%BB%E5%BD%95%E8%AE%A4%E8%AF%81%E9%A1%B5%E9%9D%A2Captive-Portal%E7%9B%B8%E5%85%B3%E8%B5%84%E6%96%99/">Wifi热点强制登录认证页面captive portal相关资料</a></li>
 <li><a href="https://cli.ee/generate-204">Generate 204</a></li>
@@ -694,27 +695,25 @@ try {
   </article>
         </div>
         
-  <div id="comments-gitment"></div>
-  <link rel="stylesheet" href="/lib/gitment/gitment-0.0.3.min.css">
-    <script src="/lib/gitment/gitment-0.0.3.min.js"></script>
+  
+
+  <div id="gitalk-container"></div>
+  <link rel="stylesheet" href="/lib/gitalk/gitalk-1.2.2.min.css">
+    <script src="/lib/gitalk/gitalk-1.2.2.min.js"></script>
   <script type="text/javascript">
-  const gitment = new Gitment({
+  var gitalk = new Gitalk({
     id: '2018-10-23 22:40:18 \x2b0800 CST',
     title: 'Android Wifi开发记录',
-    link: decodeURI(location.href),
-    desc: '\x3cp\x3e记录Wifi开发过程中的一些要点和坑。\x3c\/p\x3e\n\n\x3cp\x3e\x3c\/p\x3e',
-    owner: 'sslyxhz',
+    clientID: 'bad174e0e116e205403d',
+    clientSecret: '471a575f0edc5c7c642605ea2fdcd7522c1be8c6',
     repo: 'sslyxhz.github.io',
-    oauth: {
-      client_id: 'bad174e0e116e205403d',
-      client_secret: '471a575f0edc5c7c642605ea2fdcd7522c1be8c6'
-    }
-  })
-  gitment.render('comments-gitment')
+    owner: 'sslyxhz',
+    admin: ['sslyxhz'],
+    body: decodeURI(location.href)
+  });
+  gitalk.render('gitalk-container');
   </script>
-  <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
-
-  
+  <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
 
       </div>
     </main>
