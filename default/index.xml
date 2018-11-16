@@ -34,9 +34,7 @@ cond(yes, right)-&amp;gt;c2
 cond(no)-&amp;gt;sub1(left)-&amp;gt;op1
 c2(yes)-&amp;gt;io-&amp;gt;e
 c2(no)-&amp;gt;op2-&amp;gt;e
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -51,9 +49,7 @@ c2(no)-&amp;gt;op2-&amp;gt;e
 Note right of China: China thinks\nabout it
 China--&amp;gt;Andrew: How are you?
 Andrew-&amp;gt;&amp;gt;China: I am good thanks!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

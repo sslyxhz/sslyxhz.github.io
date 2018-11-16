@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on sslyxhz&#39;s blog</title>
-    <link>http://localhost:1313/tags/git/</link>
+    <link>https://sslyxhz.github.io/tags/git/</link>
     <description>Recent content in Git on sslyxhz&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 02 Feb 2018 23:27:37 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Nov 2018 00:35:32 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sslyxhz.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Git Tips</title>
-      <link>http://localhost:1313/_drafts/git-tips/</link>
-      <pubDate>Fri, 02 Feb 2018 23:27:37 +0800</pubDate>
+      <title>标准化 Git Message</title>
+      <link>https://sslyxhz.github.io/post/%E6%A0%87%E5%87%86%E5%8C%96git-message/</link>
+      <pubDate>Fri, 16 Nov 2018 00:35:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/_drafts/git-tips/</guid>
-      <description>简介 梳理Git流程 基本流程</description>
+      <guid>https://sslyxhz.github.io/post/%E6%A0%87%E5%87%86%E5%8C%96git-message/</guid>
+      <description>&lt;p&gt;使用Commitizen，标准化Git的Commit Message。&lt;/p&gt;</description>
     </item>
     
   </channel>

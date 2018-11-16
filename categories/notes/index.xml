@@ -17,9 +17,7 @@
       <pubDate>Tue, 23 Oct 2018 22:40:18 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/android-wifi%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</guid>
-      <description>&lt;p&gt;记录Wifi开发过程中的一些要点和坑。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;记录Wifi开发过程中的一些要点和坑。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,9 +26,7 @@
       <pubDate>Sun, 23 Sep 2018 19:36:57 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C3/</guid>
-      <description>&lt;p&gt;JNI使用手册，其三，拾遗篇。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;JNI使用手册，其三，拾遗篇。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -39,9 +35,7 @@
       <pubDate>Sat, 25 Aug 2018 15:54:18 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C2/</guid>
-      <description>&lt;p&gt;JNI使用手册，其二，基础篇。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;JNI使用手册，其二，基础篇。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -50,9 +44,7 @@
       <pubDate>Fri, 18 May 2018 00:02:36 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/android-system-log/</guid>
-      <description>&lt;p&gt;整理记录控制Android系统日志输出的关键点。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;整理记录控制Android系统日志输出的关键点。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -62,9 +54,7 @@
       
       <guid>https://sslyxhz.github.io/post/android%E6%8C%89%E9%94%AE%E6%98%A0%E5%B0%84/</guid>
       <description>&lt;p&gt;Android系统按键映射过程。&lt;br /&gt;
-ScanCode -&amp;gt; KeyCodeLabel -&amp;gt; KeyCode -&amp;gt; KeyEvent&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+ScanCode -&amp;gt; KeyCodeLabel -&amp;gt; KeyCode -&amp;gt; KeyEvent&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -73,9 +63,7 @@ ScanCode -&amp;gt; KeyCodeLabel -&amp;gt; KeyCode -&amp;gt; KeyEvent&lt;/p&gt;
       <pubDate>Sat, 03 Feb 2018 15:33:01 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/jni%E6%89%8B%E5%86%8C1/</guid>
-      <description>&lt;p&gt;JNI使用手册，其一，实用篇，先用起来。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;JNI使用手册，其一，实用篇，先用起来。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -84,9 +72,7 @@ ScanCode -&amp;gt; KeyCodeLabel -&amp;gt; KeyCode -&amp;gt; KeyEvent&lt;/p&gt;
       <pubDate>Sat, 03 Feb 2018 13:26:27 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/adb-%E6%8C%87%E4%BB%A4%E8%AE%B0%E5%BD%95/</guid>
-      <description>&lt;p&gt;整理记录一些使用过的ADB相关的命令。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;整理记录一些使用过的ADB相关的命令。&lt;/p&gt;</description>
     </item>
     
   </channel>

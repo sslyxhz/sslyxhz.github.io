@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://sslyxhz.github.io/post/%E6%A0%87%E5%87%86%E5%8C%96git-message/</loc>
+    <lastmod>2018-11-16T00:35:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://sslyxhz.github.io/post/android-wifi%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2018-10-23T22:40:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -212,6 +219,13 @@
   </url>
   
   <url>
+    <loc>https://sslyxhz.github.io/tags/git/</loc>
+    <lastmod>2018-11-16T00:35:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://sslyxhz.github.io/tags/hexo/</loc>
     <lastmod>2016-07-01T20:58:56+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -248,7 +262,7 @@
   
   <url>
     <loc>https://sslyxhz.github.io/post/</loc>
-    <lastmod>2018-10-23T22:40:18+08:00</lastmod>
+    <lastmod>2018-11-16T00:35:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -277,6 +291,13 @@
   <url>
     <loc>https://sslyxhz.github.io/categories/tips/</loc>
     <lastmod>2018-04-20T00:48:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sslyxhz.github.io/tags/tools/</loc>
+    <lastmod>2018-11-16T00:35:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -317,8 +338,15 @@
   </url>
   
   <url>
+    <loc>https://sslyxhz.github.io/tags/%E6%A0%87%E5%87%86%E5%8C%96/</loc>
+    <lastmod>2018-11-16T00:35:32+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://sslyxhz.github.io/categories/%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2018-10-23T22:05:24+08:00</lastmod>
+    <lastmod>2018-11-16T00:35:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

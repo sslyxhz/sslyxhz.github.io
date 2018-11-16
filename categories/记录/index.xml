@@ -6,10 +6,19 @@
     <description>Recent content in 记录 on sslyxhz&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 03 Oct 2018 11:23:24 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Nov 2018 00:35:32 +0800</lastBuildDate>
     
 	<atom:link href="https://sslyxhz.github.io/categories/%E8%AE%B0%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>标准化 Git Message</title>
+      <link>https://sslyxhz.github.io/post/%E6%A0%87%E5%87%86%E5%8C%96git-message/</link>
+      <pubDate>Fri, 16 Nov 2018 00:35:32 +0800</pubDate>
+      
+      <guid>https://sslyxhz.github.io/post/%E6%A0%87%E5%87%86%E5%8C%96git-message/</guid>
+      <description>&lt;p&gt;使用Commitizen，标准化Git的Commit Message。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>酸酸乳搭建记录</title>
@@ -20,9 +29,7 @@
       <description>&lt;p&gt;酸酸乳搭建记录。&lt;/p&gt;
 
 &lt;p&gt;迫于缺IP，缺梯子，入了linode TK2的坑。&lt;br /&gt;
-不折腾了，一键搞定妥妥的！记录下备用。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+不折腾了，一键搞定妥妥的！记录下备用。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,9 +38,7 @@
       <pubDate>Sun, 06 May 2018 11:30:44 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/hugo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95/</guid>
-      <description>&lt;p&gt;整理记录Hugo的使用过程。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;整理记录Hugo的使用过程。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -42,9 +47,7 @@
       <pubDate>Fri, 20 Apr 2018 00:14:18 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/android-system-tips/</guid>
-      <description>&lt;p&gt;整理记录在Android系统的一些功能设置，主要是中上层的实现。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;整理记录在Android系统的一些功能设置，主要是中上层的实现。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,9 +56,7 @@
       <pubDate>Mon, 05 Feb 2018 15:16:47 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/firefly-tips/</guid>
-      <description>&lt;p&gt;整理记录在Firefly平台碰到的一些问题。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;整理记录在Firefly平台碰到的一些问题。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -64,9 +65,7 @@
       <pubDate>Sat, 03 Feb 2018 16:51:04 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/android%E5%AE%A2%E5%88%B6%E5%8C%96/</guid>
-      <description>&lt;p&gt;整理记录在android上的客制化调整。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;整理记录在android上的客制化调整。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -75,9 +74,7 @@
       <pubDate>Sun, 10 Dec 2017 13:55:16 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/leanote%E6%BA%90%E7%A0%81%E9%83%A8%E7%BD%B2/</guid>
-      <description>&lt;p&gt;Leanote，开源笔记，在苛求数据安全的时候就得自建笔记服务了。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Leanote，开源笔记，在苛求数据安全的时候就得自建笔记服务了。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -86,9 +83,7 @@
       <pubDate>Fri, 17 Nov 2017 23:42:23 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/firefly-rk3399%E7%BC%96%E8%AF%91%E8%AE%B0%E5%BD%95/</guid>
-      <description>&lt;p&gt;一块板子一份源码二话不说就是怼，南墙不挡头铁。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;一块板子一份源码二话不说就是怼，南墙不挡头铁。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -99,9 +94,7 @@
       <guid>https://sslyxhz.github.io/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%BA%8C/</guid>
       <description>&lt;p&gt;其二，主题篇。&lt;/p&gt;
 
-&lt;p&gt;hexo，博客模板框架，基于nodejs。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;hexo，博客模板框架，基于nodejs。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -112,9 +105,7 @@
       <guid>https://sslyxhz.github.io/post/hexo%E6%96%BD%E5%B7%A5%E8%AE%B0%E5%BD%95%E4%B8%80/</guid>
       <description>&lt;p&gt;其一，安装篇。&lt;/p&gt;
 
-&lt;p&gt;hexo，博客模板框架，基于nodejs。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;hexo，博客模板框架，基于nodejs。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -123,9 +114,7 @@
       <pubDate>Mon, 23 May 2016 17:12:23 +0800</pubDate>
       
       <guid>https://sslyxhz.github.io/post/markdown%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8/</guid>
-      <description>&lt;p&gt;Markdown的目标是易读易写。在此简单记录markdown的使用语法。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Markdown的目标是易读易写。在此简单记录markdown的使用语法。&lt;/p&gt;</description>
     </item>
     
   </channel>

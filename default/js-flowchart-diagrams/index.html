@@ -17,8 +17,7 @@
 
 
 <meta name="author" content="sslyxhz" />
-  <meta name="description" content="Usage st=&amp;gt;start: Start|past:&amp;gt;http://www.google.com[blank] e=&amp;gt;end: End:&amp;gt;http://www.google.com op1=&amp;gt;operation: My Operation|past op2=&amp;gt;operation: Stuff|current sub1=&amp;gt;subroutine: My Subroutine|invalid cond=&amp;gt;condition: Yes or No?|approved:&amp;gt;http://www.google.com c2=&amp;gt;condition: Good idea|rejected io=&amp;gt;inputoutput: catch something...|request st-&amp;gt;op1(right)-&amp;gt;cond cond(yes, right)-&amp;gt;c2 cond(no)-&amp;gt;sub1(left)-&amp;gt;op1 c2(yes)-&amp;gt;io-&amp;gt;e c2(no)-&amp;gt;op2-&amp;gt;e  
-" />
+  <meta name="description" content="Usage st=&amp;gt;start: Start|past:&amp;gt;http://www.google.com[blank] e=&amp;gt;end: End:&amp;gt;http://www.google.com op1=&amp;gt;operation: My Operation|past op2=&amp;gt;operation: Stuff|current sub1=&amp;gt;subroutine: My Subroutine|invalid cond=&amp;gt;condition: Yes or No?|approved:&amp;gt;http://www.google.com c2=&amp;gt;condition: Good idea|rejected io=&amp;gt;inputoutput: catch something...|request st-&amp;gt;op1(right)-&amp;gt;cond cond(yes, right)-&amp;gt;c2 cond(no)-&amp;gt;sub1(left)-&amp;gt;op1 c2(yes)-&amp;gt;io-&amp;gt;e c2(no)-&amp;gt;op2-&amp;gt;e " />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -27,7 +26,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.50" />
+<meta name="generator" content="Hugo 0.51" />
 
 
 <link rel="canonical" href="https://sslyxhz.github.io/default/js-flowchart-diagrams/" />
@@ -68,8 +67,6 @@ cond(yes, right)-&gt;c2
 cond(no)-&gt;sub1(left)-&gt;op1
 c2(yes)-&gt;io-&gt;e
 c2(no)-&gt;op2-&gt;e
-
-
 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sslyxhz.github.io/default/js-flowchart-diagrams/" /><meta property="article:published_time" content="2015-03-04T21:57:50&#43;08:00"/>
@@ -93,14 +90,12 @@ cond(yes, right)-&gt;c2
 cond(no)-&gt;sub1(left)-&gt;op1
 c2(yes)-&gt;io-&gt;e
 c2(no)-&gt;op2-&gt;e
-
-
 ">
 
 
 <meta itemprop="datePublished" content="2015-03-04T21:57:50&#43;08:00" />
 <meta itemprop="dateModified" content="2015-03-04T21:57:50&#43;08:00" />
-<meta itemprop="wordCount" content="166">
+<meta itemprop="wordCount" content="167">
 
 
 
@@ -124,8 +119,6 @@ cond(yes, right)-&gt;c2
 cond(no)-&gt;sub1(left)-&gt;op1
 c2(yes)-&gt;io-&gt;e
 c2(no)-&gt;op2-&gt;e
-
-
 "/>
 
 <!--[if lte IE 9]>
@@ -215,32 +208,29 @@ c2(yes)-&gt;io-&gt;e
 c2(no)-&gt;op2-&gt;e
 </code></pre>
 
-<p></p>
+<pre><code class="language-flowchart">    st=&gt;start: Start|past:&gt;http://www.google.com[blank]
+    e=&gt;end: End:&gt;http://www.google.com
+    op1=&gt;operation: My Operation|past
+    op2=&gt;operation: Stuff|current
+    sub1=&gt;subroutine: My Subroutine|invalid
+    cond=&gt;condition: Yes
+    or No?|approved:&gt;http://www.google.com
+    c2=&gt;condition: Good idea|rejected
+    io=&gt;inputoutput: catch something...|request
+    
+    st-&gt;op1(right)-&gt;cond
+    cond(yes, right)-&gt;c2
+    cond(no)-&gt;sub1(left)-&gt;op1
+    c2(yes)-&gt;io-&gt;e
+    c2(no)-&gt;op2-&gt;e
+    ```
 
-<pre><code>```flowchart
-st=&gt;start: Start|past:&gt;http://www.google.com[blank]
-e=&gt;end: End:&gt;http://www.google.com
-op1=&gt;operation: My Operation|past
-op2=&gt;operation: Stuff|current
-sub1=&gt;subroutine: My Subroutine|invalid
-cond=&gt;condition: Yes
-or No?|approved:&gt;http://www.google.com
-c2=&gt;condition: Good idea|rejected
-io=&gt;inputoutput: catch something...|request
+## Configuration
 
-st-&gt;op1(right)-&gt;cond
-cond(yes, right)-&gt;c2
-cond(no)-&gt;sub1(left)-&gt;op1
-c2(yes)-&gt;io-&gt;e
-c2(no)-&gt;op2-&gt;e
-```
-</code></pre>
+Configure for all home and regular pages:
 
-<h2 id="configuration">Configuration</h2>
-
-<p>Configure for all home and regular pages:</p>
-
-<pre><code class="language-toml">[params.flowchartDiagrams]
+```toml
+[params.flowchartDiagrams]
   enable = true
   options = &quot;&quot;
 </code></pre>
