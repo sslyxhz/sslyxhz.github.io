@@ -76,7 +76,7 @@ export const defaultConfig: ThemeConfig = {
   },
   analytics: {
     googleAnalyticsId: '',
-    umamiAnalyticsId: '',
+    umamiAnalyticsId: '4b027fcc-d211-45d3-a62e-e1041528af99',
   },
   latex: {
     katex: false,
