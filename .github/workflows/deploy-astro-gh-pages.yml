@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  BUILD_PATH: "." 
+  BUILD_PATH: "."
 
 jobs:
   build:
@@ -44,20 +44,18 @@ jobs:
       - name: Install dependencies
         working-directory: ${{ env.BUILD_PATH }}
         run: |
-          yarn config get enableImmutableInstalls
-          yarn config set -H enableImmutableInstalls false
-          yarn set version 4.3.0
-          yarn install
+          corepack prepare pnpm@latest --activate
+          pnpm install
 
       - name: Build with Astro
         working-directory: ${{ env.BUILD_PATH }}
-        run: yarn build \
+        run: pnpm build \
           --site "${{ steps.pages.outputs.origin }}" \
           --base "${{ steps.pages.outputs.base_path }}"
 
       - name: Setup pagefind
         working-directory: ${{ env.BUILD_PATH }}
-        run: yarn pagefind
+        run: pnpm pagefind
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
