@@ -55,7 +55,7 @@ jobs:
 
       - name: Setup pagefind
         working-directory: ${{ env.BUILD_PATH }}
-        run: pnpm pagefind
+        run: npx pagefind
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
