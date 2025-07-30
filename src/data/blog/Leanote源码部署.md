@@ -23,13 +23,13 @@ description:
 	地址：https://pan.baidu.com/s/1i4MD2M5
 	或：https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.1.tgz
 
-```
+```bash
 # 下载百度云分享文件
 $> wget -c  —referer=http://pan.baidu.com/s/xxxx -O  filename "url"
 ```
 
 # 安装golang
-```
+```bash
 $> cd /home/xhz/leanote
 $> tar -xzvf go1.9.2.linux-amd64.tar.gz
 
@@ -45,7 +45,7 @@ $> go version
 ```
 
 # 获取Revel和Leanote的源码
-```
+```bash
 $> cd /home/xhz/leanote
 $> unzip leanote-all-master.zip
 $> cp -R leanote-all-master/src/ gopackage/
@@ -54,7 +54,7 @@ $> go install github.com/revel/cmd/revel
 ```
 
 # 安装Mongodb
-```
+```bash
 # 解压缩
 $> mv mongodb-linux-x86_64-3.0.1.gz mongodb-linux-x86_64-3.0.1.tgz
 $> tar -xzvf mongodb-linux-x86_64-3.0.1.tgz
@@ -85,7 +85,7 @@ note_contents
 ```
 
 # 运行
-```
+```bash
 $> revel run github.com/leanote/leanote
 
 ```

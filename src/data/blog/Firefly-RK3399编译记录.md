@@ -23,7 +23,7 @@ description:
 
 ## 换源
 提高国内下载速度（惯用我科 [https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu）](https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu）)
-``` shell
+```bash
 # 法一：
 sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 
@@ -46,7 +46,7 @@ deb https://mirrors.ustc.edu.cn/ubuntu/ xenial-security main restricted universe
 
 ## 设置JDK
 Openjdk，需要另外添加该源。
-``` shell
+```bash
 sudo add-apt-repository ppa:openjdk-r/ppa
 # 当add-apt-repository不可用，执行sudo apt-get install software-properties-common
 sudo apt-get update
@@ -55,7 +55,7 @@ sudo apt-get install openjdk-7-jdk      # 6.0用openjdk-7
 ```
 
 安装结束后输入java、javac、java -version验证是否设置完毕，如果出现问题需要追加配置信息：
-``` shell
+```bash
 # sudo gedit /etc/profile
 # 以下内容追加在文件末尾
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
@@ -65,11 +65,11 @@ export PATH=${JAVA_HOME}/bin:$PATH
 
 # source /etc/profile      # 刷新
 ```
-      
+
 ## 环境依赖
 
 编译Android系统，需要依赖以下项目，
-``` shell
+```bash
 # Ubuntu14.04，Android6.0
 sudo apt-get install git-core gnupg flex bison gperf libsdl1.2-dev \
 libesd0-dev libwxgtk2.8-dev squashfs-tools build-essential zip curl \
@@ -101,7 +101,7 @@ sudo apt-get install gcc-arm-linux-gnueabihf lzop libncurses5-dev libssl1.0.0 li
 ```
 
 另，可以在 .bashrc文件末尾追加，提高编译效率
-``` shell
+```bash
 echo export USE_CCACHE=1 >> ~/.bashrc
 ```
 
@@ -112,7 +112,7 @@ echo export USE_CCACHE=1 >> ~/.bashrc
 http://pan.baidu.com/s/1o7Cdilk#list/path=%2FPublic%2FDevBoard%2FFirefly-RK3399%2FSource%2FAndroid6.0&parentPath=%2FPublic%2FDevBoard
 
 
-``` shell
+```bash
 # 验证MD5
 md5sum /project/Firefly-RK3399_Android6.0_git_20170310.tar.gz
 
@@ -129,7 +129,7 @@ git reset --hard
 源码：
 https://gitlab.com/TeeFirefly/FireNow-Marshmallow/tree/Firefly_RK3399
 
-``` shell
+```bash
 # 都开始编译了才发现有线上源码是不是傻...
 git remote rm origin
 git remote add gitlab [https://gitlab.com/TeeFirefly/FireNow-Marshmallow.git](https://gitlab.com/TeeFirefly/FireNow-Marshmallow.git)
@@ -140,7 +140,7 @@ git pull gitlab Firefly_RK3399:Firefly_RK3399
 ```
 
 ## 高速缓存
-``` shell
+```bash
 # 设置编译器高速缓存,提高编译效率
 cd ~/workspace/RK3399
 prebuilts/misc/linux-x86/ccache/ccache -M 50G
@@ -150,14 +150,14 @@ prebuilts/misc/linux-x86/ccache/ccache -M 50G
 
 ## error: unsupported reloc 43
 碰到报出一串error: unsupported reloc 43，尝试第一次修改。
-``` 
+```bash
 # mydroid/art/build/Android.common_build.mk，定位到75行
 ifneq ($(WITHOUT_HOST_CLANG),true)
 # 改为
 ifeq ($(WITHOUT_HOST_CLANG),false)
 ```
 经过第一次修改之后发现编译还是报同样的错误，执行下面：
-``` shell
+```bash
 cp /usr/bin/ld.gold <source_android>/prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.11-4.6/x86_64-linux/bin/ld
 make update-api
 make...
@@ -169,7 +169,7 @@ make...
 
 # 编译方式
 - 官方编译脚本(发现的太晚...)
-``` shell
+```bash
 cd ~/project/firefly-rk3399/
 ./FFTools/make.sh -k -j8    # 单独编译kernel
 ./FFTools/make.sh -u -j8    # 单独编译uboot
@@ -178,17 +178,17 @@ cd ~/project/firefly-rk3399/
 ```
 
 - 手动编译
-``` shell
+```bash
 cd ~/project/firefly-rk3399/kernel/
-      
+
 # 编译kernel
 make ARCH=arm64 firefly_defconfig
 make -j8 ARCH=arm64 rk3399-firefly.img
-      
+
 # 编译uboot：
 make rk3399_box_defconfig
 make ARCHV=aarch64 -j8
-      
+
 # 编译android：
 source build/envsetup.sh
 lunch rk3399_firefly_box-userdebug
@@ -197,7 +197,7 @@ make -j8
 ```
 
 备注：8为同时编译的线程数，一般google推荐这个数字为2倍的cpu个数再加上2，比如4核，就是10。
-``` shell
+```bash
 # 查看CPU个数
 cat /proc/cpuinfo
 ```
@@ -211,12 +211,12 @@ cat /proc/cpuinfo
 
 ## bc not found
 编译kernel出现bc not found，[include/generated/timeconst.h] Error 127。
-``` shell
+```bash
 sudo apt-get install bc
 ```
 
 ## Communication error with Jack server (52)
-``` shell
+```bash
 # Error
 Building with Jack: out/target/common/obj/JAVA_LIBRARIES/android-support-transition-res_intermediates/classes.jack
 Communication error with Jack server (52). Try 'jack-diagnose'
@@ -229,7 +229,7 @@ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -X
 ```
 
 ## directory xxx is not writable
-``` shell
+```bash
 # Error
 Property 'jack.dex.output.dir' (in Options): directory 'out/target/common/obj/JAVA_LIBRARIES/conscrypt_intermediates/jack-rsc' is not writable (required because 'jack.dex.output.container' (defined in Options) is set to 'dir')
 
@@ -237,9 +237,9 @@ Property 'jack.dex.output.dir' (in Options): directory 'out/target/common/obj/JA
 edit $HOME/.jack-server/config.properties
 and set jack.server.max-service=1
 ```
-      
+
 ## file xxx can not be created
-``` shell
+```bash
 # Error
 [ 30% 15013/48677] build out/target/common/obj/JAVA_LIBRARIES/sdk_v9_intermediates/classes.jack
 
@@ -254,7 +254,7 @@ export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx40
 ```
 
 ## 'atomic' file not found
-``` shell
+```bash
 # Error
 frameworks/native/include/binder/Binder.h:20:10: fatal error: 'atomic' file not found
 #include <atomic>
@@ -266,7 +266,7 @@ make clean and rebuild.
 ```
 
 ## Cannot allocate memory
-``` shell
+```bash
 # Error
 [  9% 4800/48682] host C++: libart_32 <= art/runtime/verifier/method_verifier.ccninja: fatal: fork: Cannot allocate memory
 
@@ -278,7 +278,7 @@ export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx40
 ```
 
 ## Waiting for unfinished jobs
-``` shell
+``` bash
 # Error
 make: *** [out/target/product/rk3399_firefly_box/obj/STATIC_LIBRARIES/libLLVMScalarOpts_intermediates/ADCE.o] Error 1
 make: *** Waiting for unfinished jobs....
@@ -293,7 +293,7 @@ make: *** [out/target/product/rk3399_firefly_box/obj/STATIC_LIBRARIES/libLLVMARM
 ```
 
 ## OTA编译失败
-``` shell
+``` bash
 # Error
 
 No RK Loader for TARGET_DEVICE rk3288 to otapackage
@@ -334,18 +334,19 @@ make otapackage
 
 # 打包固件
 - 编译到打包
-``` shell
+``` bash
 source build/envsetup.sh
 lunch rk3399_**
 ./FFTools/make.sh -j12
-    
+
 ./mkimge.sh ota
 make otapackage
 #[100% 234/234] 在out/target/product/xxxx/生成xxxx.zip本地OTA升级包
-    
+
 # 打包统一固件，rockdev/Image-rk3399_firefly_box/update.img
 ./FFTools/mkupdate/mkupdate.sh update
 ```
+
 - Windows下打包，不常用
     - 将编译生成的文件拷贝到 AndroidTool 的 rockdev\Image 目录中
     - 然后运行 rockdev 目录下的 mkupdate.bat 批处理文件即可创建 update.img 并存放到 rockdev\Image 目录里。
