@@ -1,211 +1,180 @@
-# Typography
+# AstroPaper 📄
 
-<p align='center'>
-  <img src='./public/typograph-og.jpg' alt='Typography' width='600'/>
+![AstroPaper](public/astropaper-og.jpg)
+[![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1356898632249991861)
+![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![GitHub](https://img.shields.io/github/license/satnaing/astro-paper?color=%232F3741&style=for-the-badge)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white&style=for-the-badge)](https://conventionalcommits.org)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=for-the-badge)](http://commitizen.github.io/cz-cli/)
+
+AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro blog theme. This theme is designed and crafted based on [my personal blog](https://satnaing.dev/blog).
+
+Read [the blog posts](https://astro-paper.pages.dev/posts/) or check [the README Documentation Section](#-documentation) for more info.
+
+## 🔥 Features
+
+- [x] type-safe markdown
+- [x] super fast performance
+- [x] accessible (Keyboard/VoiceOver)
+- [x] responsive (mobile ~ desktops)
+- [x] SEO-friendly
+- [x] light & dark mode
+- [x] fuzzy search
+- [x] draft posts & pagination
+- [x] sitemap & rss feed
+- [x] followed best practices
+- [x] highly customizable
+- [x] dynamic OG image generation for blog posts [#15](https://github.com/satnaing/astro-paper/pull/15) ([Blog Post](https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/))
+
+_Note: I've tested screen-reader accessibility of AstroPaper using **VoiceOver** on Mac and **TalkBack** on Android. I couldn't test all other screen-readers out there. However, accessibility enhancements in AstroPaper should be working fine on others as well._
+
+## ✅ Lighthouse Score
+
+<p align="center">
+  <a href="https://pagespeed.web.dev/report?url=https%3A%2F%2Fastro-paper.pages.dev%2F&form_factor=desktop">
+    <img width="710" alt="AstroPaper Lighthouse Score" src="AstroPaper-lighthouse-score.svg">
+  <a>
 </p>
 
-<h6 align='center'>
-<a href="https://astro-theme-typography.vercel.app/">Live Demo</a>
-</h6>
-<h5 align='center'>
-<b>This work is rewrite from <a href="https://github.com/sumimakito/hexo-theme-typography">hexo-theme-Typography</a></b>
-</h5>
-<p align='center'>
-<b>English</b> | <a href="./README.zh-CN.md">简体中文</a>
-</p>
+## 🚀 Project Structure
 
-## Features
-
-- Build with **Astro**, **TypeScript** and **UnoCSS**
-- **Fast**. 100% [Pagespeed Score](https://pagespeed.web.dev/analysis/https-astro-theme-typography-vercel-app/j34nq9tx0s?form_factor=desktop).
-- **Typography** Derived from prevalent Chinese typographic norms and aims to provide an enhanced reading experience for website visitors.
-- **Responsive**. Responsive and works well on all screen sizes.
-- **Accessible**. A well thought out semantic and accessible content.
-- **SEO friendly**.Open Graph and Twitter Cards support for a better social sharing experience.
-- **Sitemap** and **RSS feed** for search engines.
-- i18n support.
-- Support Disqus, Giscus, Twikoo as comment service.
-- Dark mode support.
-
-## Demo
-
-> Submit a PR to add your blog Demo.
-
-- [Live Demo](https://astro-theme-typography.vercel.app/)
-- [My Blog](https://blog.moeyua.com/)
-- [Julyfun's Blog (how to fully build this blog using `bun` in minutes)](https://julyfun.fun/posts/%E5%85%89%E9%80%9F%E6%90%AD%E5%BB%BA%E8%BF%99%E6%A0%B7%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/)
-- [Jinx's Blog](https://blog.mytest.cc/)
-- [Unconventional Reading Notes](https://books.beyondxin.top/)
-
-## Getting Started
-
-Typography is a minimal, responsive and SEO-friendly Astro blog theme. This guide will help you get started with a new project.
-
-### Quick Start
-
-You can fork the repository to your account by clicking the Fork button in the upper right corner, click the button below, select the repository you just forked, click the Import button, and you will be taken to the project configuration page.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
-
-Or you can refer to the [Astro](https://docs.astro.build/guides/deploy/) documentation to deploy to your favorite platform.
-
-### Add post
-
-You can add content by creating a new markdown file in `src/content/posts`. The file need metadata in the frontmatter, like this:
-
-```md
----
-title: title
-pubDate: 2021-08-01
-categories: ["article"]
-description: "description"
----
-```
-
-Or, you can use the following command in your terminal to create a new post:
+Inside of AstroPaper, you'll see the following folders and files:
 
 ```bash
-pnpm theme:create
+/
+├── public/
+│   ├── assets/
+|   ├── pagefind/ # auto-generated when build
+│   └── favicon.svg
+│   └── astropaper-og.jpg
+│   └── favicon.svg
+│   └── toggle-theme.js
+├── src/
+│   ├── assets/
+│   │   └── icons/
+│   │   └── images/
+│   ├── components/
+│   ├── data/
+│   │   └── blog/
+│   │       └── some-blog-posts.md
+│   ├── layouts/
+│   └── pages/
+│   └── styles/
+│   └── utils/
+│   └── config.ts
+│   └── constants.ts
+│   └── content.config.ts
+└── astro.config.ts
 ```
 
-## Updating the theme
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-You can simply [`Sync Fork`](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) on your own forked project (do not click Discard Changes, otherwise you will lose your own changes).
+Any static assets, like images, can be placed in the `public/` directory.
 
-## Customization
+All blog posts are stored in `src/data/blog` directory.
 
-Typography is highly customizable. The default configuration file is [src/.config/default.ts](src/.config/default.ts), you can override the default configuration in [src/.config/user.ts](src/.config/user.ts) as needed.
+## 📖 Documentation
 
-### Social links
+Documentation can be read in two formats\_ _markdown_ & _blog post_.
 
-Typography has built-in support for adding links to your social media accounts to the site via the social option in the config file:
+- Configuration - [markdown](src/data/blog/how-to-configure-astropaper-theme.md) | [blog post](https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/)
+- Add Posts - [markdown](src/data/blog/adding-new-post.md) | [blog post](https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/)
+- Customize Color Schemes - [markdown](src/data/blog/customizing-astropaper-theme-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/)
+- Predefined Color Schemes - [markdown](src/data/blog/predefined-color-schemes.md) | [blog post](https://astro-paper.pages.dev/posts/predefined-color-schemes/)
 
-```ts
-socials: [
-  {
-    name: 'github',
-    href: 'https://github.com/moeyua/astro-theme-typography'
-  }
-]
+## 💻 Tech Stack
+
+**Main Framework** - [Astro](https://astro.build/)  
+**Type Checking** - [TypeScript](https://www.typescriptlang.org/)  
+**Styling** - [TailwindCSS](https://tailwindcss.com/)  
+**UI/UX** - [Figma Design File](https://www.figma.com/community/file/1356898632249991861)  
+**Static Search** - [FuseJS](https://pagefind.app/)  
+**Icons** - [Tablers](https://tabler-icons.io/)  
+**Code Formatting** - [Prettier](https://prettier.io/)  
+**Deployment** - [Cloudflare Pages](https://pages.cloudflare.com/)  
+**Illustration in About Page** - [https://freesvgillustration.com](https://freesvgillustration.com/)  
+**Linting** - [ESLint](https://eslint.org)
+
+## 👨🏻‍💻 Running Locally
+
+You can start using this project locally by running the following command in your desired directory:
+
+```bash
+# pnpm
+pnpm create astro@latest --template satnaing/astro-paper
+
+# pnpm
+pnpm create astro@latest -- --template satnaing/astro-paper
+
+# yarn
+yarn create astro --template satnaing/astro-paper
+
+# bun
+bun create astro@latest -- --template satnaing/astro-paper
 ```
 
-The `name` is the icon name in [Material Design Icons](https://pictogrammers.com/library/mdi/),
-which will be automatically generated as the icon.
+Then start the project by running the following commands:
 
-> Note that you need to restart the development server to see the changes.
+```bash
+# install dependencies if you haven't done so in the previous step.
+pnpm install
 
-### Navigation links
-
-By default, the navigation are `Posts`, `Archive`, `Categories` and `About`. You can add more in the config file:
-
-```ts
-{
-  navs: [
-    {
-      name: 'Categories',
-      href: '/categories'
-    }
-  ]
-}
+# start running the project
+pnpm run dev
 ```
 
-And then add the corresponding page in `src/pages`, see more in [Astro Pages](https://docs.astro.build/en/core-concepts/astro-pages/)
+As an alternative approach, if you have Docker installed, you can use Docker to run this project locally. Here's how:
 
-### Dark mode
+```bash
+# Build the Docker image
+docker build -t astropaper .
 
-Typography supports dark mode. You can change it in the config file:
-
-```ts
-themeStyle: 'dark' // 'light' | 'dark' | 'system'
+# Run the Docker container
+docker run -p 4321:80 astropaper
 ```
 
-### Internationalization (i18n)
+## Google Site Verification (optional)
 
-Typography provides built-in support for multilingual sites. By default, the language is `en-us`, you can change it in the config file:
+You can easily add your [Google Site Verification HTML tag](https://support.google.com/webmasters/answer/9008080#meta_tag_verification&zippy=%2Chtml-tag) in AstroPaper using an environment variable. This step is optional. If you don't add the following environment variable, the google-site-verification tag won't appear in the HTML `<head>` section.
 
-```ts
-locale: 'zh-cn'
+```bash
+# in your environment variable file (.env)
+PUBLIC_GOOGLE_SITE_VERIFICATION=your-google-site-verification-value
 ```
 
-For now, Typography supports below languages:
+> See [this discussion](https://github.com/satnaing/astro-paper/discussions/334#discussioncomment-10139247) for adding AstroPaper to the Google Search Console.
 
-- `en-us`
-- `zh-cn`
-- `zh-tw`
-- `ja-jp`
-- `it-it`
+## 🧞 Commands
 
-You can see all supported languages in [src/i18n.ts](src/i18n.ts), and add more if you need.
+All commands are run from the root of the project, from a terminal:
 
-### Comment
+> **_Note!_** For `Docker` commands we must have it [installed](https://docs.docker.com/engine/install/) in your machine.
 
-Typography supports multiple comment services, currently supports [Disqus](https://disqus.com/), [Giscus](https://giscus.app/) and [Twikoo](https://twikoo.js.org/).
+| Command                              | Action                                                                                                                           |
+| :----------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
+| `pnpm install`                       | Installs dependencies                                                                                                            |
+| `pnpm run dev`                       | Starts local dev server at `localhost:4321`                                                                                      |
+| `pnpm run build`                     | Build your production site to `./dist/`                                                                                          |
+| `pnpm run preview`                   | Preview your build locally, before deploying                                                                                     |
+| `pnpm run format:check`              | Check code format with Prettier                                                                                                  |
+| `pnpm run format`                    | Format codes with Prettier                                                                                                       |
+| `pnpm run sync`                      | Generates TypeScript types for all Astro modules. [Learn more](https://docs.astro.build/en/reference/cli-reference/#astro-sync). |
+| `pnpm run lint`                      | Lint with ESLint                                                                                                                 |
+| `docker compose up -d`               | Run AstroPaper on docker, You can access with the same hostname and port informed on `dev` command.                              |
+| `docker compose run app pnpm install` | You can run any command above into the docker container.                                                                         |
+| `docker build -t astropaper .`       | Build Docker image for AstroPaper.                                                                                               |
+| `docker run -p 4321:80 astropaper`   | Run AstroPaper on Docker. The website will be accessible at `http://localhost:4321`.                                             |
 
-Enable the corresponding comment service by adding the configuration to the config file, when you fill in multiple comment services, only the first service will be displayed.
+> **_Warning!_** Windows PowerShell users may need to install the [concurrently package](https://www.npmjs.com/package/concurrently) if they want to [run diagnostics](https://docs.astro.build/en/reference/cli-reference/#astro-check) during development (`astro check --watch & astro dev`). For more info, see [this issue](https://github.com/satnaing/astro-paper/issues/113).
 
-#### Disqus
+## ✨ Feedback & Suggestions
 
-You can enable Disqus by adding the following configuration to the config file:
+If you have any suggestions/feedback, you can contact me via [my email](mailto:contact@satnaing.dev). Alternatively, feel free to open an issue if you find bugs or want to request new features.
 
-```ts
-comments: {
-  disqus: {
-    shortname: 'your-disqus-shortname'
-  }
-}
-```
+## 📜 License
 
-#### Giscus
+Licensed under the MIT License, Copyright © 2025
 
-Based on the [Giscus web component](https://github.com/giscus/giscus-component?tab=readme-ov-file#using-the-web-component) implementation.
+---
 
-The prop names are the same as the data- attributes shown on the [giscus website](<(https://giscus.app/)>), but written in camelCase with the data- prefix and dashes removed.
-
-You can enable Giscus by adding the following configuration to the config file:
-
-```ts
-{
-  comments: {
-    giscus: {
-      repo: 'moeyua/astro-theme-typography'
-      repoId: 'R_kgDOKy9HOQ'
-      category: 'General'
-      categoryId: 'DIC_kwDOKy9HOc4CegmW'
-      mapping: 'title'
-      strict: '0'
-      reactionsEnabled: '1'
-      emitMetadata: '1'
-      inputPosition: 'top'
-      theme: 'light'
-      lang: 'zh-CN'
-      loading: 'lazy'
-    }
-  }
-}
-```
-
-#### Twikoo
-
-You can enable Twikoo by adding the following configuration to the config file:
-
-```ts
-{
-  comments: {
-    twikoo: {
-      envId: 'your-env-id'
-    }
-  }
-}
-```
-
-## Pagespeed Score
-
-[![Pagespeed Score](https://github.com/moeyua/astro-theme-typography/assets/45156493/2272f576-d6ff-49ef-a294-5c2acf365907)](https://pagespeed.web.dev/analysis/https-astro-theme-typography-vercel-app/j34nq9tx0s?form_factor=desktop)
-
-## TODO
-
-- [ ] WebSub
-- [x] comment
-- [ ] search
-- [ ] analytics
+Made with 🤍 by [Sat Naing](https://satnaing.dev) 👨🏻‍💻 and [contributors](https://github.com/satnaing/astro-paper/graphs/contributors).
