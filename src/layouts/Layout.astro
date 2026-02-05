@@ -1,6 +1,8 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
+import {
+  PUBLIC_GOOGLE_SITE_VERIFICATION,
+} from "astro:env/client";
 import { SITE } from "@/config";
 import "@/styles/global.css";
 
@@ -132,13 +134,14 @@ const structuredData = {
 
     <script is:inline src="/toggle-theme.js"></script>
 
-    <!-- Umami Config -->
-    <script
-      is:inline
-      async
-      src="https://umami.personaldatafreedom.publicvm.com/script.js"
-      data-website-id="4b027fcc-d211-45d3-a62e-e1041528af99"
-    ></script>
+    <!-- Clarity Config -->
+    <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "vcpx5z0ovf");
+    </script>
 
   </head>
   <body>
