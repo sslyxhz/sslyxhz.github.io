@@ -1,7 +1,7 @@
 export const SITE = {
   website: "https://sslyxhz.github.io/", // replace this with your deployed domain
   author: "sslyxhz",
-  profile: "https://satnaing.dev/",
+  profile: "https://sslyxhz.github.io/",
   desc: "sslyxhz‘s blog | coder",
   title: "子非鱼",
   ogImage: "astropaper-og.jpg",
@@ -12,12 +12,12 @@ export const SITE = {
   showArchives: true,
   showBackButton: true, // show back button in post detail
   editPost: {
-    enabled: true,
+    enabled: false,
     text: "Edit page",
-    url: "https://github.com/satnaing/astro-paper/edit/main/",
+    url: "https://github.com/sslyxhz/sslyxhz.github.io/edit/main/",
   },
   dynamicOgImage: true,
   dir: "ltr", // "rtl" | "auto"
   lang: "en", // html lang code. Set this empty and default will be "en"
-  timezone: "Asia/Bangkok", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  timezone: "Asia/Shanghai", // Default global timezone (IANA format) https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 } as const;
